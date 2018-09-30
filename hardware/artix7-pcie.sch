@@ -1,0 +1,50 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 2550 3000 1250 1250
+U 5BA4C634
+F0 "Serdes" 50
+F1 "artix7-pcie-serdes.sch" 50
+F2 "PCIE_TXP0" O L 2550 3100 50 
+F3 "PCIE_TXN0" O L 2550 3200 50 
+F4 "PCIE_RXP0" I L 2550 3300 50 
+F5 "PCIE_RXN0" I L 2550 3400 50 
+F6 "PCIE_REFCLKP" I L 2550 3600 50 
+F7 "PCIE_REFCLKN" I L 2550 3700 50 
+F8 "MGTAVCC" I R 3800 3100 50 
+F9 "MGTAVTT" I R 3800 3200 50 
+$EndSheet
+$Sheet
+S 2550 4600 1250 1150
+U 5BA4CD11
+F0 "Power" 50
+F1 "artix7-pcie-pwr.sch" 50
+F2 "MGTAVCC" O R 3800 4700 50 
+F3 "MGTAVTT" O R 3800 4800 50 
+$EndSheet
+Wire Wire Line
+	3800 3100 3900 3100
+Wire Wire Line
+	3900 3100 3900 4700
+Wire Wire Line
+	3800 4700 3900 4700
+Wire Wire Line
+	3800 3200 3950 3200
+Wire Wire Line
+	3950 3200 3950 4800
+Wire Wire Line
+	3950 4800 3800 4800
+$EndSCHEMATC
