@@ -1,0 +1,113 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date         : Wed Sep 19 06:35:16 2018
+| Host         : z400 running 64-bit Arch Linux
+| Command      : report_methodology -file xilinx_pcie_2_1_ep_7x_methodology_drc_routed.rpt -pb xilinx_pcie_2_1_ep_7x_methodology_drc_routed.pb -rpx xilinx_pcie_2_1_ep_7x_methodology_drc_routed.rpx
+| Design       : xilinx_pcie_2_1_ep_7x
+| Device       : xc7a12tcpg238-1
+| Speed File   : -1
+| Design State : Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 13
++---------+----------+---------------------------------------------+------------+
+| Rule    | Severity | Description                                 | Violations |
++---------+----------+---------------------------------------------+------------+
+| LUTAR-1 | Warning  | LUT drives async reset alert                | 1          |
+| XDCB-5  | Warning  | Runtime inefficient way to find pin objects | 12         |
++---------+----------+---------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell pcie_7x_0_support_i/pcie_7x_0_i/U0/inst/user_reset_out_i_1, with 2 or more inputs, drives asynchronous reset pin(s) pcie_7x_0_support_i/pcie_7x_0_i/U0/inst/user_reset_int_reg/PRE, pcie_7x_0_support_i/pcie_7x_0_i/U0/inst/user_reset_out_reg/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+XDCB-5#1 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/CFGMSGRECEIVEDPMETO]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '11' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a12t_cpg238/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.srcs/sources_1/ip/pcie_7x_0/source/pcie_7x_0-PCIE_X0Y0.xdc (Line: 117)
+Related violations: <none>
+
+XDCB-5#2 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/PLL0LOCK]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '12' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a12t_cpg238/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.srcs/sources_1/ip/pcie_7x_0/source/pcie_7x_0-PCIE_X0Y0.xdc (Line: 118)
+Related violations: <none>
+
+XDCB-5#3 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/RXCDRLOCK]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '10' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a12t_cpg238/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.srcs/sources_1/ip/pcie_7x_0/source/pcie_7x_0-PCIE_X0Y0.xdc (Line: 116)
+Related violations: <none>
+
+XDCB-5#4 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/RXDLYSRESETDONE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '8' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a12t_cpg238/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.srcs/sources_1/ip/pcie_7x_0/source/pcie_7x_0-PCIE_X0Y0.xdc (Line: 114)
+Related violations: <none>
+
+XDCB-5#5 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/RXELECIDLE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '4' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a12t_cpg238/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.srcs/sources_1/ip/pcie_7x_0/source/pcie_7x_0-PCIE_X0Y0.xdc (Line: 110)
+Related violations: <none>
+
+XDCB-5#6 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/RXPHALIGNDONE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '9' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a12t_cpg238/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.srcs/sources_1/ip/pcie_7x_0/source/pcie_7x_0-PCIE_X0Y0.xdc (Line: 115)
+Related violations: <none>
+
+XDCB-5#7 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/RXPMARESETDONE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '13' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a12t_cpg238/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.srcs/sources_1/ip/pcie_7x_0/source/pcie_7x_0-PCIE_X0Y0.xdc (Line: 119)
+Related violations: <none>
+
+XDCB-5#8 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/RXSYNCDONE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '14' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a12t_cpg238/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.srcs/sources_1/ip/pcie_7x_0/source/pcie_7x_0-PCIE_X0Y0.xdc (Line: 120)
+Related violations: <none>
+
+XDCB-5#9 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/TXDLYSRESETDONE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '7' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a12t_cpg238/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.srcs/sources_1/ip/pcie_7x_0/source/pcie_7x_0-PCIE_X0Y0.xdc (Line: 113)
+Related violations: <none>
+
+XDCB-5#10 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/TXPHALIGNDONE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '6' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a12t_cpg238/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.srcs/sources_1/ip/pcie_7x_0/source/pcie_7x_0-PCIE_X0Y0.xdc (Line: 112)
+Related violations: <none>
+
+XDCB-5#11 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/TXPHINITDONE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '5' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a12t_cpg238/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.srcs/sources_1/ip/pcie_7x_0/source/pcie_7x_0-PCIE_X0Y0.xdc (Line: 111)
+Related violations: <none>
+
+XDCB-5#12 Warning
+Runtime inefficient way to find pin objects  
+The option '-through : [get_pins -hierarchical -filter NAME=~*/TXSYNCDONE]' of constraint 'set_false_path' uses inefficient query to find pin objects (see constraint position '15' in the Timing Constraint window in Vivado IDE). To reduce runtime, it is recommended to get the pins through the cell objects. Please refer to Using Constraints Guide (Constraints Efficiency). An example of optimal query is: get_pins -filter {REF_PIN_NAME=~yy*} -of_objects [get_cells -hierarchical xx*].
+Current XDC: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a12t_cpg238/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.srcs/sources_1/ip/pcie_7x_0/source/pcie_7x_0-PCIE_X0Y0.xdc (Line: 121)
+Related violations: <none>
+
+

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Sat Sep 29 06:41:12 2018
+# Process ID: 3761
+# Current directory: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a15t_csg325/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.runs/impl_1
+# Command line: vivado -log xilinx_pcie_2_1_ep_7x.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source xilinx_pcie_2_1_ep_7x.tcl -notrace
+# Log file: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a15t_csg325/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.runs/impl_1/xilinx_pcie_2_1_ep_7x.vdi
+# Journal file: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/test_xc7a15t_csg325/ex_des/pcie_7x_0_ex/pcie_7x_0_ex.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source xilinx_pcie_2_1_ep_7x.tcl -notrace
