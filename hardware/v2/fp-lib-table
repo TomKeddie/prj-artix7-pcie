@@ -1,0 +1,7 @@
+(fp_lib_table
+  (lib (name tom-connectors)(type KiCad)(uri ${KIPRJMOD}/../tom-kicad/footprints/tom-connectors.pretty)(options "")(descr ""))
+  (lib (name tom-mechanical)(type KiCad)(uri ${KIPRJMOD}/../tom-kicad/footprints/tom-mechanical.pretty)(options "")(descr ""))
+  (lib (name tom-opto)(type KiCad)(uri ${KIPRJMOD}/../tom-kicad/footprints/tom-opto.pretty)(options "")(descr ""))
+  (lib (name tom-passives)(type KiCad)(uri ${KIPRJMOD}/../tom-kicad/footprints/tom-passives.pretty)(options "")(descr ""))
+  (lib (name tom-semiconductors)(type KiCad)(uri ${KIPRJMOD}/../tom-kicad/footprints/tom-semiconductors.pretty)(options "")(descr ""))
+)

@@ -1,0 +1,1396 @@
+EESchema Schematic File Version 4
+LIBS:artix7-pcie-v2-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L tom-semiconductors:FAN53541 U?
+U 1 1 5E48B077
+P 2800 3600
+F 0 "U?" H 2800 4125 50  0000 C CNN
+F 1 "FAN53541" H 2800 4034 50  0000 C CNN
+F 2 "" H 2850 3550 50  0001 C CNN
+F 3 "https://www.onsemi.com/pub/Collateral/FAN53541-D.pdf" H 2850 3550 50  0001 C CNN
+	1    2800 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5E48BCFE
+P 1400 2800
+F 0 "#PWR?" H 1400 2650 50  0001 C CNN
+F 1 "+5V" H 1415 2973 50  0000 C CNN
+F 2 "" H 1400 2800 50  0001 C CNN
+F 3 "" H 1400 2800 50  0001 C CNN
+	1    1400 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:R R?
+U 1 1 5E48C30F
+P 1400 3050
+F 0 "R?" H 1471 3088 40  0000 L CNN
+F 1 "0R" H 1471 3012 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 1471 2974 30  0001 L CNN
+F 3 "" H 1400 3050 30  0001 C CNN
+	1    1400 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 3300 2050 3300
+Wire Wire Line
+	2100 3600 2050 3600
+Wire Wire Line
+	2050 3600 2050 3500
+Connection ~ 2050 3300
+Wire Wire Line
+	2100 3400 2050 3400
+Connection ~ 2050 3400
+Wire Wire Line
+	2050 3400 2050 3300
+Wire Wire Line
+	2100 3500 2050 3500
+Connection ~ 2050 3500
+Wire Wire Line
+	2050 3500 2050 3400
+Text Label 900  3300 0    50   ~ 0
+5V_1.5
+$Comp
+L tom-passives:R R?
+U 1 1 5E48F232
+P 3500 2950
+F 0 "R?" H 3571 2988 40  0000 L CNN
+F 1 "100k/5%" H 3571 2912 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 3571 2874 30  0001 L CNN
+F 3 "" H 3500 2950 30  0001 C CNN
+	1    3500 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2050 3300 2050 2700
+Wire Wire Line
+	2050 2700 3500 2700
+$Comp
+L power:GND #PWR?
+U 1 1 5E490DCA
+P 2500 4150
+F 0 "#PWR?" H 2500 3900 50  0001 C CNN
+F 1 "GND" H 2505 3977 50  0000 C CNN
+F 2 "" H 2500 4150 50  0001 C CNN
+F 3 "" H 2500 4150 50  0001 C CNN
+	1    2500 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 4050 2500 4150
+Wire Wire Line
+	2100 3800 2100 4150
+Wire Wire Line
+	2100 4150 2500 4150
+Connection ~ 2500 4150
+Wire Wire Line
+	3000 4050 3000 4150
+Wire Wire Line
+	3000 4150 2900 4150
+Wire Wire Line
+	2600 4050 2600 4150
+Connection ~ 2600 4150
+Wire Wire Line
+	2600 4150 2500 4150
+Wire Wire Line
+	2700 4050 2700 4150
+Connection ~ 2700 4150
+Wire Wire Line
+	2700 4150 2600 4150
+Wire Wire Line
+	2800 4050 2800 4150
+Connection ~ 2800 4150
+Wire Wire Line
+	2800 4150 2700 4150
+Wire Wire Line
+	2900 4050 2900 4150
+Connection ~ 2900 4150
+Wire Wire Line
+	2900 4150 2800 4150
+Wire Wire Line
+	2100 3700 2000 3700
+$Comp
+L tom-passives:C C?
+U 1 1 5E49298C
+P 1400 3500
+F 0 "C?" H 1515 3538 40  0000 L CNN
+F 1 "10uF/6.3V/X7R" H 1515 3462 40  0000 L CNN
+F 2 "" H 1438 3350 30  0000 C CNN
+F 3 "" H 1400 3500 60  0000 C CNN
+	1    1400 3500
+	1    0    0    -1  
+$EndComp
+Connection ~ 1400 3300
+Wire Wire Line
+	1400 3300 2050 3300
+$Comp
+L tom-passives:C C?
+U 1 1 5E4965A7
+P 650 3500
+F 0 "C?" H 765 3538 40  0000 L CNN
+F 1 "10uF/6.3V/X5R" H 765 3462 40  0000 L CNN
+F 2 "" H 688 3350 30  0000 C CNN
+F 3 "" H 650 3500 60  0000 C CNN
+	1    650  3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 3300 650  3300
+$Comp
+L power:GND #PWR?
+U 1 1 5E497549
+P 1400 3700
+F 0 "#PWR?" H 1400 3450 50  0001 C CNN
+F 1 "GND" H 1405 3527 50  0000 C CNN
+F 2 "" H 1400 3700 50  0001 C CNN
+F 3 "" H 1400 3700 50  0001 C CNN
+	1    1400 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E49789E
+P 650 3700
+F 0 "#PWR?" H 650 3450 50  0001 C CNN
+F 1 "GND" H 655 3527 50  0000 C CNN
+F 2 "" H 650 3700 50  0001 C CNN
+F 3 "" H 650 3700 50  0001 C CNN
+	1    650  3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 3200 3500 3300
+Text Label 3500 3200 0    50   ~ 0
+PGOOD_1.5V
+$Comp
+L power:+1V5 #PWR?
+U 1 1 5E49B284
+P 4750 3600
+F 0 "#PWR?" H 4750 3450 50  0001 C CNN
+F 1 "+1V5" H 4765 3773 50  0000 C CNN
+F 2 "" H 4750 3600 50  0001 C CNN
+F 3 "" H 4750 3600 50  0001 C CNN
+	1    4750 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 3800 4050 3800
+$Comp
+L tom-passives:R R?
+U 1 1 5E49BD05
+P 3500 4300
+F 0 "R?" H 3429 4262 40  0000 R CNN
+F 1 "115K/1%" H 3429 4338 40  0000 R CNN
+F 2 "tom-passives:C_0402_1005Metric" H 3571 4224 30  0001 L CNN
+F 3 "" H 3500 4300 30  0001 C CNN
+	1    3500 4300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4050 3800 4050 4050
+Connection ~ 4050 3800
+Wire Wire Line
+	4050 3800 4750 3800
+Wire Wire Line
+	3500 3900 3500 4050
+Connection ~ 3500 4050
+Text Label 3500 4050 2    50   ~ 0
+FB_1.5V
+$Comp
+L power:GND #PWR?
+U 1 1 5E4A01A3
+P 3500 4550
+F 0 "#PWR?" H 3500 4300 50  0001 C CNN
+F 1 "GND" H 3505 4377 50  0000 C CNN
+F 2 "" H 3500 4550 50  0001 C CNN
+F 3 "" H 3500 4550 50  0001 C CNN
+	1    3500 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 4050 3500 4050
+$Comp
+L tom-passives:R R?
+U 1 1 5E49C901
+P 3800 4050
+F 0 "R?" V 3985 4050 40  0000 C CNN
+F 1 "100K/1%" V 3909 4050 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 3871 3974 30  0001 L CNN
+F 3 "" H 3800 4050 30  0001 C CNN
+	1    3800 4050
+	0    1    -1   0   
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E4A5148
+P 4050 4250
+F 0 "C?" H 4165 4288 40  0000 L CNN
+F 1 "10uF/6.3V/X5R" H 4165 4212 40  0000 L CNN
+F 2 "" H 4088 4100 30  0000 C CNN
+F 3 "" H 4050 4250 60  0000 C CNN
+	1    4050 4250
+	1    0    0    -1  
+$EndComp
+Connection ~ 4050 4050
+$Comp
+L tom-passives:C C?
+U 1 1 5E4A62A2
+P 4750 4250
+F 0 "C?" H 4865 4288 40  0000 L CNN
+F 1 "10nF/6.3V/X7R" H 4865 4212 40  0000 L CNN
+F 2 "" H 4788 4100 30  0000 C CNN
+F 3 "" H 4750 4250 60  0000 C CNN
+	1    4750 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 3800 4750 4050
+$Comp
+L power:GND #PWR?
+U 1 1 5E4A8A36
+P 4050 4450
+F 0 "#PWR?" H 4050 4200 50  0001 C CNN
+F 1 "GND" H 4055 4277 50  0000 C CNN
+F 2 "" H 4050 4450 50  0001 C CNN
+F 3 "" H 4050 4450 50  0001 C CNN
+	1    4050 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E4A8DBA
+P 4750 4450
+F 0 "#PWR?" H 4750 4200 50  0001 C CNN
+F 1 "GND" H 4755 4277 50  0000 C CNN
+F 2 "" H 4750 4450 50  0001 C CNN
+F 3 "" H 4750 4450 50  0001 C CNN
+	1    4750 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 3400 3600 3400
+Wire Wire Line
+	3600 3400 3600 3500
+Wire Wire Line
+	3500 3700 3600 3700
+Connection ~ 3600 3700
+Wire Wire Line
+	3600 3700 3850 3700
+Wire Wire Line
+	3500 3500 3600 3500
+Connection ~ 3600 3500
+Wire Wire Line
+	3600 3500 3600 3600
+Wire Wire Line
+	3500 3600 3600 3600
+Connection ~ 3600 3600
+Wire Wire Line
+	3600 3600 3600 3700
+Wire Wire Line
+	4350 3700 4750 3700
+Wire Wire Line
+	4750 3700 4750 3600
+Wire Wire Line
+	4750 3700 4750 3800
+Connection ~ 4750 3700
+Connection ~ 4750 3800
+$Comp
+L tom-passives:INDUCTOR_SMALL L?
+U 1 1 5E4AAC3B
+P 4100 3700
+F 0 "L?" H 4100 3915 50  0000 C CNN
+F 1 "0.56uH" H 4100 3824 50  0000 C CNN
+F 2 "" H 4100 3700 60  0001 C CNN
+F 3 "" H 4100 3700 60  0001 C CNN
+F 4 " LPS3008-561MRC" H 4100 3700 50  0001 C CNN "MPN"
+	1    4100 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-semiconductors:FAN53541 U?
+U 1 1 5E4C156E
+P 2950 1550
+F 0 "U?" H 2950 2075 50  0000 C CNN
+F 1 "FAN53541" H 2950 1984 50  0000 C CNN
+F 2 "" H 3000 1500 50  0001 C CNN
+F 3 "https://www.onsemi.com/pub/Collateral/FAN53541-D.pdf" H 3000 1500 50  0001 C CNN
+	1    2950 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5E4C1578
+P 1550 750
+F 0 "#PWR?" H 1550 600 50  0001 C CNN
+F 1 "+5V" H 1565 923 50  0000 C CNN
+F 2 "" H 1550 750 50  0001 C CNN
+F 3 "" H 1550 750 50  0001 C CNN
+	1    1550 750 
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:R R?
+U 1 1 5E4C1582
+P 1550 1000
+F 0 "R?" H 1621 1038 40  0000 L CNN
+F 1 "0R" H 1621 962 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 1621 924 30  0001 L CNN
+F 3 "" H 1550 1000 30  0001 C CNN
+	1    1550 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 1250 2200 1250
+Wire Wire Line
+	2250 1550 2200 1550
+Wire Wire Line
+	2200 1550 2200 1450
+Connection ~ 2200 1250
+Wire Wire Line
+	2250 1350 2200 1350
+Connection ~ 2200 1350
+Wire Wire Line
+	2200 1350 2200 1250
+Wire Wire Line
+	2250 1450 2200 1450
+Connection ~ 2200 1450
+Wire Wire Line
+	2200 1450 2200 1350
+Text Label 1050 1250 0    50   ~ 0
+5V_1.0
+$Comp
+L tom-passives:R R?
+U 1 1 5E4C1597
+P 3650 900
+F 0 "R?" H 3721 938 40  0000 L CNN
+F 1 "100k/5%" H 3721 862 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 3721 824 30  0001 L CNN
+F 3 "" H 3650 900 30  0001 C CNN
+	1    3650 900 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 1250 2200 650 
+Wire Wire Line
+	2200 650  3650 650 
+$Comp
+L power:GND #PWR?
+U 1 1 5E4C15A3
+P 2650 2100
+F 0 "#PWR?" H 2650 1850 50  0001 C CNN
+F 1 "GND" H 2655 1927 50  0000 C CNN
+F 2 "" H 2650 2100 50  0001 C CNN
+F 3 "" H 2650 2100 50  0001 C CNN
+	1    2650 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 2000 2650 2100
+Wire Wire Line
+	2250 1750 2250 2100
+Wire Wire Line
+	2250 2100 2650 2100
+Connection ~ 2650 2100
+Wire Wire Line
+	3150 2000 3150 2100
+Wire Wire Line
+	3150 2100 3050 2100
+Wire Wire Line
+	2750 2000 2750 2100
+Connection ~ 2750 2100
+Wire Wire Line
+	2750 2100 2650 2100
+Wire Wire Line
+	2850 2000 2850 2100
+Connection ~ 2850 2100
+Wire Wire Line
+	2850 2100 2750 2100
+Wire Wire Line
+	2950 2000 2950 2100
+Connection ~ 2950 2100
+Wire Wire Line
+	2950 2100 2850 2100
+Wire Wire Line
+	3050 2000 3050 2100
+Connection ~ 3050 2100
+Wire Wire Line
+	3050 2100 2950 2100
+Wire Wire Line
+	2250 1650 2150 1650
+$Comp
+L tom-passives:C C?
+U 1 1 5E4C15C1
+P 1550 1450
+F 0 "C?" H 1665 1488 40  0000 L CNN
+F 1 "10uF/6.3V/X7R" H 1665 1412 40  0000 L CNN
+F 2 "" H 1588 1300 30  0000 C CNN
+F 3 "" H 1550 1450 60  0000 C CNN
+	1    1550 1450
+	1    0    0    -1  
+$EndComp
+Connection ~ 1550 1250
+Wire Wire Line
+	1550 1250 2200 1250
+$Comp
+L tom-passives:C C?
+U 1 1 5E4C15CD
+P 800 1450
+F 0 "C?" H 915 1488 40  0000 L CNN
+F 1 "10uF/6.3V/X5R" H 915 1412 40  0000 L CNN
+F 2 "" H 838 1300 30  0000 C CNN
+F 3 "" H 800 1450 60  0000 C CNN
+	1    800  1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 1250 800  1250
+$Comp
+L power:GND #PWR?
+U 1 1 5E4C15D8
+P 1550 1650
+F 0 "#PWR?" H 1550 1400 50  0001 C CNN
+F 1 "GND" H 1555 1477 50  0000 C CNN
+F 2 "" H 1550 1650 50  0001 C CNN
+F 3 "" H 1550 1650 50  0001 C CNN
+	1    1550 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E4C15E2
+P 800 1650
+F 0 "#PWR?" H 800 1400 50  0001 C CNN
+F 1 "GND" H 805 1477 50  0000 C CNN
+F 2 "" H 800 1650 50  0001 C CNN
+F 3 "" H 800 1650 50  0001 C CNN
+	1    800  1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 1150 3650 1250
+Text Label 4150 1250 0    50   ~ 0
+PGOOD_1.0V
+Wire Wire Line
+	3650 1750 4200 1750
+$Comp
+L tom-passives:R R?
+U 1 1 5E4C15F9
+P 3650 2250
+F 0 "R?" H 3579 2212 40  0000 R CNN
+F 1 "402K/1%" H 3579 2288 40  0000 R CNN
+F 2 "tom-passives:C_0402_1005Metric" H 3721 2174 30  0001 L CNN
+F 3 "" H 3650 2250 30  0001 C CNN
+	1    3650 2250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4200 1750 4200 2000
+Connection ~ 4200 1750
+Wire Wire Line
+	4200 1750 4900 1750
+Wire Wire Line
+	3650 1850 3650 2000
+Connection ~ 3650 2000
+Text Label 3650 2000 2    50   ~ 0
+FB_1.0V
+$Comp
+L power:GND #PWR?
+U 1 1 5E4C1609
+P 3650 2500
+F 0 "#PWR?" H 3650 2250 50  0001 C CNN
+F 1 "GND" H 3655 2327 50  0000 C CNN
+F 2 "" H 3650 2500 50  0001 C CNN
+F 3 "" H 3650 2500 50  0001 C CNN
+	1    3650 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 2000 3650 2000
+$Comp
+L tom-passives:R R?
+U 1 1 5E4C1614
+P 3950 2000
+F 0 "R?" V 4135 2000 40  0000 C CNN
+F 1 "100K/1%" V 4059 2000 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 4021 1924 30  0001 L CNN
+F 3 "" H 3950 2000 30  0001 C CNN
+	1    3950 2000
+	0    1    -1   0   
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E4C161E
+P 4200 2200
+F 0 "C?" H 4315 2238 40  0000 L CNN
+F 1 "10uF/6.3V/X5R" H 4315 2162 40  0000 L CNN
+F 2 "" H 4238 2050 30  0000 C CNN
+F 3 "" H 4200 2200 60  0000 C CNN
+	1    4200 2200
+	1    0    0    -1  
+$EndComp
+Connection ~ 4200 2000
+$Comp
+L tom-passives:C C?
+U 1 1 5E4C1629
+P 4900 2200
+F 0 "C?" H 5015 2238 40  0000 L CNN
+F 1 "10nF/6.3V/X7R" H 5015 2162 40  0000 L CNN
+F 2 "" H 4938 2050 30  0000 C CNN
+F 3 "" H 4900 2200 60  0000 C CNN
+	1    4900 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 1750 4900 2000
+$Comp
+L power:GND #PWR?
+U 1 1 5E4C1634
+P 4200 2400
+F 0 "#PWR?" H 4200 2150 50  0001 C CNN
+F 1 "GND" H 4205 2227 50  0000 C CNN
+F 2 "" H 4200 2400 50  0001 C CNN
+F 3 "" H 4200 2400 50  0001 C CNN
+	1    4200 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E4C163E
+P 4900 2400
+F 0 "#PWR?" H 4900 2150 50  0001 C CNN
+F 1 "GND" H 4905 2227 50  0000 C CNN
+F 2 "" H 4900 2400 50  0001 C CNN
+F 3 "" H 4900 2400 50  0001 C CNN
+	1    4900 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 1350 3750 1350
+Wire Wire Line
+	3750 1350 3750 1450
+Wire Wire Line
+	3650 1650 3750 1650
+Connection ~ 3750 1650
+Wire Wire Line
+	3750 1650 4000 1650
+Wire Wire Line
+	3650 1450 3750 1450
+Connection ~ 3750 1450
+Wire Wire Line
+	3750 1450 3750 1550
+Wire Wire Line
+	3650 1550 3750 1550
+Connection ~ 3750 1550
+Wire Wire Line
+	3750 1550 3750 1650
+Wire Wire Line
+	4500 1650 4900 1650
+Wire Wire Line
+	4900 1650 4900 1550
+Wire Wire Line
+	4900 1650 4900 1750
+Connection ~ 4900 1650
+Connection ~ 4900 1750
+$Comp
+L tom-passives:INDUCTOR_SMALL L?
+U 1 1 5E4C1659
+P 4250 1650
+F 0 "L?" H 4250 1865 50  0000 C CNN
+F 1 "0.50uH" H 4250 1774 50  0000 C CNN
+F 2 "" H 4250 1650 60  0001 C CNN
+F 3 "" H 4250 1650 60  0001 C CNN
+F 4 "XEL3530-501ME" H 4250 1650 50  0001 C CNN "MPN"
+	1    4250 1650
+	1    0    0    -1  
+$EndComp
+Text Notes 3900 900  0    118  ~ 0
+Sequence #1 1.0V\nVCCINT/VCCBRAM
+$Comp
+L power:+5V #PWR?
+U 1 1 5E4D1774
+P 2150 1650
+F 0 "#PWR?" H 2150 1500 50  0001 C CNN
+F 1 "+5V" V 2165 1778 50  0000 L CNN
+F 2 "" H 2150 1650 50  0001 C CNN
+F 3 "" H 2150 1650 50  0001 C CNN
+	1    2150 1650
+	0    -1   -1   0   
+$EndComp
+Text Notes 3900 3100 0    118  ~ 0
+Sequence #3 1.5V\nVCCO
+$Comp
+L tom-semiconductors:FAN53541 U?
+U 1 1 5E4963AE
+P 7700 1500
+F 0 "U?" H 7700 2025 50  0000 C CNN
+F 1 "FAN53541" H 7700 1934 50  0000 C CNN
+F 2 "" H 7750 1450 50  0001 C CNN
+F 3 "https://www.onsemi.com/pub/Collateral/FAN53541-D.pdf" H 7750 1450 50  0001 C CNN
+	1    7700 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5E4963B8
+P 6300 700
+F 0 "#PWR?" H 6300 550 50  0001 C CNN
+F 1 "+5V" H 6315 873 50  0000 C CNN
+F 2 "" H 6300 700 50  0001 C CNN
+F 3 "" H 6300 700 50  0001 C CNN
+	1    6300 700 
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:R R?
+U 1 1 5E4963C2
+P 6300 950
+F 0 "R?" H 6371 988 40  0000 L CNN
+F 1 "0R" H 6371 912 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 6371 874 30  0001 L CNN
+F 3 "" H 6300 950 30  0001 C CNN
+	1    6300 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 1200 6950 1200
+Wire Wire Line
+	7000 1500 6950 1500
+Wire Wire Line
+	6950 1500 6950 1400
+Connection ~ 6950 1200
+Wire Wire Line
+	7000 1300 6950 1300
+Connection ~ 6950 1300
+Wire Wire Line
+	6950 1300 6950 1200
+Wire Wire Line
+	7000 1400 6950 1400
+Connection ~ 6950 1400
+Wire Wire Line
+	6950 1400 6950 1300
+Text Label 5800 1200 0    50   ~ 0
+5V_1.8
+$Comp
+L tom-passives:R R?
+U 1 1 5E4963D7
+P 8400 850
+F 0 "R?" H 8471 888 40  0000 L CNN
+F 1 "100k/5%" H 8471 812 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 8471 774 30  0001 L CNN
+F 3 "" H 8400 850 30  0001 C CNN
+	1    8400 850 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 1200 6950 600 
+Wire Wire Line
+	6950 600  8400 600 
+$Comp
+L power:GND #PWR?
+U 1 1 5E4963E3
+P 7400 2050
+F 0 "#PWR?" H 7400 1800 50  0001 C CNN
+F 1 "GND" H 7405 1877 50  0000 C CNN
+F 2 "" H 7400 2050 50  0001 C CNN
+F 3 "" H 7400 2050 50  0001 C CNN
+	1    7400 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 1950 7400 2050
+Wire Wire Line
+	7000 1700 7000 2050
+Wire Wire Line
+	7000 2050 7400 2050
+Connection ~ 7400 2050
+Wire Wire Line
+	7900 1950 7900 2050
+Wire Wire Line
+	7900 2050 7800 2050
+Wire Wire Line
+	7500 1950 7500 2050
+Connection ~ 7500 2050
+Wire Wire Line
+	7500 2050 7400 2050
+Wire Wire Line
+	7600 1950 7600 2050
+Connection ~ 7600 2050
+Wire Wire Line
+	7600 2050 7500 2050
+Wire Wire Line
+	7700 1950 7700 2050
+Connection ~ 7700 2050
+Wire Wire Line
+	7700 2050 7600 2050
+Wire Wire Line
+	7800 1950 7800 2050
+Connection ~ 7800 2050
+Wire Wire Line
+	7800 2050 7700 2050
+$Comp
+L tom-passives:C C?
+U 1 1 5E496400
+P 6300 1400
+F 0 "C?" H 6415 1438 40  0000 L CNN
+F 1 "10uF/6.3V/X7R" H 6415 1362 40  0000 L CNN
+F 2 "" H 6338 1250 30  0000 C CNN
+F 3 "" H 6300 1400 60  0000 C CNN
+	1    6300 1400
+	1    0    0    -1  
+$EndComp
+Connection ~ 6300 1200
+Wire Wire Line
+	6300 1200 6950 1200
+$Comp
+L tom-passives:C C?
+U 1 1 5E49640C
+P 5550 1400
+F 0 "C?" H 5665 1438 40  0000 L CNN
+F 1 "10uF/6.3V/X5R" H 5665 1362 40  0000 L CNN
+F 2 "" H 5588 1250 30  0000 C CNN
+F 3 "" H 5550 1400 60  0000 C CNN
+	1    5550 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 1200 5550 1200
+$Comp
+L power:GND #PWR?
+U 1 1 5E496417
+P 6300 1600
+F 0 "#PWR?" H 6300 1350 50  0001 C CNN
+F 1 "GND" H 6305 1427 50  0000 C CNN
+F 2 "" H 6300 1600 50  0001 C CNN
+F 3 "" H 6300 1600 50  0001 C CNN
+	1    6300 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E496421
+P 5550 1600
+F 0 "#PWR?" H 5550 1350 50  0001 C CNN
+F 1 "GND" H 5555 1427 50  0000 C CNN
+F 2 "" H 5550 1600 50  0001 C CNN
+F 3 "" H 5550 1600 50  0001 C CNN
+	1    5550 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8400 1100 8400 1200
+Text Label 8400 1100 0    50   ~ 0
+PGOOD_1.8V
+Wire Wire Line
+	8400 1700 8950 1700
+Wire Wire Line
+	8950 1700 8950 1950
+Connection ~ 8950 1700
+Wire Wire Line
+	8950 1700 9650 1700
+Wire Wire Line
+	8400 1800 8400 1950
+Connection ~ 8400 1950
+Text Label 8400 1950 2    50   ~ 0
+FB_1.8V
+Wire Wire Line
+	8450 1950 8400 1950
+$Comp
+L tom-passives:R R?
+U 1 1 5E496453
+P 8700 1950
+F 0 "R?" V 8885 1950 40  0000 C CNN
+F 1 "100K/1%" V 8809 1950 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 8771 1874 30  0001 L CNN
+F 3 "" H 8700 1950 30  0001 C CNN
+	1    8700 1950
+	0    1    -1   0   
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E49645D
+P 8950 2150
+F 0 "C?" H 9065 2188 40  0000 L CNN
+F 1 "10uF/6.3V/X5R" H 9065 2112 40  0000 L CNN
+F 2 "" H 8988 2000 30  0000 C CNN
+F 3 "" H 8950 2150 60  0000 C CNN
+	1    8950 2150
+	1    0    0    -1  
+$EndComp
+Connection ~ 8950 1950
+$Comp
+L tom-passives:C C?
+U 1 1 5E496468
+P 9650 2150
+F 0 "C?" H 9765 2188 40  0000 L CNN
+F 1 "10nF/6.3V/X7R" H 9765 2112 40  0000 L CNN
+F 2 "" H 9688 2000 30  0000 C CNN
+F 3 "" H 9650 2150 60  0000 C CNN
+	1    9650 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9650 1700 9650 1950
+$Comp
+L power:GND #PWR?
+U 1 1 5E49647D
+P 9650 2350
+F 0 "#PWR?" H 9650 2100 50  0001 C CNN
+F 1 "GND" H 9655 2177 50  0000 C CNN
+F 2 "" H 9650 2350 50  0001 C CNN
+F 3 "" H 9650 2350 50  0001 C CNN
+	1    9650 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8400 1300 8500 1300
+Wire Wire Line
+	8500 1300 8500 1400
+Wire Wire Line
+	8400 1600 8500 1600
+Connection ~ 8500 1600
+Wire Wire Line
+	8500 1600 8750 1600
+Wire Wire Line
+	8400 1400 8500 1400
+Connection ~ 8500 1400
+Wire Wire Line
+	8500 1400 8500 1500
+Wire Wire Line
+	8400 1500 8500 1500
+Connection ~ 8500 1500
+Wire Wire Line
+	8500 1500 8500 1600
+Wire Wire Line
+	9250 1600 9650 1600
+Wire Wire Line
+	9650 1600 9650 1500
+Wire Wire Line
+	9650 1600 9650 1700
+Connection ~ 9650 1600
+Connection ~ 9650 1700
+$Comp
+L tom-passives:INDUCTOR_SMALL L?
+U 1 1 5E496498
+P 9000 1600
+F 0 "L?" H 9000 1815 50  0000 C CNN
+F 1 "0.56uH" H 9000 1724 50  0000 C CNN
+F 2 "" H 9000 1600 60  0001 C CNN
+F 3 "" H 9000 1600 60  0001 C CNN
+F 4 "LPS3008-561MRC" H 9000 1600 50  0001 C CNN "MPN"
+	1    9000 1600
+	1    0    0    -1  
+$EndComp
+Text Notes 8650 850  0    118  ~ 0
+Sequence #2 1.8V\nVCCINT/VCCBRAM
+$Comp
+L power:+1V0 #PWR?
+U 1 1 5E4ABC53
+P 4900 1550
+F 0 "#PWR?" H 4900 1400 50  0001 C CNN
+F 1 "+1V0" H 4915 1723 50  0000 C CNN
+F 2 "" H 4900 1550 50  0001 C CNN
+F 3 "" H 4900 1550 50  0001 C CNN
+	1    4900 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 1250 5200 1250
+Wire Wire Line
+	5200 1250 5200 1950
+Wire Wire Line
+	5200 1950 6550 1950
+Wire Wire Line
+	6550 1950 6550 1600
+Wire Wire Line
+	6550 1600 7000 1600
+Connection ~ 3650 1250
+$Comp
+L power:+1V8 #PWR?
+U 1 1 5E4B77F0
+P 9650 1500
+F 0 "#PWR?" H 9650 1350 50  0001 C CNN
+F 1 "+1V8" H 9665 1673 50  0000 C CNN
+F 2 "" H 9650 1500 50  0001 C CNN
+F 3 "" H 9650 1500 50  0001 C CNN
+	1    9650 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-semiconductors:FAN53541 U?
+U 1 1 5E4C2D3A
+P 7550 3550
+F 0 "U?" H 7550 4075 50  0000 C CNN
+F 1 "FAN53541" H 7550 3984 50  0000 C CNN
+F 2 "" H 7600 3500 50  0001 C CNN
+F 3 "https://www.onsemi.com/pub/Collateral/FAN53541-D.pdf" H 7600 3500 50  0001 C CNN
+	1    7550 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5E4C2D44
+P 6150 2750
+F 0 "#PWR?" H 6150 2600 50  0001 C CNN
+F 1 "+5V" H 6165 2923 50  0000 C CNN
+F 2 "" H 6150 2750 50  0001 C CNN
+F 3 "" H 6150 2750 50  0001 C CNN
+	1    6150 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:R R?
+U 1 1 5E4C2D4E
+P 6150 3000
+F 0 "R?" H 6221 3038 40  0000 L CNN
+F 1 "0R" H 6221 2962 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 6221 2924 30  0001 L CNN
+F 3 "" H 6150 3000 30  0001 C CNN
+	1    6150 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 3250 6800 3250
+Wire Wire Line
+	6850 3550 6800 3550
+Wire Wire Line
+	6800 3550 6800 3450
+Connection ~ 6800 3250
+Wire Wire Line
+	6850 3350 6800 3350
+Connection ~ 6800 3350
+Wire Wire Line
+	6800 3350 6800 3250
+Wire Wire Line
+	6850 3450 6800 3450
+Connection ~ 6800 3450
+Wire Wire Line
+	6800 3450 6800 3350
+Text Label 5650 3250 0    50   ~ 0
+5V_3.3
+$Comp
+L tom-passives:R R?
+U 1 1 5E4C2D63
+P 8250 2900
+F 0 "R?" H 8321 2938 40  0000 L CNN
+F 1 "100k/5%" H 8321 2862 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 8321 2824 30  0001 L CNN
+F 3 "" H 8250 2900 30  0001 C CNN
+	1    8250 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 3250 6800 2650
+Wire Wire Line
+	6800 2650 8250 2650
+$Comp
+L power:GND #PWR?
+U 1 1 5E4C2D6F
+P 7250 4100
+F 0 "#PWR?" H 7250 3850 50  0001 C CNN
+F 1 "GND" H 7255 3927 50  0000 C CNN
+F 2 "" H 7250 4100 50  0001 C CNN
+F 3 "" H 7250 4100 50  0001 C CNN
+	1    7250 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 4000 7250 4100
+Wire Wire Line
+	6850 3750 6850 4100
+Wire Wire Line
+	6850 4100 7250 4100
+Connection ~ 7250 4100
+Wire Wire Line
+	7750 4000 7750 4100
+Wire Wire Line
+	7750 4100 7650 4100
+Wire Wire Line
+	7350 4000 7350 4100
+Connection ~ 7350 4100
+Wire Wire Line
+	7350 4100 7250 4100
+Wire Wire Line
+	7450 4000 7450 4100
+Connection ~ 7450 4100
+Wire Wire Line
+	7450 4100 7350 4100
+Wire Wire Line
+	7550 4000 7550 4100
+Connection ~ 7550 4100
+Wire Wire Line
+	7550 4100 7450 4100
+Wire Wire Line
+	7650 4000 7650 4100
+Connection ~ 7650 4100
+Wire Wire Line
+	7650 4100 7550 4100
+Wire Wire Line
+	6850 3650 6750 3650
+$Comp
+L tom-passives:C C?
+U 1 1 5E4C2D8D
+P 6150 3450
+F 0 "C?" H 6265 3488 40  0000 L CNN
+F 1 "10uF/6.3V/X7R" H 6265 3412 40  0000 L CNN
+F 2 "" H 6188 3300 30  0000 C CNN
+F 3 "" H 6150 3450 60  0000 C CNN
+	1    6150 3450
+	1    0    0    -1  
+$EndComp
+Connection ~ 6150 3250
+Wire Wire Line
+	6150 3250 6800 3250
+$Comp
+L tom-passives:C C?
+U 1 1 5E4C2D99
+P 5400 3450
+F 0 "C?" H 5515 3488 40  0000 L CNN
+F 1 "10uF/6.3V/X5R" H 5515 3412 40  0000 L CNN
+F 2 "" H 5438 3300 30  0000 C CNN
+F 3 "" H 5400 3450 60  0000 C CNN
+	1    5400 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6150 3250 5400 3250
+$Comp
+L power:GND #PWR?
+U 1 1 5E4C2DA4
+P 6150 3650
+F 0 "#PWR?" H 6150 3400 50  0001 C CNN
+F 1 "GND" H 6155 3477 50  0000 C CNN
+F 2 "" H 6150 3650 50  0001 C CNN
+F 3 "" H 6150 3650 50  0001 C CNN
+	1    6150 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E4C2DAE
+P 5400 3650
+F 0 "#PWR?" H 5400 3400 50  0001 C CNN
+F 1 "GND" H 5405 3477 50  0000 C CNN
+F 2 "" H 5400 3650 50  0001 C CNN
+F 3 "" H 5400 3650 50  0001 C CNN
+	1    5400 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 3150 8250 3250
+Text Label 8250 3150 0    50   ~ 0
+PGOOD_3.3V
+Wire Wire Line
+	8250 3750 8800 3750
+$Comp
+L tom-passives:R R?
+U 1 1 5E4C2DC5
+P 8250 4250
+F 0 "R?" H 8179 4212 40  0000 R CNN
+F 1 "31.6K/1%" H 8179 4288 40  0000 R CNN
+F 2 "tom-passives:C_0402_1005Metric" H 8321 4174 30  0001 L CNN
+F 3 "" H 8250 4250 30  0001 C CNN
+	1    8250 4250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8800 3750 8800 4000
+Connection ~ 8800 3750
+Wire Wire Line
+	8800 3750 9500 3750
+Wire Wire Line
+	8250 3850 8250 4000
+Connection ~ 8250 4000
+Text Label 8250 4000 2    50   ~ 0
+FB_3.3V
+$Comp
+L power:GND #PWR?
+U 1 1 5E4C2DD5
+P 8250 4500
+F 0 "#PWR?" H 8250 4250 50  0001 C CNN
+F 1 "GND" H 8255 4327 50  0000 C CNN
+F 2 "" H 8250 4500 50  0001 C CNN
+F 3 "" H 8250 4500 50  0001 C CNN
+	1    8250 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8300 4000 8250 4000
+$Comp
+L tom-passives:R R?
+U 1 1 5E4C2DE0
+P 8550 4000
+F 0 "R?" V 8735 4000 40  0000 C CNN
+F 1 "100K/1%" V 8659 4000 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 8621 3924 30  0001 L CNN
+F 3 "" H 8550 4000 30  0001 C CNN
+	1    8550 4000
+	0    1    -1   0   
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E4C2DEA
+P 8800 4200
+F 0 "C?" H 8915 4238 40  0000 L CNN
+F 1 "10uF/6.3V/X5R" H 8915 4162 40  0000 L CNN
+F 2 "" H 8838 4050 30  0000 C CNN
+F 3 "" H 8800 4200 60  0000 C CNN
+	1    8800 4200
+	1    0    0    -1  
+$EndComp
+Connection ~ 8800 4000
+$Comp
+L tom-passives:C C?
+U 1 1 5E4C2DF5
+P 9500 4200
+F 0 "C?" H 9615 4238 40  0000 L CNN
+F 1 "10nF/6.3V/X7R" H 9615 4162 40  0000 L CNN
+F 2 "" H 9538 4050 30  0000 C CNN
+F 3 "" H 9500 4200 60  0000 C CNN
+	1    9500 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 3750 9500 4000
+$Comp
+L power:GND #PWR?
+U 1 1 5E4C2E00
+P 8800 4400
+F 0 "#PWR?" H 8800 4150 50  0001 C CNN
+F 1 "GND" H 8805 4227 50  0000 C CNN
+F 2 "" H 8800 4400 50  0001 C CNN
+F 3 "" H 8800 4400 50  0001 C CNN
+	1    8800 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E4C2E0A
+P 9500 4400
+F 0 "#PWR?" H 9500 4150 50  0001 C CNN
+F 1 "GND" H 9505 4227 50  0000 C CNN
+F 2 "" H 9500 4400 50  0001 C CNN
+F 3 "" H 9500 4400 50  0001 C CNN
+	1    9500 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 3350 8350 3350
+Wire Wire Line
+	8350 3350 8350 3450
+Wire Wire Line
+	8250 3650 8350 3650
+Connection ~ 8350 3650
+Wire Wire Line
+	8350 3650 8600 3650
+Wire Wire Line
+	8250 3450 8350 3450
+Connection ~ 8350 3450
+Wire Wire Line
+	8350 3450 8350 3550
+Wire Wire Line
+	8250 3550 8350 3550
+Connection ~ 8350 3550
+Wire Wire Line
+	8350 3550 8350 3650
+Wire Wire Line
+	9100 3650 9500 3650
+Wire Wire Line
+	9500 3650 9500 3550
+Wire Wire Line
+	9500 3650 9500 3750
+Connection ~ 9500 3650
+Connection ~ 9500 3750
+$Comp
+L tom-passives:INDUCTOR_SMALL L?
+U 1 1 5E4C2E25
+P 8850 3650
+F 0 "L?" H 8850 3865 50  0000 C CNN
+F 1 "0.56uH" H 8850 3774 50  0000 C CNN
+F 2 "" H 8850 3650 60  0001 C CNN
+F 3 "" H 8850 3650 60  0001 C CNN
+F 4 " LPS3008-561MRC" H 8850 3650 50  0001 C CNN "MPN"
+	1    8850 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E4C2E39
+P 8400 2450
+F 0 "#PWR?" H 8400 2200 50  0001 C CNN
+F 1 "GND" H 8405 2277 50  0000 C CNN
+F 2 "" H 8400 2450 50  0001 C CNN
+F 3 "" H 8400 2450 50  0001 C CNN
+	1    8400 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5E4C2E43
+P 8950 2350
+F 0 "#PWR?" H 8950 2100 50  0001 C CNN
+F 1 "GND" H 8955 2177 50  0000 C CNN
+F 2 "" H 8950 2350 50  0001 C CNN
+F 3 "" H 8950 2350 50  0001 C CNN
+	1    8950 2350
+	1    0    0    -1  
+$EndComp
+Text Notes 8650 3050 0    118  ~ 0
+Sequence #3 3.3V\nVCCO
+$Comp
+L tom-passives:R R?
+U 1 1 5E496438
+P 8400 2200
+F 0 "R?" H 8329 2162 40  0000 R CNN
+F 1 "80.6K/1%" H 8329 2238 40  0000 R CNN
+F 2 "tom-passives:C_0402_1005Metric" H 8471 2124 30  0001 L CNN
+F 3 "" H 8400 2200 30  0001 C CNN
+	1    8400 2200
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E50EB16
+P 9500 3550
+F 0 "#PWR?" H 9500 3400 50  0001 C CNN
+F 1 "+3.3V" H 9515 3723 50  0000 C CNN
+F 2 "" H 9500 3550 50  0001 C CNN
+F 3 "" H 9500 3550 50  0001 C CNN
+	1    9500 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8400 1200 10450 1200
+Wire Wire Line
+	10450 1200 10450 4850
+Wire Wire Line
+	10450 4850 6750 4850
+Wire Wire Line
+	2000 4850 2000 3700
+Connection ~ 8400 1200
+Wire Wire Line
+	6750 3650 6750 4850
+Connection ~ 6750 4850
+Wire Wire Line
+	6750 4850 2000 4850
+Text HLabel 900  4550 0    50   Input ~ 0
++5VIN
+$Comp
+L power:+5V #PWR?
+U 1 1 5E53BC74
+P 1100 4400
+F 0 "#PWR?" H 1100 4250 50  0001 C CNN
+F 1 "+5V" H 1115 4573 50  0000 C CNN
+F 2 "" H 1100 4400 50  0001 C CNN
+F 3 "" H 1100 4400 50  0001 C CNN
+	1    1100 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	900  4550 1100 4550
+Wire Wire Line
+	1100 4550 1100 4400
+Text HLabel 900  4800 0    50   Input ~ 0
++1.0VOUT
+$Comp
+L power:+1V0 #PWR?
+U 1 1 5E552D28
+P 1300 4400
+F 0 "#PWR?" H 1300 4250 50  0001 C CNN
+F 1 "+1V0" H 1315 4573 50  0000 C CNN
+F 2 "" H 1300 4400 50  0001 C CNN
+F 3 "" H 1300 4400 50  0001 C CNN
+	1    1300 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+1V5 #PWR?
+U 1 1 5E554FAE
+P 1500 4400
+F 0 "#PWR?" H 1500 4250 50  0001 C CNN
+F 1 "+1V5" H 1515 4573 50  0000 C CNN
+F 2 "" H 1500 4400 50  0001 C CNN
+F 3 "" H 1500 4400 50  0001 C CNN
+	1    1500 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5E5568F5
+P 1900 4400
+F 0 "#PWR?" H 1900 4250 50  0001 C CNN
+F 1 "+3.3V" H 1915 4573 50  0000 C CNN
+F 2 "" H 1900 4400 50  0001 C CNN
+F 3 "" H 1900 4400 50  0001 C CNN
+	1    1900 4400
+	1    0    0    -1  
+$EndComp
+Text HLabel 900  5050 0    50   Input ~ 0
++1.5VOUT
+Text HLabel 900  5300 0    50   Input ~ 0
++1.8VOUT
+Text HLabel 900  5550 0    50   Input ~ 0
++3.3VOUT
+$Comp
+L power:+1V8 #PWR?
+U 1 1 5E55C572
+P 1700 4400
+F 0 "#PWR?" H 1700 4250 50  0001 C CNN
+F 1 "+1V8" H 1715 4573 50  0000 C CNN
+F 2 "" H 1700 4400 50  0001 C CNN
+F 3 "" H 1700 4400 50  0001 C CNN
+	1    1700 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	900  4800 1300 4800
+Wire Wire Line
+	1300 4800 1300 4400
+Wire Wire Line
+	1500 4400 1500 5050
+Wire Wire Line
+	1500 5050 900  5050
+Wire Wire Line
+	900  5300 1700 5300
+Wire Wire Line
+	1700 5300 1700 4400
+Wire Wire Line
+	1900 4400 1900 5550
+Wire Wire Line
+	1900 5550 900  5550
+Wire Wire Line
+	3100 4050 3100 4150
+Wire Wire Line
+	3100 4150 3000 4150
+Connection ~ 3000 4150
+Wire Wire Line
+	3250 2000 3250 2100
+Wire Wire Line
+	3250 2100 3150 2100
+Connection ~ 3150 2100
+Wire Wire Line
+	8000 1950 8000 2050
+Wire Wire Line
+	8000 2050 7900 2050
+Connection ~ 7900 2050
+Wire Wire Line
+	7850 4000 7850 4100
+Wire Wire Line
+	7850 4100 7750 4100
+Connection ~ 7750 4100
+$EndSCHEMATC
