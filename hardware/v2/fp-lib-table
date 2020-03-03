@@ -4,4 +4,5 @@
   (lib (name tom-opto)(type KiCad)(uri ${KIPRJMOD}/../tom-kicad/footprints/tom-opto.pretty)(options "")(descr ""))
   (lib (name tom-passives)(type KiCad)(uri ${KIPRJMOD}/../tom-kicad/footprints/tom-passives.pretty)(options "")(descr ""))
   (lib (name tom-semiconductors)(type KiCad)(uri ${KIPRJMOD}/../tom-kicad/footprints/tom-semiconductors.pretty)(options "")(descr ""))
+  (lib (name artix7-pcie-v2)(type KiCad)(uri ${KIPRJMOD}/artix7-pcie-v2.pretty)(options "")(descr ""))
 )

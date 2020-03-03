@@ -1,0 +1,600 @@
+EESchema Schematic File Version 4
+LIBS:artix7-pcie-v2-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L artix7-pcie-v2:XC7A75T-FGG484 U1
+U 4 1 5E98C0C1
+P 7250 2900
+F 0 "U1" H 8530 2946 50  0000 L CNN
+F 1 "XC7A75T-FGG484" H 8530 2855 50  0000 L CNN
+F 2 "" H 7250 2900 50  0001 C CNN
+F 3 "" H 7250 2900 50  0000 C CNN
+	4    7250 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-connectors:USB3_A J4
+U 1 1 5E99DEF0
+P 1700 2250
+F 0 "J4" H 1757 2967 50  0000 C CNN
+F 1 "USB3_A" H 1757 2876 50  0000 C CNN
+F 2 "" H 1850 2350 50  0001 C CNN
+F 3 "~" H 1850 2350 50  0001 C CNN
+	1    1700 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 2450 3100 2450
+Wire Wire Line
+	3100 2450 3100 2700
+Wire Wire Line
+	3100 2700 5750 2700
+Wire Wire Line
+	3500 4400 3500 3000
+Wire Wire Line
+	3500 3000 5750 3000
+Text Label 2300 2050 0    50   ~ 0
+S0_CLK_N
+Text Label 2300 2150 0    50   ~ 0
+S0_CLK_P
+Text Label 2300 2350 0    50   ~ 0
+S0_RX_N
+Text Label 2300 2450 0    50   ~ 0
+S0_RX_P
+$Comp
+L tom-passives:C C30
+U 1 1 5E9C81AB
+P 4900 1800
+F 0 "C30" V 4671 1800 40  0000 C CNN
+F 1 "0.1uF/6.3V/X5R/PCIE" V 4747 1800 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 4938 1650 30  0001 C CNN
+F 3 "" H 4900 1800 60  0001 C CNN
+	1    4900 1800
+	0    1    1    0   
+$EndComp
+$Comp
+L tom-passives:C C32
+U 1 1 5E9CA77F
+P 5400 1900
+F 0 "C32" V 5171 1900 40  0000 C CNN
+F 1 "0.1uF/6.3V/X5R/PCIE" V 5247 1900 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 5438 1750 30  0001 C CNN
+F 3 "" H 5400 1900 60  0001 C CNN
+	1    5400 1900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5750 1800 5100 1800
+Wire Wire Line
+	2700 2750 2200 2750
+Wire Wire Line
+	2800 1900 2800 2650
+Wire Wire Line
+	2800 2650 2200 2650
+Wire Wire Line
+	2800 1900 5200 1900
+Text Label 2300 2650 0    50   ~ 0
+S0_TX_N
+Text Label 2300 2750 0    50   ~ 0
+S0_TX_P
+Wire Wire Line
+	2900 3700 5750 3700
+Wire Wire Line
+	2200 2050 2900 2050
+Wire Wire Line
+	2900 2050 2900 3700
+Wire Wire Line
+	3000 3600 5750 3600
+Wire Wire Line
+	2200 2150 3000 2150
+Wire Wire Line
+	3000 2150 3000 3600
+$Comp
+L power:GND #PWR072
+U 1 1 5EACC3BA
+P 1700 2950
+F 0 "#PWR072" H 1700 2700 50  0001 C CNN
+F 1 "GND" H 1705 2777 50  0000 C CNN
+F 2 "" H 1700 2950 50  0001 C CNN
+F 3 "" H 1700 2950 50  0001 C CNN
+	1    1700 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:R R26
+U 1 1 5EACE9C5
+P 1250 3050
+F 0 "R26" V 1065 3050 40  0000 C CNN
+F 1 "0R" V 1141 3050 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" V 1180 3050 30  0001 C CNN
+F 3 "" H 1250 3050 30  0001 C CNN
+	1    1250 3050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1500 2950 1500 3050
+$Comp
+L power:GND #PWR070
+U 1 1 5EACF99A
+P 1000 3050
+F 0 "#PWR070" H 1000 2800 50  0001 C CNN
+F 1 "GND" H 1005 2877 50  0000 C CNN
+F 2 "" H 1000 3050 50  0001 C CNN
+F 3 "" H 1000 3050 50  0001 C CNN
+	1    1000 3050
+	1    0    0    -1  
+$EndComp
+Text HLabel 1100 5400 0    50   BiDi ~ 0
+S1_DRAIN
+Wire Wire Line
+	1600 5400 1100 5400
+Wire Wire Line
+	1600 5000 1600 5400
+Wire Wire Line
+	1500 5000 1500 5100
+$Comp
+L power:GND #PWR071
+U 1 1 5EAD2F17
+P 1000 5100
+F 0 "#PWR071" H 1000 4850 50  0001 C CNN
+F 1 "GND" H 1005 4927 50  0000 C CNN
+F 2 "" H 1000 5100 50  0001 C CNN
+F 3 "" H 1000 5100 50  0001 C CNN
+	1    1000 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:R R27
+U 1 1 5EAD1FF6
+P 1250 5100
+F 0 "R27" V 1065 5100 40  0000 C CNN
+F 1 "0R" V 1141 5100 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" V 1180 5100 30  0001 C CNN
+F 3 "" H 1250 5100 30  0001 C CNN
+	1    1250 5100
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR073
+U 1 1 5EACBD31
+P 1700 5000
+F 0 "#PWR073" H 1700 4750 50  0001 C CNN
+F 1 "GND" H 1705 4827 50  0000 C CNN
+F 2 "" H 1700 5000 50  0001 C CNN
+F 3 "" H 1700 5000 50  0001 C CNN
+	1    1700 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 4100 2700 4100
+Wire Wire Line
+	2200 4200 2800 4200
+Text Label 2300 4500 0    50   ~ 0
+S1_RX_P
+Text Label 2300 4400 0    50   ~ 0
+S1_RX_N
+Text Label 2300 4200 0    50   ~ 0
+S1_CLK_P
+Text Label 2300 4100 0    50   ~ 0
+S1_CLK_N
+Wire Wire Line
+	2700 3900 5750 3900
+Wire Wire Line
+	2700 4100 2700 3900
+Wire Wire Line
+	3600 4500 2200 4500
+Wire Wire Line
+	2200 4400 3500 4400
+$Comp
+L tom-connectors:USB3_A J5
+U 1 1 5E9A32AC
+P 1700 4300
+F 0 "J5" H 1757 5017 50  0000 C CNN
+F 1 "USB3_A" H 1757 4926 50  0000 C CNN
+F 2 "" H 1850 4400 50  0001 C CNN
+F 3 "~" H 1850 4400 50  0001 C CNN
+	1    1700 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 3800 2800 3800
+Wire Wire Line
+	2800 3800 2800 4200
+Text Label 2300 4700 0    50   ~ 0
+S1_TX_N
+Text Label 2300 4800 0    50   ~ 0
+S1_TX_P
+Text HLabel 1100 3350 0    50   BiDi ~ 0
+S0_DRAIN
+Wire Wire Line
+	1600 2950 1600 3350
+Wire Wire Line
+	1600 3350 1100 3350
+Text HLabel 1100 1350 0    50   BiDi ~ 0
+S0_VBUS
+Wire Wire Line
+	2200 1850 2200 1350
+Wire Wire Line
+	2200 1350 1100 1350
+Text HLabel 1100 3500 0    50   BiDi ~ 0
+S1_VBUS
+Wire Wire Line
+	2200 3900 2200 3500
+Wire Wire Line
+	2200 3500 1100 3500
+$Comp
+L artix7-pcie-v2:XC7A75T-FGG484 U1
+U 5 1 5EB5D4D9
+P 5750 5700
+F 0 "U1" H 5750 6367 50  0000 C CNN
+F 1 "XC7A75T-FGG484" H 5750 6276 50  0000 C CNN
+F 2 "" H 5750 5700 50  0001 C CNN
+F 3 "" H 5750 5700 50  0000 C CNN
+	5    5750 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:R R28
+U 1 1 5EB72E9F
+P 7500 6000
+F 0 "R28" V 7315 6000 40  0000 C CNN
+F 1 "100R/1%" V 7391 6000 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" V 7430 6000 30  0001 C CNN
+F 3 "" H 7500 6000 30  0001 C CNN
+	1    7500 6000
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+1V2 #PWR076
+U 1 1 5EB7A45C
+P 7750 5050
+F 0 "#PWR076" H 7750 4900 50  0001 C CNN
+F 1 "+1V2" H 7765 5223 50  0000 C CNN
+F 2 "" H 7750 5050 50  0001 C CNN
+F 3 "" H 7750 5050 50  0001 C CNN
+	1    7750 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 5300 7750 5300
+Wire Wire Line
+	7750 5050 7750 5300
+Connection ~ 7750 5300
+Wire Wire Line
+	7750 5300 7750 5400
+Wire Wire Line
+	7250 5400 7750 5400
+Connection ~ 7750 5400
+Wire Wire Line
+	7250 5500 7750 5500
+Wire Wire Line
+	7750 5400 7750 5500
+Connection ~ 7750 5500
+Wire Wire Line
+	7750 5500 7750 5600
+Wire Wire Line
+	7250 5600 7750 5600
+Connection ~ 7750 5600
+Wire Wire Line
+	7750 5600 7750 5700
+Wire Wire Line
+	7250 5700 7750 5700
+Connection ~ 7750 5700
+Wire Wire Line
+	7750 5700 7750 5800
+Wire Wire Line
+	7250 5800 7750 5800
+Connection ~ 7750 5800
+Wire Wire Line
+	7750 5800 7750 6000
+$Comp
+L tom-passives:C C34
+U 1 1 5EB8CA7B
+P 8100 5500
+F 0 "C34" H 8215 5538 40  0000 L CNN
+F 1 "0.1uF/6.3V/X5R" H 8215 5462 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 8138 5350 30  0001 C CNN
+F 3 "" H 8100 5500 60  0001 C CNN
+	1    8100 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C37
+U 1 1 5EB8DBCE
+P 8950 5500
+F 0 "C37" H 9065 5538 40  0000 L CNN
+F 1 "0.1uF/6.3V/X5R" H 9065 5462 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 8988 5350 30  0001 C CNN
+F 3 "" H 8950 5500 60  0001 C CNN
+	1    8950 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C35
+U 1 1 5EB8F405
+P 8400 5500
+F 0 "C35" H 8515 5538 40  0000 L CNN
+F 1 "0.1uF/6.3V/X5R" H 8515 5462 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 8438 5350 30  0001 C CNN
+F 3 "" H 8400 5500 60  0001 C CNN
+	1    8400 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C36
+U 1 1 5EB9090F
+P 8700 5500
+F 0 "C36" H 8815 5538 40  0000 L CNN
+F 1 "0.1uF/6.3V/X5R" H 8815 5462 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 8738 5350 30  0001 C CNN
+F 3 "" H 8700 5500 60  0001 C CNN
+	1    8700 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C38
+U 1 1 5EB91E0B
+P 9700 5500
+F 0 "C38" H 9815 5538 40  0000 L CNN
+F 1 "4.7uF/6.3V/X5R" H 9815 5462 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 9738 5350 30  0001 C CNN
+F 3 "" H 9700 5500 60  0001 C CNN
+	1    9700 5500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 5300 8100 5300
+Connection ~ 8100 5300
+Wire Wire Line
+	8100 5300 8400 5300
+Connection ~ 8400 5300
+Wire Wire Line
+	8400 5300 8700 5300
+Connection ~ 8700 5300
+Wire Wire Line
+	8700 5300 8950 5300
+Connection ~ 8950 5300
+Wire Wire Line
+	8950 5300 9700 5300
+Connection ~ 8400 5700
+Wire Wire Line
+	8400 5700 8700 5700
+Connection ~ 8700 5700
+Wire Wire Line
+	8700 5700 8950 5700
+Connection ~ 8950 5700
+Wire Wire Line
+	8950 5700 9700 5700
+$Comp
+L power:GND #PWR077
+U 1 1 5EBD44D5
+P 9700 5700
+F 0 "#PWR077" H 9700 5450 50  0001 C CNN
+F 1 "GND" H 9705 5527 50  0000 C CNN
+F 2 "" H 9700 5700 50  0001 C CNN
+F 3 "" H 9700 5700 50  0001 C CNN
+	1    9700 5700
+	1    0    0    -1  
+$EndComp
+Connection ~ 9700 5700
+Wire Wire Line
+	8100 5700 8400 5700
+$Comp
+L power:+1V0 #PWR075
+U 1 1 5EBF7D68
+P 4250 5050
+F 0 "#PWR075" H 4250 4900 50  0001 C CNN
+F 1 "+1V0" H 4265 5223 50  0000 C CNN
+F 2 "" H 4250 5050 50  0001 C CNN
+F 3 "" H 4250 5050 50  0001 C CNN
+	1    4250 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 5700 4250 5600
+Connection ~ 4250 5300
+Wire Wire Line
+	4250 5300 4250 5050
+Connection ~ 4250 5400
+Wire Wire Line
+	4250 5400 4250 5300
+Connection ~ 4250 5500
+Wire Wire Line
+	4250 5500 4250 5400
+Connection ~ 4250 5600
+Wire Wire Line
+	4250 5600 4250 5500
+$Comp
+L tom-passives:C C25
+U 1 1 5EC02E32
+P 3550 5500
+F 0 "C25" H 3665 5538 40  0000 L CNN
+F 1 "0.1uF/6.3V/X5R" H 3665 5462 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 3588 5350 30  0001 C CNN
+F 3 "" H 3550 5500 60  0001 C CNN
+	1    3550 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C24
+U 1 1 5EC08F78
+P 3250 5500
+F 0 "C24" H 3365 5538 40  0000 L CNN
+F 1 "0.1uF/6.3V/X5R" H 3365 5462 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 3288 5350 30  0001 C CNN
+F 3 "" H 3250 5500 60  0001 C CNN
+	1    3250 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C23
+U 1 1 5EC0A4B0
+P 2500 5500
+F 0 "C23" H 2615 5538 40  0000 L CNN
+F 1 "4.7uF/6.3V/X5R" H 2615 5462 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 2538 5350 30  0001 C CNN
+F 3 "" H 2500 5500 60  0001 C CNN
+	1    2500 5500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 5300 3250 5300
+Connection ~ 3250 5300
+Wire Wire Line
+	3250 5300 3550 5300
+Connection ~ 3550 5300
+Wire Wire Line
+	3550 5300 4250 5300
+Wire Wire Line
+	3550 5700 3250 5700
+Connection ~ 3250 5700
+Wire Wire Line
+	3250 5700 2500 5700
+$Comp
+L power:GND #PWR074
+U 1 1 5EC114C2
+P 2500 5700
+F 0 "#PWR074" H 2500 5450 50  0001 C CNN
+F 1 "GND" H 2505 5527 50  0000 C CNN
+F 2 "" H 2500 5700 50  0001 C CNN
+F 3 "" H 2500 5700 50  0001 C CNN
+	1    2500 5700
+	1    0    0    -1  
+$EndComp
+Connection ~ 2500 5700
+Wire Wire Line
+	5750 1900 5600 1900
+Wire Wire Line
+	4700 1800 2700 1800
+Wire Wire Line
+	2700 1800 2700 2750
+$Comp
+L tom-passives:C C26
+U 1 1 5E746FE8
+P 3900 2000
+F 0 "C26" V 3671 2000 40  0000 C CNN
+F 1 "0.1uF/6.3V/X5R/PCIE" V 3747 2000 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 3938 1850 30  0001 C CNN
+F 3 "" H 3900 2000 60  0001 C CNN
+	1    3900 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L tom-passives:C C28
+U 1 1 5E7489FC
+P 4450 2100
+F 0 "C28" V 4221 2100 40  0000 C CNN
+F 1 "0.1uF/6.3V/X5R/PCIE" V 4297 2100 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 4488 1950 30  0001 C CNN
+F 3 "" H 4450 2100 60  0001 C CNN
+	1    4450 2100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4650 2100 5750 2100
+Wire Wire Line
+	5750 2000 4100 2000
+Wire Wire Line
+	5750 2900 3600 2900
+Wire Wire Line
+	3600 2900 3600 4500
+$Comp
+L tom-passives:C C33
+U 1 1 5E789C9D
+P 5400 2300
+F 0 "C33" V 5171 2300 40  0000 C CNN
+F 1 "0.1uF/6.3V/X5R/PCIE" V 5247 2300 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 5438 2150 30  0001 C CNN
+F 3 "" H 5400 2300 60  0001 C CNN
+	1    5400 2300
+	0    1    1    0   
+$EndComp
+$Comp
+L tom-passives:C C31
+U 1 1 5E78A758
+P 4900 2200
+F 0 "C31" V 4671 2200 40  0000 C CNN
+F 1 "0.1uF/6.3V/X5R/PCIE" V 4747 2200 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 4938 2050 30  0001 C CNN
+F 3 "" H 4900 2200 60  0001 C CNN
+	1    4900 2200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5750 2200 5100 2200
+Wire Wire Line
+	5750 2300 5600 2300
+$Comp
+L tom-passives:C C29
+U 1 1 5E7971BD
+P 4450 2500
+F 0 "C29" V 4221 2500 40  0000 C CNN
+F 1 "0.1uF/6.3V/X5R/PCIE" V 4297 2500 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 4488 2350 30  0001 C CNN
+F 3 "" H 4450 2500 60  0001 C CNN
+	1    4450 2500
+	0    1    1    0   
+$EndComp
+$Comp
+L tom-passives:C C27
+U 1 1 5E797E88
+P 3900 2400
+F 0 "C27" V 3671 2400 40  0000 C CNN
+F 1 "0.1uF/6.3V/X5R/PCIE" V 3747 2400 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 3938 2250 30  0001 C CNN
+F 3 "" H 3900 2400 60  0001 C CNN
+	1    3900 2400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5750 2500 4650 2500
+Wire Wire Line
+	5750 2400 4100 2400
+Wire Wire Line
+	3200 2800 3200 2350
+Wire Wire Line
+	3200 2350 2200 2350
+Wire Wire Line
+	3200 2800 5750 2800
+Wire Wire Line
+	3700 2000 3300 2000
+Wire Wire Line
+	3300 2000 3300 4800
+Wire Wire Line
+	3300 4800 2200 4800
+Wire Wire Line
+	2200 4700 3400 4700
+Wire Wire Line
+	3400 4700 3400 2100
+Wire Wire Line
+	3400 2100 4250 2100
+Wire Wire Line
+	4250 2500 4250 3400
+Wire Wire Line
+	4250 3400 5750 3400
+Wire Wire Line
+	3700 2400 3700 3300
+Wire Wire Line
+	3700 3300 5750 3300
+Wire Wire Line
+	5200 2300 5200 3200
+Wire Wire Line
+	5200 3200 5750 3200
+Wire Wire Line
+	4700 2200 4700 3100
+Wire Wire Line
+	4700 3100 5750 3100
+$EndSCHEMATC
