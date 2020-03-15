@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 6
+Sheet 7 7
 Title ""
 Date ""
 Rev ""
@@ -14,17 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L artix7-pcie-v2:XC7A75T-FGG484 U1
-U 1 1 5E5F6D7E
-P 3150 3800
-F 0 "U1" H 3150 825 50  0000 C CNN
-F 1 "XC7A75T-FGG484" H 3150 734 50  0000 C CNN
-F 2 "artix7-pcie-v2:Xilinx_FGG484" H 3150 3800 50  0001 C CNN
-F 3 "" H 3150 3800 50  0000 C CNN
-	1    3150 3800
-	1    0    0    -1  
-$EndComp
 Text HLabel 5450 1800 2    50   BiDi ~ 0
 SPI_FLASH_MOSI_D0
 Wire Wire Line
@@ -45,59 +34,10 @@ Text HLabel 5500 2800 2    50   Output ~ 0
 SPI_FLASH_CS
 Wire Wire Line
 	5150 2800 5500 2800
-$Comp
-L power:+3.3V #PWR023
-U 1 1 5E966F73
-P 1550 700
-F 0 "#PWR023" H 1550 550 50  0001 C CNN
-F 1 "+3.3V" H 1565 873 50  0000 C CNN
-F 2 "" H 1550 700 50  0001 C CNN
-F 3 "" H 1550 700 50  0001 C CNN
-	1    1550 700 
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1550 700  1550 900 
 Wire Wire Line
-	1550 900  1650 900 
-Connection ~ 1550 900 
-Connection ~ 1650 900 
-Wire Wire Line
-	1650 900  1750 900 
-Connection ~ 1750 900 
-Wire Wire Line
-	1750 900  1850 900 
-Connection ~ 1850 900 
-Wire Wire Line
-	1850 900  1950 900 
-$Comp
-L power:+3.3V #PWR024
-U 1 1 5E96870C
-P 4750 700
-F 0 "#PWR024" H 4750 550 50  0001 C CNN
-F 1 "+3.3V" H 4765 873 50  0000 C CNN
-F 2 "" H 4750 700 50  0001 C CNN
-F 3 "" H 4750 700 50  0001 C CNN
-	1    4750 700 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4250 900  4350 900 
-Connection ~ 4350 900 
-Wire Wire Line
-	4350 900  4450 900 
-Connection ~ 4450 900 
-Wire Wire Line
-	4450 900  4550 900 
-Connection ~ 4550 900 
-Wire Wire Line
-	4550 900  4650 900 
-Connection ~ 4650 900 
-Wire Wire Line
-	4650 900  4750 900 
-Wire Wire Line
 	4750 900  4750 700 
-Connection ~ 4750 900 
 $Comp
 L tom-passives:R R8
 U 1 1 5E975EB1
@@ -112,10 +52,10 @@ $EndComp
 Wire Wire Line
 	5150 2200 6300 2200
 $Comp
-L tom-connectors:Conn_02x20_Odd_Even J3
+L tom-connectors:Conn_02x20_Odd_Even J2
 U 1 1 5ECBB45F
 P 9500 5000
-F 0 "J3" H 9550 6117 50  0000 C CNN
+F 0 "J2" H 9550 6117 50  0000 C CNN
 F 1 "Conn_02x20_Odd_Even" H 9550 6026 50  0000 C CNN
 F 2 "artix7-pcie-v2:Socket_Strip_Angled_2x20" H 9500 5000 50  0001 C CNN
 F 3 "~" H 9500 5000 50  0001 C CNN
@@ -1133,22 +1073,6 @@ F1 C8 FC 40 98 30 61 C2 84 09 13 26 4C 98 30 61 1F 18 F6 3D 4D 53 26 0E 00 00 F8
 20 26 73 00 00 00 62 FF 0B 39 93 98 23 90 6F B0 88 00 00 00 00 49 45 4E 44 AE 42 60 82 
 EndData
 $EndBitmap
-Text HLabel 1000 3000 0    50   Output ~ 0
-IO_L7_13_P
-Text HLabel 1000 3100 0    50   Output ~ 0
-IO_L7_13_N
-Text HLabel 1000 3300 0    50   Output ~ 0
-IO_L8_13_N
-Text HLabel 1000 2300 0    50   Input ~ 0
-IO_L3_13_N
-Wire Wire Line
-	1000 2300 1150 2300
-Wire Wire Line
-	1000 3000 1150 3000
-Wire Wire Line
-	1000 3100 1150 3100
-Wire Wire Line
-	1000 3300 1150 3300
 Text HLabel 9950 4200 2    50   BiDi ~ 0
 IO_L9_16_P
 Text HLabel 9150 4200 0    50   BiDi ~ 0
@@ -1382,4 +1306,174 @@ Wire Wire Line
 	5150 3200 5300 3200
 Wire Wire Line
 	5300 3300 5150 3300
+$Comp
+L power:+3V3 #PWR0120
+U 1 1 5F093C5F
+P 4750 700
+F 0 "#PWR0120" H 4750 550 50  0001 C CNN
+F 1 "+3V3" H 4765 873 50  0000 C CNN
+F 2 "" H 4750 700 50  0001 C CNN
+F 3 "" H 4750 700 50  0001 C CNN
+	1    4750 700 
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5150 1700
+NoConn ~ 5150 2600
+NoConn ~ 5150 2700
+NoConn ~ 5150 2900
+NoConn ~ 5150 3800
+NoConn ~ 5150 4300
+NoConn ~ 5150 4400
+NoConn ~ 5150 4500
+NoConn ~ 5150 5300
+NoConn ~ 5150 5400
+NoConn ~ 5150 5500
+NoConn ~ 5150 5600
+NoConn ~ 5150 5700
+NoConn ~ 5150 5800
+NoConn ~ 5150 5900
+NoConn ~ 5150 6000
+NoConn ~ 5150 6100
+NoConn ~ 5150 6400
+NoConn ~ 5150 6500
+NoConn ~ 1150 1700
+NoConn ~ 1150 2200
+NoConn ~ 1150 2600
+NoConn ~ 1150 2700
+NoConn ~ 1150 2800
+NoConn ~ 1150 2900
+NoConn ~ 1150 3200
+NoConn ~ 1150 3400
+NoConn ~ 1150 3500
+NoConn ~ 1150 3600
+NoConn ~ 1150 3700
+NoConn ~ 1150 3800
+NoConn ~ 1150 3900
+NoConn ~ 1150 4100
+NoConn ~ 1150 4200
+NoConn ~ 1150 4300
+NoConn ~ 1150 4400
+NoConn ~ 1150 4500
+NoConn ~ 1150 4600
+NoConn ~ 1150 4700
+NoConn ~ 1150 4800
+NoConn ~ 1150 4900
+NoConn ~ 1150 5000
+NoConn ~ 1150 5100
+$Comp
+L tom-mechanical:TestPoint TP7
+U 1 1 5F3C3650
+P 5750 3900
+F 0 "TP7" V 5750 4088 50  0000 L CNN
+F 1 "TestPoint" H 5808 3927 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 5950 3900 50  0001 C CNN
+F 3 "~" H 5950 3900 50  0001 C CNN
+	1    5750 3900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5750 3900 5150 3900
+$Comp
+L tom-mechanical:TestPoint TP8
+U 1 1 5F3CB4AF
+P 5750 2300
+F 0 "TP8" V 5750 2488 50  0000 L CNN
+F 1 "TestPoint" H 5808 2327 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 5950 2300 50  0001 C CNN
+F 3 "~" H 5950 2300 50  0001 C CNN
+	1    5750 2300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5750 2300 5150 2300
+Text HLabel 5300 6600 2    50   Output ~ 0
+IO_L25_14
+Text HLabel 5300 6300 2    50   Output ~ 0
+IO_L23_14_N
+Text HLabel 5300 6200 2    50   Output ~ 0
+IO_L23_14_P
+Wire Wire Line
+	5150 6600 5300 6600
+Wire Wire Line
+	5300 6300 5150 6300
+Wire Wire Line
+	5150 6200 5300 6200
+NoConn ~ 1150 3000
+NoConn ~ 1150 3100
+NoConn ~ 1150 3300
+NoConn ~ 1150 4000
+Text HLabel 5300 4200 2    50   Input ~ 0
+IO_L13_14_P
+Wire Wire Line
+	5150 4200 5300 4200
+NoConn ~ 1150 2300
+Text HLabel 5300 5200 2    50   Input ~ 0
+IO_L18_14_P
+Wire Wire Line
+	5300 5200 5150 5200
+NoConn ~ 1150 2000
+NoConn ~ 1150 2100
+Connection ~ 4750 900 
+Wire Wire Line
+	1850 900  1950 900 
+Connection ~ 1850 900 
+Wire Wire Line
+	1750 900  1850 900 
+Connection ~ 1750 900 
+Wire Wire Line
+	4650 900  4750 900 
+Connection ~ 4650 900 
+Wire Wire Line
+	4550 900  4650 900 
+Connection ~ 4550 900 
+Wire Wire Line
+	4450 900  4550 900 
+Connection ~ 4450 900 
+Wire Wire Line
+	4350 900  4450 900 
+Wire Wire Line
+	4250 900  4350 900 
+Connection ~ 4350 900 
+Wire Wire Line
+	1650 900  1750 900 
+Wire Wire Line
+	1550 900  1650 900 
+Connection ~ 1650 900 
+Connection ~ 1550 900 
+$Comp
+L artix7-pcie-v2:XC7A75T-FGG484 U1
+U 1 1 5E5F6D7E
+P 3150 3800
+F 0 "U1" H 3150 825 50  0000 C CNN
+F 1 "XC7A75T-FGG484" H 3150 734 50  0000 C CNN
+F 2 "artix7-pcie-v2:Xilinx_FGG484" H 3150 3800 50  0001 C CNN
+F 3 "" H 3150 3800 50  0000 C CNN
+	1    3150 3800
+	1    0    0    -1  
+$EndComp
+Text HLabel 5300 4800 2    50   Input ~ 0
+IO_L16_14_P
+Text HLabel 5300 4900 2    50   Output ~ 0
+IO_L16_14_N
+Wire Wire Line
+	5150 4800 5300 4800
+Wire Wire Line
+	5150 4900 5300 4900
+NoConn ~ 1150 1800
+NoConn ~ 1150 1900
+NoConn ~ 1150 2400
+NoConn ~ 1150 2500
+NoConn ~ 1550 700 
+Text Label 1550 700  0    50   ~ 0
+VCCO_13
+Text HLabel 5300 4000 2    50   Input ~ 0
+IO_L12_14_P
+Wire Wire Line
+	5150 4000 5300 4000
+Text HLabel 5300 4100 2    50   Output ~ 0
+IO_L12_14_N
+Wire Wire Line
+	5150 4100 5300 4100
+Text Notes 850  4600 1    50   ~ 0
+Bank 13 left unused to ensure compatibility with smaller devices
 $EndSCHEMATC

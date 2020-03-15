@@ -1,4 +1,4 @@
-update=Tue 10 Mar 2020 12:07:12 PM PDT
+update=Thu 12 Mar 2020 05:06:38 PM PDT
 version=1
 last_client=kicad
 [general]
@@ -16,24 +16,25 @@ LibDir=
 version=1
 PageLayoutDescrFile=
 LastNetListRead=
-CopperLayerCount=2
+CopperLayerCount=4
 BoardThickness=1.6
 AllowMicroVias=0
 AllowBlindVias=0
 RequireCourtyardDefinitions=0
 ProhibitOverlappingCourtyards=1
-MinTrackWidth=0.08889999999999999
+MinTrackWidth=0.1143
 MinViaDiameter=0.45
 MinViaDrill=0.2
 MinMicroViaDiameter=0.2
 MinMicroViaDrill=0.09999999999999999
 MinHoleToHole=0.25
-TrackWidth1=0.25
-TrackWidth2=0.1143
-ViaDiameter1=0.8
-ViaDrill1=0.4
-ViaDiameter2=0.45
-ViaDrill2=0.2
+TrackWidth1=0.127
+TrackWidth2=0.127
+TrackWidth3=0.3
+ViaDiameter1=0.55
+ViaDrill1=0.25
+ViaDiameter2=0.55
+ViaDrill2=0.25
 dPairWidth1=0.2
 dPairGap1=0.25
 dPairViaGap1=0.25
@@ -57,7 +58,7 @@ OthersTextSizeH=1
 OthersTextSizeThickness=0.15
 OthersTextItalic=0
 OthersTextUpright=1
-SolderMaskClearance=0.09999999999999999
+SolderMaskClearance=0.05
 SolderMaskMinWidth=0
 SolderPasteClearance=0
 SolderPasteRatio=-0
@@ -68,11 +69,11 @@ Enabled=1
 [pcbnew/Layer.In1.Cu]
 Name=In1.Cu
 Type=0
-Enabled=0
+Enabled=1
 [pcbnew/Layer.In2.Cu]
 Name=In2.Cu
 Type=0
-Enabled=0
+Enabled=1
 [pcbnew/Layer.In3.Cu]
 Name=In3.Cu
 Type=0
@@ -230,10 +231,10 @@ Enabled=0
 [pcbnew/Netclasses]
 [pcbnew/Netclasses/Default]
 Name=Default
-Clearance=0.2
-TrackWidth=0.25
-ViaDiameter=0.8
-ViaDrill=0.4
+Clearance=0.127
+TrackWidth=0.127
+ViaDiameter=0.55
+ViaDrill=0.25
 uViaDiameter=0.3
 uViaDrill=0.1
 dPairWidth=0.2

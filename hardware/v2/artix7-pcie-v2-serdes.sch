@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 6
+Sheet 4 7
 Title ""
 Date ""
 Rev ""
@@ -630,4 +630,12 @@ Text Label 5950 2400 0    50   ~ 0
 S3_TX_C_P
 Text Label 5950 2500 0    50   ~ 0
 S3_TX_C_N
+Text Label 5950 3200 0    50   ~ 0
+S2_RX_N
+Text Label 5950 3100 0    50   ~ 0
+S2_RX_P
+Text Label 5950 3300 0    50   ~ 0
+S3_RX_P
+Text Label 5950 3400 0    50   ~ 0
+S3_RX_N
 $EndSCHEMATC

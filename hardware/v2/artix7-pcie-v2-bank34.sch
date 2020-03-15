@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 6
+Sheet 7 7
 Title ""
 Date ""
 Rev ""
@@ -30,39 +30,13 @@ L tom-connectors:Conn_02x20_Odd_Even J?
 U 1 1 5E70D5E0
 P 8500 4750
 AR Path="/5E5E2B54/5E70D5E0" Ref="J?"  Part="1" 
-AR Path="/5E6D5E13/5E70D5E0" Ref="J6"  Part="1" 
-F 0 "J6" H 8550 5867 50  0000 C CNN
+AR Path="/5E6D5E13/5E70D5E0" Ref="J1"  Part="1" 
+F 0 "J1" H 8550 5867 50  0000 C CNN
 F 1 "Conn_02x20_Odd_Even" H 8550 5776 50  0000 C CNN
 F 2 "artix7-pcie-v2:Socket_Strip_Angled_2x20" H 8500 4750 50  0001 C CNN
 F 3 "~" H 8500 4750 50  0001 C CNN
 	1    8500 4750
 	-1   0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5E70D5E6
-P 9550 3850
-AR Path="/5E5E2B54/5E70D5E6" Ref="#PWR?"  Part="1" 
-AR Path="/5E6D5E13/5E70D5E6" Ref="#PWR0101"  Part="1" 
-F 0 "#PWR0101" H 9550 3700 50  0001 C CNN
-F 1 "+3.3V" H 9565 4023 50  0000 C CNN
-F 2 "" H 9550 3850 50  0001 C CNN
-F 3 "" H 9550 3850 50  0001 C CNN
-	1    9550 3850
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5E70D5EC
-P 7200 3850
-AR Path="/5E5E2B54/5E70D5EC" Ref="#PWR?"  Part="1" 
-AR Path="/5E6D5E13/5E70D5EC" Ref="#PWR0102"  Part="1" 
-F 0 "#PWR0102" H 7200 3700 50  0001 C CNN
-F 1 "+3.3V" H 7215 4023 50  0000 C CNN
-F 2 "" H 7200 3850 50  0001 C CNN
-F 3 "" H 7200 3850 50  0001 C CNN
-	1    7200 3850
-	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	8700 3850 9550 3850
@@ -72,12 +46,10 @@ Wire Wire Line
 	8700 4750 9550 4750
 Wire Wire Line
 	9550 4750 9550 3850
-Connection ~ 9550 3850
 Wire Wire Line
 	8200 4750 7200 4750
 Wire Wire Line
 	7200 4750 7200 3850
-Connection ~ 7200 3850
 Wire Wire Line
 	8700 5750 9550 5750
 Wire Wire Line
@@ -142,20 +114,6 @@ Wire Wire Line
 Connection ~ 7300 4850
 Wire Wire Line
 	7300 4850 7300 3950
-Text HLabel 5750 1000 1    50   BiDi ~ 0
-IO_L1_35_P
-Text HLabel 5900 1000 1    50   BiDi ~ 0
-IO_L1_35_N
-Wire Wire Line
-	5300 2150 5750 2150
-Wire Wire Line
-	5750 2150 5750 1000
-Wire Wire Line
-	5300 2250 5900 2250
-Wire Wire Line
-	5900 2250 5900 1000
-Text HLabel 5600 1000 1    50   Output ~ 0
-IO_0_35
 Wire Wire Line
 	1050 5950 1300 5950
 Wire Wire Line
@@ -1393,10 +1351,6 @@ Wire Wire Line
 Wire Wire Line
 	1300 3650 1150 3650
 Wire Wire Line
-	5300 2050 5600 2050
-Wire Wire Line
-	5600 2050 5600 1000
-Wire Wire Line
 	8050 4050 8200 4050
 Wire Wire Line
 	8200 4150 8050 4150
@@ -1456,10 +1410,6 @@ Wire Wire Line
 	5450 2350 5300 2350
 Wire Wire Line
 	5450 2450 5300 2450
-Wire Wire Line
-	5450 6050 5300 6050
-Wire Wire Line
-	5300 5950 5450 5950
 Wire Wire Line
 	5450 6450 5300 6450
 Wire Wire Line
@@ -1560,10 +1510,6 @@ Text Label 5450 6350 0    50   ~ 0
 IO_L22_35_P
 Text Label 5450 6450 0    50   ~ 0
 IO_L22_35_N
-Text Label 5450 5950 0    50   ~ 0
-IO_L20_35_P
-Text Label 5450 6050 0    50   ~ 0
-IO_L20_35_N
 Text Label 8050 4050 2    50   ~ 0
 IO_L2_35_P
 Text Label 8050 4150 2    50   ~ 0
@@ -1578,8 +1524,6 @@ Text Label 8050 4550 2    50   ~ 0
 IO_L15_35_P
 Text Label 8050 4650 2    50   ~ 0
 IO_L22_35_P
-Text Label 8050 4950 2    50   ~ 0
-IO_L20_35_P
 Text Label 8050 5050 2    50   ~ 0
 IO_L1_34_P
 Text Label 8050 5150 2    50   ~ 0
@@ -1606,8 +1550,6 @@ Text Label 8850 4550 0    50   ~ 0
 IO_L15_35_N
 Text Label 8850 4650 0    50   ~ 0
 IO_L22_35_N
-Text Label 8850 4950 0    50   ~ 0
-IO_L20_35_N
 Text Label 8850 5050 0    50   ~ 0
 IO_L1_34_N
 Text Label 8850 5150 0    50   ~ 0
@@ -1676,13 +1618,164 @@ NoConn ~ 1300 4450
 NoConn ~ 1300 4350
 NoConn ~ 1300 4250
 NoConn ~ 1300 4150
-NoConn ~ 1300 4050
-NoConn ~ 1300 3950
 NoConn ~ 1300 3850
 NoConn ~ 1300 3750
 NoConn ~ 1300 3250
 NoConn ~ 1300 3150
-NoConn ~ 1300 2650
-NoConn ~ 1300 2550
 NoConn ~ 1300 2050
+Wire Wire Line
+	4400 1250 4500 1250
+Connection ~ 4500 1250
+Wire Wire Line
+	4500 1250 4600 1250
+Connection ~ 4600 1250
+Wire Wire Line
+	4600 1250 4700 1250
+Connection ~ 4700 1250
+Wire Wire Line
+	4700 1250 4800 1250
+Connection ~ 4800 1250
+Wire Wire Line
+	4800 1250 4900 1250
+Wire Wire Line
+	4900 1250 4900 1150
+Connection ~ 4900 1250
+Wire Wire Line
+	2200 1250 2100 1250
+Connection ~ 1800 1250
+Wire Wire Line
+	1800 1250 1700 1250
+Connection ~ 1900 1250
+Wire Wire Line
+	1900 1250 1800 1250
+Connection ~ 2000 1250
+Wire Wire Line
+	2000 1250 1900 1250
+Connection ~ 2100 1250
+Wire Wire Line
+	2100 1250 2000 1250
+Wire Wire Line
+	1700 1250 1700 1150
+Connection ~ 1700 1250
+NoConn ~ 5300 2050
+$Comp
+L tom-mechanical:TestPoint TP1
+U 1 1 5F37E446
+P 5450 2050
+F 0 "TP1" H 5508 2122 50  0000 L CNN
+F 1 "TestPoint" H 5508 2077 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 5650 2050 50  0001 C CNN
+F 3 "~" H 5650 2050 50  0001 C CNN
+	1    5450 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-mechanical:TestPoint TP2
+U 1 1 5F37EBC2
+P 5700 2050
+F 0 "TP2" H 5758 2122 50  0000 L CNN
+F 1 "TestPoint" H 5758 2077 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 5900 2050 50  0001 C CNN
+F 3 "~" H 5900 2050 50  0001 C CNN
+	1    5700 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 2050 5450 2150
+Wire Wire Line
+	5450 2150 5300 2150
+Wire Wire Line
+	5300 2250 5700 2250
+Wire Wire Line
+	5700 2250 5700 2050
+$Comp
+L tom-mechanical:TestPoint TP4
+U 1 1 5F392D5A
+P 850 3900
+F 0 "TP4" H 908 3972 50  0000 L CNN
+F 1 "TestPoint" H 908 3927 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 1050 3900 50  0001 C CNN
+F 3 "~" H 1050 3900 50  0001 C CNN
+	1    850  3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 3950 850  3950
+Wire Wire Line
+	850  3950 850  3900
+Wire Wire Line
+	600  3900 600  4050
+Wire Wire Line
+	600  4050 1300 4050
+$Comp
+L tom-mechanical:TestPoint TP3
+U 1 1 5F39221C
+P 600 3900
+F 0 "TP3" H 658 3972 50  0000 L CNN
+F 1 "TestPoint" H 658 3927 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 800 3900 50  0001 C CNN
+F 3 "~" H 800 3900 50  0001 C CNN
+	1    600  3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VEE #PWR0126
+U 1 1 5F4DD67C
+P 1700 1150
+F 0 "#PWR0126" H 1700 1000 50  0001 C CNN
+F 1 "VEE" H 1717 1323 50  0000 C CNN
+F 2 "" H 1700 1150 50  0001 C CNN
+F 3 "" H 1700 1150 50  0001 C CNN
+	1    1700 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VEE #PWR0127
+U 1 1 5F4E04F5
+P 4900 1150
+F 0 "#PWR0127" H 4900 1000 50  0001 C CNN
+F 1 "VEE" H 4917 1323 50  0000 C CNN
+F 2 "" H 4900 1150 50  0001 C CNN
+F 3 "" H 4900 1150 50  0001 C CNN
+	1    4900 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VEE #PWR0128
+U 1 1 5F4E5BA1
+P 9550 3850
+F 0 "#PWR0128" H 9550 3700 50  0001 C CNN
+F 1 "VEE" H 9567 4023 50  0000 C CNN
+F 2 "" H 9550 3850 50  0001 C CNN
+F 3 "" H 9550 3850 50  0001 C CNN
+	1    9550 3850
+	1    0    0    -1  
+$EndComp
+Connection ~ 9550 3850
+$Comp
+L power:VEE #PWR0129
+U 1 1 5F4E5DA1
+P 7200 3850
+F 0 "#PWR0129" H 7200 3700 50  0001 C CNN
+F 1 "VEE" H 7217 4023 50  0000 C CNN
+F 2 "" H 7200 3850 50  0001 C CNN
+F 3 "" H 7200 3850 50  0001 C CNN
+	1    7200 3850
+	1    0    0    -1  
+$EndComp
+Connection ~ 7200 3850
+Wire Wire Line
+	1300 2550 1150 2550
+Wire Wire Line
+	1300 2650 1150 2650
+Text Label 1150 2550 2    50   ~ 0
+IO_L3_34_P
+Text Label 1150 2650 2    50   ~ 0
+IO_L3_34_N
+NoConn ~ 5300 6050
+NoConn ~ 5300 5950
+Text Label 8050 4950 2    50   ~ 0
+IO_L3_34_P
+Text Label 8850 4950 0    50   ~ 0
+IO_L3_34_N
 $EndSCHEMATC

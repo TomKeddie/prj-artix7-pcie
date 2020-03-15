@@ -6,4 +6,5 @@
   (lib (name tom-semiconductors)(type Legacy)(uri ${KIPRJMOD}/../tom-kicad/symbols/tom-semiconductors.lib)(options "")(descr ""))
   (lib (name artix7-pcie-v2)(type Legacy)(uri ${KIPRJMOD}/artix7-pcie-v2.lib)(options "")(descr ""))
   (lib (name tom-modules)(type Legacy)(uri /home/tom/git/TomKeddie/prj-artix7-pcie/hardware/tom-kicad/symbols/tom-modules.lib)(options "")(descr ""))
+  (lib (name SIT8008BI-13-33E-33.333330E)(type Legacy)(uri /home/tom/Downloads/SIT8008BI-13-33E-33.333330E.lib)(options "")(descr ""))
 )
