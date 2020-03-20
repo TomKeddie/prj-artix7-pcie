@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 7
+Sheet 6 7
 Title ""
 Date ""
 Rev ""
@@ -1323,18 +1323,11 @@ NoConn ~ 5150 2700
 NoConn ~ 5150 2900
 NoConn ~ 5150 3800
 NoConn ~ 5150 4300
-NoConn ~ 5150 4400
-NoConn ~ 5150 4500
-NoConn ~ 5150 5300
-NoConn ~ 5150 5400
 NoConn ~ 5150 5500
 NoConn ~ 5150 5600
-NoConn ~ 5150 5700
 NoConn ~ 5150 5800
 NoConn ~ 5150 5900
-NoConn ~ 5150 6000
 NoConn ~ 5150 6100
-NoConn ~ 5150 6400
 NoConn ~ 5150 6500
 NoConn ~ 1150 1700
 NoConn ~ 1150 2200
@@ -1476,4 +1469,32 @@ Wire Wire Line
 	5150 4100 5300 4100
 Text Notes 850  4600 1    50   ~ 0
 Bank 13 left unused to ensure compatibility with smaller devices
+Text HLabel 5300 5400 2    50   Output ~ 0
+IO_L19_14_P
+Text HLabel 5300 6000 2    50   Output ~ 0
+IO_L22_14_P
+Text HLabel 5300 6400 2    50   Output ~ 0
+IO_L24_14_P
+Wire Wire Line
+	5150 5400 5300 5400
+Wire Wire Line
+	5300 6000 5150 6000
+Wire Wire Line
+	5150 6400 5300 6400
+Text HLabel 5300 4400 2    50   BiDi ~ 0
+IO_L14_14_P
+Text HLabel 5300 4500 2    50   BiDi ~ 0
+IO_L14_14_N
+Wire Wire Line
+	5150 4400 5300 4400
+Wire Wire Line
+	5300 4500 5150 4500
+Text HLabel 5300 5300 2    50   Output ~ 0
+IO_L18_14_N
+Wire Wire Line
+	5150 5300 5300 5300
+Text HLabel 5300 5700 2    50   BiDi ~ 0
+IO_L20_14_N
+Wire Wire Line
+	5150 5700 5300 5700
 $EndSCHEMATC

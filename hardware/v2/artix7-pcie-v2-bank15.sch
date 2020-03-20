@@ -257,10 +257,10 @@ Wire Wire Line
 Wire Wire Line
 	5150 3900 4550 3900
 $Comp
-L tom-mechanical:TestPoint TP9
+L tom-mechanical:TestPoint TP5
 U 1 1 5F434414
 P 4700 3500
-F 0 "TP9" H 4758 3572 50  0000 L CNN
+F 0 "TP5" H 4758 3572 50  0000 L CNN
 F 1 "TestPoint" H 4758 3527 50  0001 L CNN
 F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 4758 3527 50  0001 L CNN
 F 3 "~" H 4900 3500 50  0001 C CNN
@@ -268,10 +268,10 @@ F 3 "~" H 4900 3500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L tom-mechanical:TestPoint TP10
+L tom-mechanical:TestPoint TP6
 U 1 1 5F435AEE
 P 4950 3500
-F 0 "TP10" H 5008 3572 50  0000 L CNN
+F 0 "TP6" H 5008 3572 50  0000 L CNN
 F 1 "TestPoint" H 5008 3527 50  0001 L CNN
 F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 5008 3527 50  0001 L CNN
 F 3 "~" H 5150 3500 50  0001 C CNN

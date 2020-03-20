@@ -90,7 +90,7 @@ Wire Wire Line
 Text Label 4150 1250 0    50   ~ 0
 PGOOD_1.0V
 Text Notes 700  5050 0    118  ~ 0
-Sequence #3 3.3V\nVCCO Banks 13, 14 & 16
+Sequence #3 3.3V\nVCCO Banks 14 & 16\n(allow 500mA per bank)
 $Comp
 L tom-semiconductors:LP5907MFX U3
 U 1 1 5E49EA2E
@@ -354,7 +354,7 @@ Wire Wire Line
 Wire Wire Line
 	3350 1450 4500 1450
 Text Notes 9050 950  0    118  ~ 0
-Sequence #2 1.8V\nVCCAUX
+Sequence #2 1.8V\nVCCAUX (est 114mA)
 $Comp
 L power:GND #PWR043
 U 1 1 5E4C163E
@@ -394,7 +394,7 @@ Wire Wire Line
 Wire Wire Line
 	4650 1550 4650 1650
 Text Notes 3900 900  0    118  ~ 0
-Sequence #1 1.0V\nVCCINT/VCCBRAM
+Sequence #1 1.0V\nVCCINT/VCCBRAM\n(1.567A + 567mA)
 Connection ~ 4650 1650
 $Comp
 L power:VCC #PWR034
@@ -888,7 +888,7 @@ Wire Wire Line
 Wire Wire Line
 	8600 1250 10300 1250
 Text Notes 4850 5050 0    118  ~ 0
-Sequence #3 1.2V\nVTT
+Sequence #3 1.2V\nVTT (156mA est)
 Wire Wire Line
 	5700 2550 5700 3900
 Connection ~ 5700 2550
@@ -1105,7 +1105,7 @@ Wire Wire Line
 Connection ~ 10550 3850
 Text Label 9300 3750 0    50   ~ 0
 TRIM_1.8V
-Text Notes 8600 4600 0    50   ~ 0
+Text Notes 9400 3450 0    50   ~ 0
 19.8k//6.49k=4.8878k (want 4.888k)
 Wire Wire Line
 	8800 3900 8750 3900
@@ -1202,8 +1202,8 @@ F 3 "" H 10550 3750 50  0001 C CNN
 	1    10550 3750
 	1    0    0    -1  
 $EndComp
-Text Notes 8100 5050 0    118  ~ 0
-Sequence #3 3.3V\nVCCO Banks 34 & 35
 Text Label 7000 3550 0    50   ~ 0
 VCC_VEE
+Text Notes 8100 5050 0    118  ~ 0
+Sequence #3 3.3V\nVCCO Banks 34 & 35\n(allow 500mA per bank)
 $EndSCHEMATC

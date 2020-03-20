@@ -1,5 +1,10 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 5P49V6965A000NLGI
+D Clock Generators & Support Products VersaClock 6E Standard Part
+F https://componentsearchengine.com/Datasheets/1/5P49V6965A000NLGI.pdf
+$ENDCMP
+#
 $CMP XC7A75T-FGG484
 D Artix 7 T 75 XC7A75T-FGG484
 K FPGA
