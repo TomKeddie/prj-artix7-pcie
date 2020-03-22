@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:artix7-pcie-v2-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 6 7
+Sheet 7 7
 Title ""
 Date ""
 Rev ""
@@ -14,17 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L artix7-pcie-v2:XC7A75T-FGG484 U1
-U 3 1 5E6D68C3
-P 3300 4150
-F 0 "U1" H 3300 1175 50  0000 C CNN
-F 1 "XC7A75T-FGG484" H 3300 1084 50  0000 C CNN
-F 2 "artix7-pcie-v2:Xilinx_FGG484" H 3300 4150 50  0001 C CNN
-F 3 "" H 3300 4150 50  0000 C CNN
-	3    3300 4150
-	1    0    0    -1  
-$EndComp
 $Comp
 L tom-connectors:Conn_02x20_Odd_Even J?
 U 1 1 5E70D5E0
@@ -50,16 +38,6 @@ Wire Wire Line
 	8200 4750 7200 4750
 Wire Wire Line
 	7200 4750 7200 3850
-Wire Wire Line
-	8700 5750 9550 5750
-Wire Wire Line
-	9550 5750 9550 4750
-Connection ~ 9550 4750
-Wire Wire Line
-	8200 5750 7200 5750
-Wire Wire Line
-	7200 5750 7200 4750
-Connection ~ 7200 4750
 $Comp
 L power:GND #PWR?
 U 1 1 5E70D600
@@ -114,14 +92,6 @@ Wire Wire Line
 Connection ~ 7300 4850
 Wire Wire Line
 	7300 4850 7300 3950
-Wire Wire Line
-	1050 5950 1300 5950
-Wire Wire Line
-	1050 6050 1300 6050
-Wire Wire Line
-	1050 6350 1300 6350
-Wire Wire Line
-	1050 6450 1300 6450
 $Bitmap
 Pos 9350 2050
 Scale 0.500000
@@ -1474,14 +1444,6 @@ Text Label 1150 3550 2    50   ~ 0
 IO_L8_34_P
 Text Label 1150 3650 2    50   ~ 0
 IO_L8_34_N
-Text Label 1050 5950 2    50   ~ 0
-IO_L20_34_P
-Text Label 1050 6050 2    50   ~ 0
-IO_L20_34_N
-Text Label 1050 6350 2    50   ~ 0
-IO_L22_34_P
-Text Label 1050 6450 2    50   ~ 0
-IO_L22_34_N
 Text Label 5450 2350 0    50   ~ 0
 IO_L2_35_P
 Text Label 5450 2450 0    50   ~ 0
@@ -1623,40 +1585,6 @@ NoConn ~ 1300 3750
 NoConn ~ 1300 3250
 NoConn ~ 1300 3150
 NoConn ~ 1300 2050
-Wire Wire Line
-	4400 1250 4500 1250
-Connection ~ 4500 1250
-Wire Wire Line
-	4500 1250 4600 1250
-Connection ~ 4600 1250
-Wire Wire Line
-	4600 1250 4700 1250
-Connection ~ 4700 1250
-Wire Wire Line
-	4700 1250 4800 1250
-Connection ~ 4800 1250
-Wire Wire Line
-	4800 1250 4900 1250
-Wire Wire Line
-	4900 1250 4900 1150
-Connection ~ 4900 1250
-Wire Wire Line
-	2200 1250 2100 1250
-Connection ~ 1800 1250
-Wire Wire Line
-	1800 1250 1700 1250
-Connection ~ 1900 1250
-Wire Wire Line
-	1900 1250 1800 1250
-Connection ~ 2000 1250
-Wire Wire Line
-	2000 1250 1900 1250
-Connection ~ 2100 1250
-Wire Wire Line
-	2100 1250 2000 1250
-Wire Wire Line
-	1700 1250 1700 1150
-Connection ~ 1700 1250
 NoConn ~ 5300 2050
 $Comp
 L tom-mechanical:TestPoint TP1
@@ -1718,52 +1646,6 @@ F 3 "~" H 800 3900 50  0001 C CNN
 	1    600  3900
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:VEE #PWR0126
-U 1 1 5F4DD67C
-P 1700 1150
-F 0 "#PWR0126" H 1700 1000 50  0001 C CNN
-F 1 "VEE" H 1717 1323 50  0000 C CNN
-F 2 "" H 1700 1150 50  0001 C CNN
-F 3 "" H 1700 1150 50  0001 C CNN
-	1    1700 1150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VEE #PWR0127
-U 1 1 5F4E04F5
-P 4900 1150
-F 0 "#PWR0127" H 4900 1000 50  0001 C CNN
-F 1 "VEE" H 4917 1323 50  0000 C CNN
-F 2 "" H 4900 1150 50  0001 C CNN
-F 3 "" H 4900 1150 50  0001 C CNN
-	1    4900 1150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VEE #PWR0128
-U 1 1 5F4E5BA1
-P 9550 3850
-F 0 "#PWR0128" H 9550 3700 50  0001 C CNN
-F 1 "VEE" H 9567 4023 50  0000 C CNN
-F 2 "" H 9550 3850 50  0001 C CNN
-F 3 "" H 9550 3850 50  0001 C CNN
-	1    9550 3850
-	1    0    0    -1  
-$EndComp
-Connection ~ 9550 3850
-$Comp
-L power:VEE #PWR0129
-U 1 1 5F4E5DA1
-P 7200 3850
-F 0 "#PWR0129" H 7200 3700 50  0001 C CNN
-F 1 "VEE" H 7217 4023 50  0000 C CNN
-F 2 "" H 7200 3850 50  0001 C CNN
-F 3 "" H 7200 3850 50  0001 C CNN
-	1    7200 3850
-	1    0    0    -1  
-$EndComp
-Connection ~ 7200 3850
 Wire Wire Line
 	1300 2550 1150 2550
 Wire Wire Line
@@ -1778,4 +1660,88 @@ Text Label 8050 4950 2    50   ~ 0
 IO_L3_34_P
 Text Label 8850 4950 0    50   ~ 0
 IO_L3_34_N
+Wire Wire Line
+	9550 3850 9550 3550
+Wire Wire Line
+	9550 3550 7200 3550
+Connection ~ 9550 3850
+Wire Wire Line
+	7200 3850 7200 3550
+Connection ~ 7200 3850
+Connection ~ 7200 3550
+Wire Wire Line
+	7200 3550 7000 3550
+NoConn ~ 1300 5950
+NoConn ~ 1300 6050
+NoConn ~ 1300 6350
+NoConn ~ 1300 6450
+Connection ~ 2200 1250
+Wire Wire Line
+	2200 1250 2100 1250
+Connection ~ 2100 1250
+Wire Wire Line
+	2100 1250 2000 1250
+Connection ~ 2000 1250
+Wire Wire Line
+	2000 1250 1900 1250
+Connection ~ 1900 1250
+Wire Wire Line
+	4800 1250 4900 1250
+Connection ~ 4800 1250
+Wire Wire Line
+	4700 1250 4800 1250
+Connection ~ 4700 1250
+Wire Wire Line
+	4600 1250 4700 1250
+Connection ~ 4600 1250
+Wire Wire Line
+	4500 1250 4600 1250
+Connection ~ 4500 1250
+Wire Wire Line
+	4400 1250 4500 1250
+Connection ~ 4400 1250
+Wire Wire Line
+	1900 1250 1800 1250
+Connection ~ 1800 1250
+Wire Wire Line
+	1700 1250 1500 1250
+Wire Wire Line
+	1800 1250 1700 1250
+Connection ~ 1700 1250
+$Comp
+L artix7-pcie-v2:XC7A75T-FGG484 U1
+U 3 1 5E6D68C3
+P 3300 4150
+F 0 "U1" H 3300 1175 50  0000 C CNN
+F 1 "XC7A75T-FGG484" H 3300 1084 50  0000 C CNN
+F 2 "artix7-pcie-v2:Xilinx_FGG484" H 3300 4150 50  0001 C CNN
+F 3 "" H 3300 4150 50  0000 C CNN
+	3    3300 4150
+	1    0    0    -1  
+$EndComp
+Text Label 7000 3550 2    50   ~ 0
+VCCO_35
+Wire Wire Line
+	8050 5750 8200 5750
+Wire Wire Line
+	8700 5750 8850 5750
+Text Label 8850 5750 0    50   ~ 0
+VCCO_34
+Text Label 8050 5750 2    50   ~ 0
+VCCO_34
+Text Label 4200 1250 2    50   ~ 0
+VCCO_35
+Text HLabel 5100 1250 2    50   Input ~ 0
+VCCO_35
+Connection ~ 4900 1250
+Wire Wire Line
+	5100 1250 4900 1250
+Wire Wire Line
+	4400 1250 4200 1250
+Wire Wire Line
+	2200 1250 2400 1250
+Text Label 2400 1250 0    50   ~ 0
+VCCO_34
+Text HLabel 1500 1250 0    50   Input ~ 0
+VCCO_34
 $EndSCHEMATC

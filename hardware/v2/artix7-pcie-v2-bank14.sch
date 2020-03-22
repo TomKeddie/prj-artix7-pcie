@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:artix7-pcie-v2-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 6 7
+Sheet 4 7
 Title ""
 Date ""
 Rev ""
@@ -34,10 +33,6 @@ Text HLabel 5500 2800 2    50   Output ~ 0
 SPI_FLASH_CS
 Wire Wire Line
 	5150 2800 5500 2800
-Wire Wire Line
-	1550 700  1550 900 
-Wire Wire Line
-	4750 900  4750 700 
 $Comp
 L tom-passives:R R8
 U 1 1 5E975EB1
@@ -62,26 +57,6 @@ F 3 "~" H 9500 5000 50  0001 C CNN
 	1    9500 5000
 	1    0    0    1   
 $EndComp
-Wire Wire Line
-	9300 5900 8450 5900
-Wire Wire Line
-	9800 5900 10800 5900
-Wire Wire Line
-	9300 5000 8450 5000
-Wire Wire Line
-	8450 5000 8450 5900
-Wire Wire Line
-	10800 5000 10800 5900
-Wire Wire Line
-	9300 4000 8450 4000
-Wire Wire Line
-	8450 4000 8450 5000
-Connection ~ 8450 5000
-Wire Wire Line
-	9800 4000 10800 4000
-Wire Wire Line
-	10800 4000 10800 5000
-Connection ~ 10800 5000
 Wire Wire Line
 	8550 4100 9300 4100
 Wire Wire Line
@@ -1077,30 +1052,6 @@ Text HLabel 9950 4200 2    50   BiDi ~ 0
 IO_L9_16_P
 Text HLabel 9150 4200 0    50   BiDi ~ 0
 IO_L9_16_N
-$Comp
-L power:+3V3 #PWR0105
-U 1 1 5ED5D308
-P 10800 4000
-F 0 "#PWR0105" H 10800 3850 50  0001 C CNN
-F 1 "+3V3" H 10815 4173 50  0000 C CNN
-F 2 "" H 10800 4000 50  0001 C CNN
-F 3 "" H 10800 4000 50  0001 C CNN
-	1    10800 4000
-	1    0    0    -1  
-$EndComp
-Connection ~ 10800 4000
-$Comp
-L power:+3V3 #PWR0106
-U 1 1 5ED5F3A8
-P 8450 4000
-F 0 "#PWR0106" H 8450 3850 50  0001 C CNN
-F 1 "+3V3" H 8465 4173 50  0000 C CNN
-F 2 "" H 8450 4000 50  0001 C CNN
-F 3 "" H 8450 4000 50  0001 C CNN
-	1    8450 4000
-	1    0    0    -1  
-$EndComp
-Connection ~ 8450 4000
 Wire Wire Line
 	9800 4200 9950 4200
 Wire Wire Line
@@ -1229,8 +1180,6 @@ IO_L7_14_P
 Text Label 9950 5100 0    50   ~ 0
 IO_L4_14_P
 Wire Wire Line
-	9800 5000 10800 5000
-Wire Wire Line
 	9950 5100 9800 5100
 Wire Wire Line
 	9800 5200 9950 5200
@@ -1306,29 +1255,13 @@ Wire Wire Line
 	5150 3200 5300 3200
 Wire Wire Line
 	5300 3300 5150 3300
-$Comp
-L power:+3V3 #PWR0120
-U 1 1 5F093C5F
-P 4750 700
-F 0 "#PWR0120" H 4750 550 50  0001 C CNN
-F 1 "+3V3" H 4765 873 50  0000 C CNN
-F 2 "" H 4750 700 50  0001 C CNN
-F 3 "" H 4750 700 50  0001 C CNN
-	1    4750 700 
-	1    0    0    -1  
-$EndComp
 NoConn ~ 5150 1700
 NoConn ~ 5150 2600
 NoConn ~ 5150 2700
 NoConn ~ 5150 2900
 NoConn ~ 5150 3800
-NoConn ~ 5150 4300
 NoConn ~ 5150 5500
 NoConn ~ 5150 5600
-NoConn ~ 5150 5800
-NoConn ~ 5150 5900
-NoConn ~ 5150 6100
-NoConn ~ 5150 6500
 NoConn ~ 1150 1700
 NoConn ~ 1150 2200
 NoConn ~ 1150 2600
@@ -1406,7 +1339,6 @@ Wire Wire Line
 	5300 5200 5150 5200
 NoConn ~ 1150 2000
 NoConn ~ 1150 2100
-Connection ~ 4750 900 
 Wire Wire Line
 	1850 900  1950 900 
 Connection ~ 1850 900 
@@ -1432,7 +1364,6 @@ Wire Wire Line
 Wire Wire Line
 	1550 900  1650 900 
 Connection ~ 1650 900 
-Connection ~ 1550 900 
 $Comp
 L artix7-pcie-v2:XC7A75T-FGG484 U1
 U 1 1 5E5F6D7E
@@ -1456,8 +1387,7 @@ NoConn ~ 1150 1800
 NoConn ~ 1150 1900
 NoConn ~ 1150 2400
 NoConn ~ 1150 2500
-NoConn ~ 1550 700 
-Text Label 1550 700  0    50   ~ 0
+Text Label 1950 900  0    50   ~ 0
 VCCO_13
 Text HLabel 5300 4000 2    50   Input ~ 0
 IO_L12_14_P
@@ -1497,4 +1427,79 @@ Text HLabel 5300 5700 2    50   BiDi ~ 0
 IO_L20_14_N
 Wire Wire Line
 	5150 5700 5300 5700
+Text HLabel 4950 900  2    50   Input ~ 0
+VCCO_14
+Wire Wire Line
+	4950 900  4750 900 
+Connection ~ 4750 900 
+Text HLabel 8350 3850 0    50   Input ~ 0
+VCCO_16
+Wire Wire Line
+	4250 900  3950 900 
+Connection ~ 4250 900 
+Text Label 3950 900  2    50   ~ 0
+VCCO_14
+Text Label 9150 5900 2    50   ~ 0
+VCCO_14
+Text Label 9950 5900 0    50   ~ 0
+VCCO_14
+Wire Wire Line
+	8450 5000 8450 4000
+Wire Wire Line
+	8450 5000 9300 5000
+Connection ~ 8450 3850
+Wire Wire Line
+	8450 3850 8350 3850
+Wire Wire Line
+	10800 3850 10800 4000
+Wire Wire Line
+	10800 5000 9800 5000
+Wire Wire Line
+	8450 3850 10800 3850
+Wire Wire Line
+	9300 4000 8450 4000
+Connection ~ 8450 4000
+Wire Wire Line
+	8450 4000 8450 3850
+Wire Wire Line
+	9800 4000 10800 4000
+Connection ~ 10800 4000
+Wire Wire Line
+	10800 4000 10800 5000
+Wire Wire Line
+	9150 5900 9300 5900
+Wire Wire Line
+	9800 5900 9950 5900
+Text HLabel 5300 4300 2    50   Input ~ 0
+IO_L13_14_N
+Wire Wire Line
+	5300 4300 5150 4300
+Text HLabel 5300 5900 2    50   BiDi ~ 0
+IO_L21_14_N
+Text HLabel 5300 5800 2    50   Output ~ 0
+IO_L21_14_P
+Wire Wire Line
+	5300 5800 5150 5800
+Wire Wire Line
+	5150 5900 5300 5900
+$Comp
+L power:PWR_FLAG #FLG0110
+U 1 1 5EE3E044
+P 1550 900
+F 0 "#FLG0110" H 1550 975 50  0001 C CNN
+F 1 "PWR_FLAG" H 1550 1073 50  0000 C CNN
+F 2 "" H 1550 900 50  0001 C CNN
+F 3 "~" H 1550 900 50  0001 C CNN
+	1    1550 900 
+	1    0    0    -1  
+$EndComp
+Connection ~ 1550 900 
+Text HLabel 5300 6100 2    50   Input ~ 0
+IO_L22_14_N
+Wire Wire Line
+	5300 6100 5150 6100
+Text HLabel 5300 6500 2    50   Input ~ 0
+IO_L24_14_N
+Wire Wire Line
+	5300 6500 5150 6500
 $EndSCHEMATC

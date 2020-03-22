@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:artix7-pcie-v2-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 7
+Sheet 3 7
 Title ""
 Date ""
 Rev ""
@@ -124,17 +123,6 @@ Wire Wire Line
 Connection ~ 4050 1500
 Wire Wire Line
 	4050 1500 4150 1500
-$Comp
-L power:+3V3 #PWR0122
-U 1 1 5F15DFBC
-P 4150 1350
-F 0 "#PWR0122" H 4150 1200 50  0001 C CNN
-F 1 "+3V3" H 4165 1523 50  0000 C CNN
-F 2 "" H 4150 1350 50  0001 C CNN
-F 3 "" H 4150 1350 50  0001 C CNN
-	1    4150 1350
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4550 5700 5950 5700
 NoConn ~ 4550 2300
@@ -220,9 +208,6 @@ NoConn ~ 550  7100
 NoConn ~ 550  7200
 Wire Wire Line
 	1450 1500 1350 1500
-Connection ~ 950  1500
-Wire Wire Line
-	950  1500 750  1500
 Connection ~ 1050 1500
 Wire Wire Line
 	1050 1500 950  1500
@@ -235,27 +220,8 @@ Wire Wire Line
 Connection ~ 1350 1500
 Wire Wire Line
 	1350 1500 1250 1500
-NoConn ~ 750  1500
-Text Label 750  1500 2    50   ~ 0
+Text Label 1450 1500 0    50   ~ 0
 VCCO_15
-Text HLabel 5450 1450 1    50   BiDi ~ 0
-IO_L10_16_P
-Text HLabel 5550 1450 1    50   BiDi ~ 0
-IO_L10_16_N
-Wire Wire Line
-	4550 4200 5450 4200
-Wire Wire Line
-	5450 4200 5450 1450
-Wire Wire Line
-	5550 1450 5550 4300
-Wire Wire Line
-	5550 4300 4550 4300
-Text HLabel 5150 1450 1    50   Output ~ 0
-IO_L8_16_N
-Wire Wire Line
-	5150 1450 5150 3900
-Wire Wire Line
-	5150 3900 4550 3900
 $Comp
 L tom-mechanical:TestPoint TP5
 U 1 1 5F434414
@@ -286,4 +252,21 @@ Wire Wire Line
 	4550 3700 4950 3700
 Wire Wire Line
 	4950 3700 4950 3500
+Text HLabel 4150 1350 1    50   Input ~ 0
+VCCO_16
+NoConn ~ 4550 4200
+NoConn ~ 4550 4300
+NoConn ~ 4550 3900
+$Comp
+L power:PWR_FLAG #FLG0111
+U 1 1 5EE4B316
+P 950 1500
+F 0 "#FLG0111" H 950 1575 50  0001 C CNN
+F 1 "PWR_FLAG" H 950 1673 50  0000 C CNN
+F 2 "" H 950 1500 50  0001 C CNN
+F 3 "~" H 950 1500 50  0001 C CNN
+	1    950  1500
+	1    0    0    -1  
+$EndComp
+Connection ~ 950  1500
 $EndSCHEMATC

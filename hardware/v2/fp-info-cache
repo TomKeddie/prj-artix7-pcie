@@ -1,22 +1,22 @@
-4752473364142
-tom-modules
-APXS006
-
-
+4750483332282
+artix7-pcie-v2
+QFN50P400X400X100-25N-D
+NLG24P2
+Integrated Circuit
 0
-10
-10
-tom-modules
-OSC_SIT8008BI
-
-
+25
+25
+artix7-pcie-v2
+Socket_Strip_Angled_2x20
+Through hole socket strip
+socket strip
 0
-4
-4
-tom-modules
-TPS82130SILT
-
-
+40
+40
+artix7-pcie-v2
+Xilinx_FGG484
+Artix-7 BGA, 22x22 grid, 23x23mm package, 1mm pitch; https://www.xilinx.com/support/documentation/user_guides/ug475_7Series_Pkg_Pinout.pdf#page=275, NSMD pad definition Appendix A
+BGA 484 1 FG484 FGG484
 0
-9
-9
+484
+484

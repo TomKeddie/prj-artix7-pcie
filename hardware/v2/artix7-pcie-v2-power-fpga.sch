@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:artix7-pcie-v2-cache
 EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 7
+Sheet 7 7
 Title ""
 Date ""
 Rev ""
@@ -323,7 +322,7 @@ Connection ~ 1350 1700
 Wire Wire Line
 	1350 1700 1350 1800
 Wire Wire Line
-	3350 2650 3350 2600
+	3350 2700 3350 2600
 Connection ~ 3350 1400
 Wire Wire Line
 	3350 1400 3350 1050
