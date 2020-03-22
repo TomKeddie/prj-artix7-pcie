@@ -8,6 +8,7 @@ from migen import *
 from litex.soc.cores.clock import *
 from litex.soc.cores.gpio import GPIOTristate, GPIOOut
 from litex.soc.cores.uart import UARTWishboneBridge
+from litex.soc.cores.bitbang import I2CMaster
 from litex.soc.integration.soc_core import *
 from litex.soc.integration.builder import *
 
@@ -18,7 +19,10 @@ from litex.build.xilinx.common import DifferentialOutput
 # IOs ----------------------------------------------------------------------------------------------
 
 _io = [
-    ("clk100", 0, Pins("Y18"), IOStandard("LVCMOS33")), # IO_L12_13_P
+    ("clk100", 0,
+        Subsignal("p", Pins("Y18")),
+        Subsignal("n", Pins("Y19")),
+        IOStandard("DIFF_HSTL_I")),
     ("flash", 0,
         Subsignal("cs_n", Pins("T19")),
         Subsignal("mosi", Pins("P22")),
@@ -42,10 +46,17 @@ _io = [
         Subsignal("rx", Pins("W19")),
         IOStandard("LVCMOS33"),
     ),
-    ("usb", 0,
+    ("usb_a", 0,
      Subsignal("d_p", Pins("N13")),    # IO_L10_16_P
      Subsignal("d_n", Pins("N14")),    # IO_L10_16_N
      Subsignal("pullup", Pins("N15")), # IO_L8_16_N
+     IOStandard("LVCMOS33")
+    ),
+    ("usb_micro", 0,
+     Subsignal("d_p", Pins("V18")),    # IO_L10_16_P
+     Subsignal("d_n", Pins("V19")),    # IO_L10_16_N
+     Subsignal("pullup", Pins("U18")), # IO_L8_16_N
+     Subsignal("id", Pins("T18")), # IO_L8_16_N
      IOStandard("LVCMOS33")
     ),
     ("TP1", 0, Pins("B1"), IOStandard("LVCMOS15")),
@@ -56,15 +67,25 @@ _io = [
     ("TP6", 0, Pins("B16"), IOStandard("LVCMOS25")),
     ("TP7", 0, Pins("V20"), IOStandard("LVCMOS33")),
     ("TP8", 0, Pins("V22"), IOStandard("LVCMOS33")),
-    ("user_btn_n", 0, Pins("U17"), IOStandard("LVCMOS33")), # IO_L3_13_M
-    ("user_led_n", 0, Pins("AB10"), IOStandard("LVCMOS33"), Misc("PULLUP=TRUE")),
+    ("user_btn_n", 0, Pins("U17"), IOStandard("LVCMOS33"), Misc("PULLUP=TRUE")),
+    ("user_led_n", 0, Pins("AB10"), IOStandard("LVCMOS33")),
     ("rgb_led", 0,
         Subsignal("r", Pins("P15")),  # IO_L7_13_P
         Subsignal("g", Pins("P16")),  # IO_L7_13_N
         Subsignal("b", Pins("P14")),  # IO_L8_13_N
         IOStandard("LVCMOS33"),
     ),
-    # using different io standards here to make sure we have the bank separation correct
+    ("pcie_ctrl", 0,
+     Subsignal("wake", Pins("R16")),
+     Subsignal("perst", Pins("R17")),
+               IOStandard("LVCMOS33")),
+    ("clk_i2c", 0,
+     Subsignal("scl", Pins("N17"), IOStandard("LVCMOS33")),
+     Subsignal("sda", Pins("P17"), IOStandard("LVCMOS33")),
+     ),
+    # using different io standards here to make sure we have the bank
+    # separation correct, voltages don't reflect schematic in some
+    # cases.
     ("J1_35", 0, Pins("B2 C2 D1 E1 G2 H2 J1 K1 J2 K2 L1 M1 N2 P2"), IOStandard("LVCMOS15")),
     ("J1_34", 0, Pins("R2 R3 U1 T1 V2 U2 Y1 W1 Y2 W2 AB1 AA1 AB2 AB3"), IOStandard("LVCMOS18")),
     ("J2_14", 0, Pins("AB18 AA18 AB20 AA19 AB22 AB21 AA21 AA20 Y22 Y21 W22 W21 U21 T21"), IOStandard("LVCMOS33")),
@@ -121,28 +142,43 @@ class BaseSoC(SoCCore):
         self.submodules.uartbridge = UARTWishboneBridge(platform.request("serial2"), int(sys_clk_freq), baudrate=115200)
         self.add_wb_master(self.uartbridge.wishbone)
         self.register_mem("vexriscv_debug", 0xf00f0000, self.cpu.debug_bus, 0x10)
-        
-        self.submodules.tp = GPIOTristate(Cat(platform.request("TP1"),
-                                              platform.request("TP2"),
-                                              platform.request("TP3"),
-                                              platform.request("TP4"),
-                                              platform.request("TP5"),
-                                              platform.request("TP6"),
-                                              platform.request("TP7"),
-                                              platform.request("TP8")))
+
+        tp_list = Cat(platform.request("TP1"),
+                      platform.request("TP2"),
+                      platform.request("TP3"),
+                      platform.request("TP4"),
+                      platform.request("TP5"),
+                      platform.request("TP6"),
+                      platform.request("TP7"),
+                      platform.request("TP8"))
+        print("====================================================================")
+        print(tp_list)
+        print("====================================================================")
+        self.submodules.tp = GPIOTristate(tp_list)
         self.add_csr("tp")
-        self.submodules.j1a = GPIOTristate(platform.request("J1_35"))
-        self.add_csr("j1a")
-        self.submodules.j1b = GPIOTristate(platform.request("J1_34"))
-        self.add_csr("j1b")
-        self.submodules.j2a = GPIOTristate(platform.request("J2_14"))
-        self.add_csr("j2a")
-        self.submodules.j2b = GPIOTristate(platform.request("J2_16"))
-        self.add_csr("j2b")
+        j1_35_pads = platform.request("J1_35")
+        print("====================================================================")
+        print(j1_35_pads)
+        print("====================================================================")
+        self.submodules.j1_35 = GPIOTristate(j1_35_pads)
+        self.add_csr("j1_35")
+        self.submodules.j1_34 = GPIOTristate(platform.request("J1_34"))
+        self.add_csr("j1_34")
+        self.submodules.j2_14 = GPIOTristate(platform.request("J2_14"))
+        self.add_csr("j2_14")
+        self.submodules.j2_16 = GPIOTristate(platform.request("J2_16"))
+        self.add_csr("j2_16")
         self.submodules.led = GPIOOut(platform.request("rgb_led").raw_bits())
         self.add_csr("led")
-        self.submodules.usb = GPIOTristate(platform.request("usb").raw_bits())
-        self.add_csr("usb")
+        self.submodules.usba = GPIOTristate(platform.request("usb_a").raw_bits())
+        self.add_csr("usba")
+        self.submodules.usbmicro = GPIOTristate(platform.request("usb_micro").raw_bits())
+        self.add_csr("usbmicro")
+        self.submodules.clk_i2c = I2CMaster(pads=platform.request("clk_i2c"))
+        self.add_csr("clk_i2c")
+        self.submodules.pcie_ctrl = GPIOTristate(platform.request("pcie_ctrl").raw_bits())
+        self.add_csr("pcie_ctrl")
+
 
 
 # Build --------------------------------------------------------------------------------------------
