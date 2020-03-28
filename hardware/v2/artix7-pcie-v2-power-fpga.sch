@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 7
+Sheet 5 7
 Title ""
 Date ""
 Rev ""
@@ -399,4 +399,499 @@ Wire Wire Line
 Connection ~ 1200 2100
 Wire Wire Line
 	1200 2100 1200 1400
+$Comp
+L tom-passives:C C?
+U 1 1 5E7EC0F9
+P 6300 2050
+AR Path="/5E98B37D/5E7EC0F9" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E7EC0F9" Ref="C42"  Part="1" 
+F 0 "C42" V 6250 1250 40  0000 L CNN
+F 1 "100uF/6.3V/X5R" V 6350 1250 40  0000 L CNN
+F 2 "tom-passives:C_1206_3216Metric" H 6338 1900 30  0001 C CNN
+F 3 "" H 6300 2050 60  0001 C CNN
+	1    6300 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E7F531E
+P 6500 2050
+AR Path="/5E98B37D/5E7F531E" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E7F531E" Ref="C45"  Part="1" 
+F 0 "C45" V 6450 1250 40  0000 L CNN
+F 1 "4.7uF/6.3V/X5R" V 6550 1250 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 6538 1900 30  0001 C CNN
+F 3 "" H 6500 2050 60  0001 C CNN
+	1    6500 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR036
+U 1 1 5E7F7D1A
+P 6050 2250
+F 0 "#PWR036" H 6050 2000 50  0001 C CNN
+F 1 "GND" H 6055 2077 50  0000 C CNN
+F 2 "" H 6050 2250 50  0001 C CNN
+F 3 "" H 6050 2250 50  0001 C CNN
+	1    6050 2250
+	1    0    0    -1  
+$EndComp
+Text Label 1200 2200 2    50   ~ 0
+VCCAUX
+Text Label 6050 1850 2    50   ~ 0
+VCCAUX
+Wire Wire Line
+	6050 1850 6300 1850
+Connection ~ 6300 1850
+Wire Wire Line
+	6300 1850 6500 1850
+Wire Wire Line
+	6050 2250 6300 2250
+Connection ~ 6300 2250
+Wire Wire Line
+	6300 2250 6500 2250
+$Comp
+L tom-passives:C C?
+U 1 1 5E811793
+P 6300 3200
+AR Path="/5E98B37D/5E811793" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E811793" Ref="C43"  Part="1" 
+F 0 "C43" V 6250 2400 40  0000 L CNN
+F 1 "4.7uF/6.3V/X5R" V 6350 2400 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 6338 3050 30  0001 C CNN
+F 3 "" H 6300 3200 60  0001 C CNN
+	1    6300 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR037
+U 1 1 5E811EC1
+P 6050 3400
+F 0 "#PWR037" H 6050 3150 50  0001 C CNN
+F 1 "GND" H 6055 3227 50  0000 C CNN
+F 2 "" H 6050 3400 50  0001 C CNN
+F 3 "" H 6050 3400 50  0001 C CNN
+	1    6050 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 3400 6300 3400
+Text Label 1350 2500 2    50   ~ 0
+VCCBRAM
+Text Label 6050 3000 2    50   ~ 0
+VCCBRAM
+Wire Wire Line
+	6050 3000 6300 3000
+$Comp
+L tom-passives:C C?
+U 1 1 5E829A46
+P 6300 4350
+AR Path="/5E98B37D/5E829A46" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E829A46" Ref="C44"  Part="1" 
+F 0 "C44" V 6250 3550 40  0000 L CNN
+F 1 "100uF/6.3V/X5R" V 6350 3550 40  0000 L CNN
+F 2 "tom-passives:C_1206_3216Metric" H 6338 4200 30  0001 C CNN
+F 3 "" H 6300 4350 60  0001 C CNN
+	1    6300 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR038
+U 1 1 5E82A280
+P 6100 4550
+F 0 "#PWR038" H 6100 4300 50  0001 C CNN
+F 1 "GND" H 6105 4377 50  0000 C CNN
+F 2 "" H 6100 4550 50  0001 C CNN
+F 3 "" H 6100 4550 50  0001 C CNN
+	1    6100 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 4550 6100 4550
+Wire Wire Line
+	6300 4150 6100 4150
+Text Label 3350 1400 0    50   ~ 0
+VCCINT
+Text Label 6100 4150 2    50   ~ 0
+VCCINT
+$Comp
+L tom-passives:C C?
+U 1 1 5E84F02C
+P 6500 4350
+AR Path="/5E98B37D/5E84F02C" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E84F02C" Ref="C46"  Part="1" 
+F 0 "C46" V 6450 3550 40  0000 L CNN
+F 1 "4.7uF/6.3V/X5R" V 6550 3550 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 6538 4200 30  0001 C CNN
+F 3 "" H 6500 4350 60  0001 C CNN
+	1    6500 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 4150 6500 4150
+Connection ~ 6300 4150
+Connection ~ 6500 4150
+Connection ~ 6300 4550
+Connection ~ 6500 4550
+Wire Wire Line
+	6500 4550 6300 4550
+$Comp
+L tom-passives:C C?
+U 1 1 5E896C49
+P 6700 2050
+AR Path="/5E98B37D/5E896C49" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E896C49" Ref="C50"  Part="1" 
+F 0 "C50" V 6650 1250 40  0000 L CNN
+F 1 "4.7uF/6.3V/X5R" V 6750 1250 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 6738 1900 30  0001 C CNN
+F 3 "" H 6700 2050 60  0001 C CNN
+	1    6700 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 1850 6700 1850
+Connection ~ 6500 1850
+Wire Wire Line
+	6500 2250 6700 2250
+Connection ~ 6500 2250
+$Comp
+L tom-passives:C C?
+U 1 1 5E8A3E42
+P 7100 2050
+AR Path="/5E98B37D/5E8A3E42" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E8A3E42" Ref="C51"  Part="1" 
+F 0 "C51" V 7050 1250 40  0000 L CNN
+F 1 "0.47uF/6.3V/X5R" V 7150 1250 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 7138 1900 30  0001 C CNN
+F 3 "" H 7100 2050 60  0001 C CNN
+	1    7100 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E8ACFD9
+P 7300 2050
+AR Path="/5E98B37D/5E8ACFD9" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E8ACFD9" Ref="C52"  Part="1" 
+F 0 "C52" V 7250 1250 40  0000 L CNN
+F 1 "0.47uF/6.3V/X5R" V 7350 1250 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 7338 1900 30  0001 C CNN
+F 3 "" H 7300 2050 60  0001 C CNN
+	1    7300 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E8AD165
+P 7500 2050
+AR Path="/5E98B37D/5E8AD165" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E8AD165" Ref="C54"  Part="1" 
+F 0 "C54" V 7450 1250 40  0000 L CNN
+F 1 "0.47uF/6.3V/X5R" V 7550 1250 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 7538 1900 30  0001 C CNN
+F 3 "" H 7500 2050 60  0001 C CNN
+	1    7500 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E8AD2FF
+P 7700 2050
+AR Path="/5E98B37D/5E8AD2FF" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E8AD2FF" Ref="C56"  Part="1" 
+F 0 "C56" V 7650 1250 40  0000 L CNN
+F 1 "0.47uF/6.3V/X5R" V 7750 1250 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 7738 1900 30  0001 C CNN
+F 3 "" H 7700 2050 60  0001 C CNN
+	1    7700 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6900 1850 7100 1850
+Connection ~ 7100 1850
+Wire Wire Line
+	7100 1850 7300 1850
+Connection ~ 7300 1850
+Wire Wire Line
+	7300 1850 7500 1850
+Connection ~ 7500 1850
+Wire Wire Line
+	7500 1850 7700 1850
+Wire Wire Line
+	6900 2250 7100 2250
+Connection ~ 7100 2250
+Wire Wire Line
+	7100 2250 7300 2250
+Connection ~ 7300 2250
+Wire Wire Line
+	7300 2250 7500 2250
+Connection ~ 7500 2250
+Wire Wire Line
+	7500 2250 7700 2250
+$Comp
+L tom-passives:C C?
+U 1 1 5E8C720A
+P 6500 3200
+AR Path="/5E98B37D/5E8C720A" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E8C720A" Ref="C49"  Part="1" 
+F 0 "C49" V 6450 2400 40  0000 L CNN
+F 1 "0.47uF/6.3V/X5R" V 6550 2400 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 6538 3050 30  0001 C CNN
+F 3 "" H 6500 3200 60  0001 C CNN
+	1    6500 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E8C753C
+P 7300 4350
+AR Path="/5E98B37D/5E8C753C" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E8C753C" Ref="C53"  Part="1" 
+F 0 "C53" V 7250 3550 40  0000 L CNN
+F 1 "0.47uF/6.3V/X5R" V 7350 3550 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 7338 4200 30  0001 C CNN
+F 3 "" H 7300 4350 60  0001 C CNN
+	1    7300 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E8C7B18
+P 7500 4350
+AR Path="/5E98B37D/5E8C7B18" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E8C7B18" Ref="C55"  Part="1" 
+F 0 "C55" V 7450 3550 40  0000 L CNN
+F 1 "0.47uF/6.3V/X5R" V 7550 3550 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 7538 4200 30  0001 C CNN
+F 3 "" H 7500 4350 60  0001 C CNN
+	1    7500 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E8C80FD
+P 7700 4350
+AR Path="/5E98B37D/5E8C80FD" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E8C80FD" Ref="C58"  Part="1" 
+F 0 "C58" V 7650 3550 40  0000 L CNN
+F 1 "0.47uF/6.3V/X5R" V 7750 3550 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 7738 4200 30  0001 C CNN
+F 3 "" H 7700 4350 60  0001 C CNN
+	1    7700 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E8C8B73
+P 7900 4350
+AR Path="/5E98B37D/5E8C8B73" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E8C8B73" Ref="C59"  Part="1" 
+F 0 "C59" V 7850 3550 40  0000 L CNN
+F 1 "0.47uF/6.3V/X5R" V 7950 3550 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 7938 4200 30  0001 C CNN
+F 3 "" H 7900 4350 60  0001 C CNN
+	1    7900 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 4150 7300 4150
+Connection ~ 7300 4150
+Wire Wire Line
+	7300 4150 7500 4150
+Connection ~ 7500 4150
+Connection ~ 7700 4150
+Wire Wire Line
+	7700 4150 7900 4150
+Wire Wire Line
+	7900 4550 7700 4550
+Connection ~ 7300 4550
+Wire Wire Line
+	7300 4550 7100 4550
+Connection ~ 7500 4550
+Wire Wire Line
+	7500 4550 7300 4550
+Connection ~ 7700 4550
+Wire Wire Line
+	6300 3000 6500 3000
+Connection ~ 6300 3000
+Wire Wire Line
+	6500 3400 6300 3400
+Connection ~ 6300 3400
+$Comp
+L tom-passives:C C?
+U 1 1 5E8FD843
+P 6700 4350
+AR Path="/5E98B37D/5E8FD843" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E8FD843" Ref="C71"  Part="1" 
+F 0 "C71" V 6650 3550 40  0000 L CNN
+F 1 "4.7uF/6.3V/X5R" V 6750 3550 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 6738 4200 30  0001 C CNN
+F 3 "" H 6700 4350 60  0001 C CNN
+	1    6700 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E8FD9ED
+P 6900 4350
+AR Path="/5E98B37D/5E8FD9ED" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E8FD9ED" Ref="C72"  Part="1" 
+F 0 "C72" V 6850 3550 40  0000 L CNN
+F 1 "4.7uF/6.3V/X5R" V 6950 3550 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 6938 4200 30  0001 C CNN
+F 3 "" H 6900 4350 60  0001 C CNN
+	1    6900 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E8FDBCB
+P 7100 4350
+AR Path="/5E98B37D/5E8FDBCB" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E8FDBCB" Ref="C73"  Part="1" 
+F 0 "C73" V 7050 3550 40  0000 L CNN
+F 1 "4.7uF/6.3V/X5R" V 7150 3550 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 7138 4200 30  0001 C CNN
+F 3 "" H 7100 4350 60  0001 C CNN
+	1    7100 4350
+	1    0    0    -1  
+$EndComp
+Connection ~ 7100 4150
+Connection ~ 6700 4150
+Wire Wire Line
+	6700 4150 6900 4150
+Connection ~ 6900 4150
+Wire Wire Line
+	6900 4150 7100 4150
+Connection ~ 7100 4550
+Connection ~ 6700 4550
+Wire Wire Line
+	6700 4550 6900 4550
+Connection ~ 6900 4550
+Wire Wire Line
+	6900 4550 7100 4550
+$Comp
+L tom-passives:C C?
+U 1 1 5E914FE0
+P 8100 4350
+AR Path="/5E98B37D/5E914FE0" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E914FE0" Ref="C75"  Part="1" 
+F 0 "C75" V 8050 3550 40  0000 L CNN
+F 1 "0.47uF/6.3V/X5R" V 8150 3550 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 8138 4200 30  0001 C CNN
+F 3 "" H 8100 4350 60  0001 C CNN
+	1    8100 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E914FEA
+P 8300 4350
+AR Path="/5E98B37D/5E914FEA" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E914FEA" Ref="C76"  Part="1" 
+F 0 "C76" V 8250 3550 40  0000 L CNN
+F 1 "0.47uF/6.3V/X5R" V 8350 3550 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 8338 4200 30  0001 C CNN
+F 3 "" H 8300 4350 60  0001 C CNN
+	1    8300 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-passives:C C?
+U 1 1 5E914FF4
+P 8500 4350
+AR Path="/5E98B37D/5E914FF4" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E914FF4" Ref="C77"  Part="1" 
+F 0 "C77" V 8450 3550 40  0000 L CNN
+F 1 "0.47uF/6.3V/X5R" V 8550 3550 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 8538 4200 30  0001 C CNN
+F 3 "" H 8500 4350 60  0001 C CNN
+	1    8500 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 4150 8100 4150
+Connection ~ 8100 4150
+Wire Wire Line
+	8100 4150 8300 4150
+Connection ~ 8300 4150
+Wire Wire Line
+	8300 4150 8500 4150
+Wire Wire Line
+	8500 4550 8300 4550
+Connection ~ 8100 4550
+Wire Wire Line
+	8100 4550 7900 4550
+Connection ~ 8300 4550
+Wire Wire Line
+	8300 4550 8100 4550
+Connection ~ 7900 4150
+Connection ~ 7900 4550
+$Comp
+L tom-passives:C C?
+U 1 1 5E91F236
+P 6700 3200
+AR Path="/5E98B37D/5E91F236" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E91F236" Ref="C69"  Part="1" 
+F 0 "C69" V 6650 2400 40  0000 L CNN
+F 1 "0.47uF/6.3V/X5R" V 6750 2400 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 6738 3050 30  0001 C CNN
+F 3 "" H 6700 3200 60  0001 C CNN
+	1    6700 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 3000 6700 3000
+Connection ~ 6500 3000
+Wire Wire Line
+	6700 3400 6500 3400
+Connection ~ 6500 3400
+$Comp
+L tom-passives:C C?
+U 1 1 5E93790E
+P 6900 2050
+AR Path="/5E98B37D/5E93790E" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E93790E" Ref="C70"  Part="1" 
+F 0 "C70" V 6850 1250 40  0000 L CNN
+F 1 "4.7uF/6.3V/X5R" V 6950 1250 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 6938 1900 30  0001 C CNN
+F 3 "" H 6900 2050 60  0001 C CNN
+	1    6900 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 1850 6900 1850
+Connection ~ 6700 1850
+Connection ~ 6900 1850
+Wire Wire Line
+	6900 2250 6700 2250
+Connection ~ 6900 2250
+Connection ~ 6700 2250
+$Comp
+L tom-passives:C C?
+U 1 1 5E947B86
+P 7900 2050
+AR Path="/5E98B37D/5E947B86" Ref="C?"  Part="1" 
+AR Path="/5E48AFE6/5F1FEEB3/5E947B86" Ref="C74"  Part="1" 
+F 0 "C74" V 7850 1250 40  0000 L CNN
+F 1 "0.47uF/6.3V/X5R" V 7950 1250 40  0000 L CNN
+F 2 "tom-passives:C_0402_1005Metric" H 7938 1900 30  0001 C CNN
+F 3 "" H 7900 2050 60  0001 C CNN
+	1    7900 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 1850 7900 1850
+Connection ~ 7700 1850
+Wire Wire Line
+	7900 2250 7700 2250
+Connection ~ 7700 2250
+Wire Wire Line
+	7500 4150 7700 4150
+Wire Wire Line
+	7500 4550 7700 4550
+Wire Wire Line
+	6500 4150 6700 4150
+Wire Wire Line
+	6500 4550 6700 4550
 $EndSCHEMATC

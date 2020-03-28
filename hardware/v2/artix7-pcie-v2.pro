@@ -1,4 +1,4 @@
-update=Thu 12 Mar 2020 05:06:38 PM PDT
+update=Fri 27 Mar 2020 04:18:59 PM PDT
 version=1
 last_client=kicad
 [general]
@@ -31,13 +31,21 @@ MinHoleToHole=0.25
 TrackWidth1=0.127
 TrackWidth2=0.127
 TrackWidth3=0.3
+TrackWidth4=0.508
+TrackWidth5=0.762
+TrackWidth6=1.27
 ViaDiameter1=0.55
 ViaDrill1=0.25
 ViaDiameter2=0.55
 ViaDrill2=0.25
-dPairWidth1=0.2
-dPairGap1=0.25
+ViaDiameter3=1.5
+ViaDrill3=0.75
+dPairWidth1=0.127
+dPairGap1=0.508
 dPairViaGap1=0.25
+dPairWidth2=0.127
+dPairGap2=0.508
+dPairViaGap2=0.508
 SilkLineWidth=0.12
 SilkTextSizeV=1
 SilkTextSizeH=1
@@ -67,12 +75,12 @@ Name=F.Cu
 Type=0
 Enabled=1
 [pcbnew/Layer.In1.Cu]
-Name=In1.Cu
-Type=0
+Name=Gnd.Cu
+Type=1
 Enabled=1
 [pcbnew/Layer.In2.Cu]
-Name=In2.Cu
-Type=0
+Name=Pwr.Cu
+Type=1
 Enabled=1
 [pcbnew/Layer.In3.Cu]
 Name=In3.Cu
@@ -237,6 +245,6 @@ ViaDiameter=0.55
 ViaDrill=0.25
 uViaDiameter=0.3
 uViaDrill=0.1
-dPairWidth=0.2
-dPairGap=0.25
+dPairWidth=0.127
+dPairGap=0.508
 dPairViaGap=0.25
