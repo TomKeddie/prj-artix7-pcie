@@ -5,6 +5,7 @@ import argparse
 
 from migen import *
 
+from litex.soc.cores import spi_flash
 from litex.soc.cores.clock import *
 from litex.soc.cores.gpio import GPIOTristate, GPIOOut
 from litex.soc.cores.uart import UARTWishboneBridge
@@ -47,16 +48,16 @@ _io = [
         IOStandard("LVCMOS33"),
     ),
     ("usb_a", 0,
-     Subsignal("d_p", Pins("N13")),    # IO_L10_16_P
-     Subsignal("d_n", Pins("N14")),    # IO_L10_16_N
-     Subsignal("pullup", Pins("N15")), # IO_L8_16_N
+     Subsignal("d_p", Pins("P19")),    # IO_L10_16_P
+     Subsignal("d_n", Pins("R19")),    # IO_L10_16_N
+     Subsignal("pullup", Pins("P20")), # IO_L8_16_N
      IOStandard("LVCMOS33")
     ),
     ("usb_micro", 0,
      Subsignal("d_p", Pins("V18")),    # IO_L10_16_P
      Subsignal("d_n", Pins("V19")),    # IO_L10_16_N
      Subsignal("pullup", Pins("U18")), # IO_L8_16_N
-     Subsignal("id", Pins("T18")), # IO_L8_16_N
+     Subsignal("id", Pins("U20")), # IO_L8_16_N
      IOStandard("LVCMOS33")
     ),
     ("TP1", 0, Pins("B1"), IOStandard("LVCMOS15")),
@@ -178,6 +179,9 @@ class BaseSoC(SoCCore):
         self.add_csr("clk_i2c")
         self.submodules.pcie_ctrl = GPIOTristate(platform.request("pcie_ctrl").raw_bits())
         self.add_csr("pcie_ctrl")
+        self.submodules.spi_flash = spi_flash.SpiFlashDualQuad(platform.request("spiflash4x"), with_bitbang=True, endianness="little")
+        self.spi_flash.add_clk_primitive(platform.device)
+        self.add_csr("spi_flash")
 
 
 
