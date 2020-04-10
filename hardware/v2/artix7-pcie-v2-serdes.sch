@@ -41,8 +41,6 @@ Wire Wire Line
 	3900 2450 3900 2700
 Wire Wire Line
 	3900 2700 7250 2700
-Wire Wire Line
-	4300 4600 4300 3400
 Text Label 3100 2350 0    50   ~ 0
 S0_RX_N
 Text Label 3100 2450 0    50   ~ 0
@@ -119,7 +117,7 @@ F 3 "" H 1800 3050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 1700 5950 0    50   Output ~ 0
-S3_PERST
+S2_PERST
 Wire Wire Line
 	2300 5200 2300 5350
 $Comp
@@ -156,39 +154,37 @@ F 3 "" H 3000 5950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3000 4300 3500 4300
+	3000 4300 3900 4300
 Wire Wire Line
-	3000 4400 3600 4400
+	3000 4400 4000 4400
 Text Label 3100 4700 0    50   ~ 0
-S3_RX_P
+S2_RX_P
 Text Label 3100 4600 0    50   ~ 0
-S3_RX_N
+S2_RX_N
 Text Label 3100 4400 0    50   ~ 0
-S3_CLK_P
+MGTREFCLK1_C_P
 Text Label 3100 4300 0    50   ~ 0
-S3_CLK_N
+MGTREFCLK1_C_N
 Wire Wire Line
-	3500 3900 7250 3900
+	3900 3900 5450 3900
 Wire Wire Line
-	3500 4300 3500 3900
-Wire Wire Line
-	4400 4700 3000 4700
+	3900 4300 3900 3900
 Wire Wire Line
 	3000 4600 4300 4600
 Wire Wire Line
-	7250 3800 3600 3800
+	7250 3800 5350 3800
 Wire Wire Line
-	3600 3800 3600 4400
+	4000 3800 4000 4400
 Text Label 3100 4900 0    50   ~ 0
-S3_TX_N
+S2_TX_N
 Text Label 3100 5000 0    50   ~ 0
-S3_TX_P
+S2_TX_P
 Wire Wire Line
 	3000 1850 3000 1350
 Wire Wire Line
 	3000 1350 1900 1350
 Text HLabel 1900 3700 0    50   Output ~ 0
-S3_WAKE
+S2_WAKE
 Wire Wire Line
 	3000 4100 3000 3700
 Wire Wire Line
@@ -392,27 +388,25 @@ Wire Wire Line
 $Comp
 L tom-passives:C C22
 U 1 1 5E746FE8
-P 4700 2400
-F 0 "C22" V 4471 2400 40  0000 C CNN
-F 1 "0.1uF/6.3V/X5R/PCIE" V 4547 2400 40  0000 C CNN
-F 2 "tom-passives:C_0402_1005Metric" H 4738 2250 30  0001 C CNN
-F 3 "" H 4700 2400 60  0001 C CNN
-	1    4700 2400
+P 4700 2200
+F 0 "C22" V 4471 2200 40  0000 C CNN
+F 1 "0.1uF/6.3V/X5R/PCIE" V 4547 2200 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 4738 2050 30  0001 C CNN
+F 3 "" H 4700 2200 60  0001 C CNN
+	1    4700 2200
 	0    1    1    0   
 $EndComp
 $Comp
 L tom-passives:C C24
 U 1 1 5E7489FC
-P 5200 2500
-F 0 "C24" V 4971 2500 40  0000 C CNN
-F 1 "0.1uF/6.3V/X5R/PCIE" V 5047 2500 40  0000 C CNN
-F 2 "tom-passives:C_0402_1005Metric" H 5238 2350 30  0001 C CNN
-F 3 "" H 5200 2500 60  0001 C CNN
-	1    5200 2500
+P 5200 2300
+F 0 "C24" V 4971 2300 40  0000 C CNN
+F 1 "0.1uF/6.3V/X5R/PCIE" V 5047 2300 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 5238 2150 30  0001 C CNN
+F 3 "" H 5200 2300 60  0001 C CNN
+	1    5200 2300
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	4400 3300 4400 4700
 Wire Wire Line
 	4000 2800 4000 2350
 Wire Wire Line
@@ -420,17 +414,13 @@ Wire Wire Line
 Wire Wire Line
 	4000 2800 7250 2800
 Wire Wire Line
-	4500 2400 4100 2400
-Wire Wire Line
-	4100 2400 4100 5000
+	4500 2200 4100 2200
 Wire Wire Line
 	4100 5000 3000 5000
 Wire Wire Line
 	3000 4900 4200 4900
 Wire Wire Line
-	4200 4900 4200 2500
-Wire Wire Line
-	4200 2500 5000 2500
+	4200 2300 5000 2300
 Wire Wire Line
 	2400 2950 2500 2950
 Connection ~ 2500 2950
@@ -454,10 +444,10 @@ Text Label 6750 1900 0    50   ~ 0
 S0_TX_C_N
 Text Label 6750 1800 0    50   ~ 0
 S0_TX_C_P
-Text Label 6750 2400 0    50   ~ 0
-S3_TX_C_P
-Text Label 6750 2500 0    50   ~ 0
-S3_TX_C_N
+Text Label 6750 2200 0    50   ~ 0
+S2_TX_C_P
+Text Label 6750 2300 0    50   ~ 0
+S2_TX_C_N
 Text HLabel 1900 3500 0    50   Input ~ 0
 MGT_REFCLK0_N
 Wire Wire Line
@@ -465,13 +455,9 @@ Wire Wire Line
 Wire Wire Line
 	3100 3700 3100 3500
 Wire Wire Line
-	3100 3500 1900 3500
-Wire Wire Line
 	7250 3600 3250 3600
 Wire Wire Line
 	3250 3600 3250 3350
-Wire Wire Line
-	3250 3350 1900 3350
 Text HLabel 1900 3350 0    50   Input ~ 0
 MGT_REFCLK0_P
 Text HLabel 10800 5300 2    50   Input ~ 0
@@ -590,7 +576,7 @@ L power:PWR_FLAG #FLG0114
 U 1 1 5F118316
 P 2600 5650
 F 0 "#FLG0114" H 2600 5725 50  0001 C CNN
-F 1 "PWR_FLAG" H 2600 5823 50  0000 C CNN
+F 1 "PWR_FLAG" V 2600 5950 50  0000 C CNN
 F 2 "" H 2600 5650 50  0001 C CNN
 F 3 "~" H 2600 5650 50  0001 C CNN
 	1    2600 5650
@@ -612,15 +598,13 @@ Connection ~ 2400 5950
 NoConn ~ 7250 2000
 NoConn ~ 7250 2100
 Wire Wire Line
-	4300 3400 7250 3400
+	4300 3200 7250 3200
 Wire Wire Line
-	7250 3300 4400 3300
+	7250 3100 4400 3100
 Wire Wire Line
-	7250 2500 5400 2500
+	7250 2300 5400 2300
 Wire Wire Line
-	4900 2400 7250 2400
-NoConn ~ 7250 2200
-NoConn ~ 7250 2300
+	4900 2200 7250 2200
 Wire Wire Line
 	7250 2900 7150 2900
 Wire Wire Line
@@ -640,18 +624,6 @@ Wire Wire Line
 	7250 3000 7150 3000
 Connection ~ 7150 3000
 Wire Wire Line
-	7150 3000 7150 3100
-Wire Wire Line
-	7150 3100 7250 3100
-Connection ~ 7150 3100
-Wire Wire Line
-	7150 3100 7150 3200
-Wire Wire Line
-	7250 3200 7150 3200
-Connection ~ 7150 3200
-Wire Wire Line
-	7150 3200 7150 4000
-Wire Wire Line
 	8050 6000 8050 6150
 Text Label 8050 6150 0    50   ~ 0
 MGTRREF
@@ -659,4 +631,64 @@ Wire Wire Line
 	8900 5300 9100 5300
 Wire Wire Line
 	8900 5700 9100 5700
+Text Label 2500 5600 1    50   ~ 0
+S2_GND
+Text Label 2400 5600 1    50   ~ 0
+S2_DRAIN
+Wire Wire Line
+	3100 3500 1900 3500
+Wire Wire Line
+	3250 3350 1900 3350
+$Comp
+L tom-passives:C C48
+U 1 1 5EDACCD3
+P 5650 3900
+F 0 "C48" V 5421 3900 40  0000 C CNN
+F 1 "0.1uF/6.3V/X5R/PCIE" V 5497 3900 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 5688 3750 30  0001 C CNN
+F 3 "" H 5650 3900 60  0001 C CNN
+	1    5650 3900
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	5850 3900 7250 3900
+$Comp
+L tom-passives:C C47
+U 1 1 5EDAF2BE
+P 5150 3800
+F 0 "C47" V 4921 3800 40  0000 C CNN
+F 1 "0.1uF/6.3V/X5R/PCIE" V 4997 3800 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 5188 3650 30  0001 C CNN
+F 3 "" H 5150 3800 60  0001 C CNN
+	1    5150 3800
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	4950 3800 4000 3800
+Text Label 6250 3900 0    50   ~ 0
+MGTREFCLK1_N
+Text Label 6250 3800 0    50   ~ 0
+MGTREFCLK1_P
+Wire Wire Line
+	3000 4700 4400 4700
+Wire Wire Line
+	4100 2200 4100 5000
+Wire Wire Line
+	4200 4900 4200 2300
+Wire Wire Line
+	7150 3000 7150 3300
+Wire Wire Line
+	4300 3200 4300 4600
+Wire Wire Line
+	4400 3100 4400 4700
+Wire Wire Line
+	7250 3300 7150 3300
+Connection ~ 7150 3300
+Wire Wire Line
+	7150 3300 7150 3400
+Wire Wire Line
+	7250 3400 7150 3400
+Connection ~ 7150 3400
+Wire Wire Line
+	7150 3400 7150 4000
 $EndSCHEMATC

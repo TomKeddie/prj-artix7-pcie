@@ -60,14 +60,7 @@ $EndComp
 Wire Wire Line
 	8550 4100 9300 4100
 Wire Wire Line
-	8550 4100 8550 4900
-Wire Wire Line
-	8550 4900 9300 4900
-Wire Wire Line
-	8550 4900 8550 5800
-Wire Wire Line
 	8550 5800 9300 5800
-Connection ~ 8550 4900
 Wire Wire Line
 	9800 4100 10700 4100
 Wire Wire Line
@@ -1048,14 +1041,6 @@ F1 C8 FC 40 98 30 61 C2 84 09 13 26 4C 98 30 61 1F 18 F6 3D 4D 53 26 0E 00 00 F8
 20 26 73 00 00 00 62 FF 0B 39 93 98 23 90 6F B0 88 00 00 00 00 49 45 4E 44 AE 42 60 82 
 EndData
 $EndBitmap
-Text HLabel 9950 4200 2    50   BiDi ~ 0
-IO_L9_16_P
-Text HLabel 9150 4200 0    50   BiDi ~ 0
-IO_L9_16_N
-Wire Wire Line
-	9800 4200 9950 4200
-Wire Wire Line
-	9300 4200 9150 4200
 $Comp
 L power:GND #PWR025
 U 1 1 5E980861
@@ -1095,54 +1080,54 @@ Connection ~ 10700 5800
 Wire Wire Line
 	8550 5800 8550 6000
 Connection ~ 8550 5800
-Text HLabel 9950 4400 2    50   BiDi ~ 0
+Text HLabel 9950 4300 2    50   BiDi ~ 0
 IO_L17_16_P
-Text HLabel 9150 4400 0    50   BiDi ~ 0
+Text HLabel 9150 4300 0    50   BiDi ~ 0
 IO_L17_16_N
-Text HLabel 9150 4500 0    50   BiDi ~ 0
+Text HLabel 9150 4400 0    50   BiDi ~ 0
 IO_L21_16_N
-Text HLabel 9950 4500 2    50   BiDi ~ 0
+Text HLabel 9950 4400 2    50   BiDi ~ 0
 IO_L21_16_P
-Text HLabel 9950 4600 2    50   BiDi ~ 0
+Text HLabel 9950 4500 2    50   BiDi ~ 0
 IO_L20_16_P
-Text HLabel 9150 4600 0    50   BiDi ~ 0
+Text HLabel 9150 4500 0    50   BiDi ~ 0
 IO_L20_16_N
 Text HLabel 9150 4800 0    50   BiDi ~ 0
 IO_L24_16_N
 Text HLabel 9950 4800 2    50   BiDi ~ 0
 IO_L24_16_P
-Text HLabel 9150 4300 0    50   BiDi ~ 0
+Text HLabel 9150 4200 0    50   BiDi ~ 0
 IO_L11_16_N
-Text HLabel 9950 4300 2    50   BiDi ~ 0
+Text HLabel 9950 4200 2    50   BiDi ~ 0
 IO_L11_16_P
 Wire Wire Line
-	9150 4300 9300 4300
+	9150 4200 9300 4200
 Wire Wire Line
-	9300 4400 9150 4400
+	9300 4300 9150 4300
 Wire Wire Line
-	9300 4600 9150 4600
+	9300 4500 9150 4500
 Wire Wire Line
-	9150 4700 9300 4700
+	9150 4600 9300 4600
 Wire Wire Line
 	9300 4800 9150 4800
 Wire Wire Line
 	9800 4800 9950 4800
 Wire Wire Line
-	9950 4700 9800 4700
-Wire Wire Line
-	9800 4600 9950 4600
-Wire Wire Line
-	9800 4400 9950 4400
-Wire Wire Line
-	9950 4300 9800 4300
-Text HLabel 9150 4700 0    50   BiDi ~ 0
-IO_L22_16_N
-Text HLabel 9950 4700 2    50   BiDi ~ 0
-IO_L22_16_P
+	9950 4600 9800 4600
 Wire Wire Line
 	9800 4500 9950 4500
 Wire Wire Line
-	9300 4500 9150 4500
+	9800 4300 9950 4300
+Wire Wire Line
+	9950 4200 9800 4200
+Text HLabel 9150 4600 0    50   BiDi ~ 0
+IO_L22_16_N
+Text HLabel 9950 4600 2    50   BiDi ~ 0
+IO_L22_16_P
+Wire Wire Line
+	9800 4400 9950 4400
+Wire Wire Line
+	9300 4400 9150 4400
 Wire Wire Line
 	9800 5700 9950 5700
 Text Label 9950 5700 0    50   ~ 0
@@ -1721,4 +1706,19 @@ F 3 "~" H 5950 2300 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5300 3800 5150 3800
+Wire Wire Line
+	8550 4100 8550 4900
+Wire Wire Line
+	9300 4900 8550 4900
+Connection ~ 8550 4900
+Wire Wire Line
+	8550 4900 8550 5800
+Text HLabel 9950 4700 2    50   BiDi ~ 0
+IO_L23_16_P
+Text HLabel 9150 4700 0    50   BiDi ~ 0
+IO_L23_16_N
+Wire Wire Line
+	9300 4700 9150 4700
+Wire Wire Line
+	9800 4700 9950 4700
 $EndSCHEMATC
