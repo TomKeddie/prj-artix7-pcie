@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name tom-connectors)(type Legacy)(uri /home/tom/git/TomKeddie/prj-artix7-pcie/hardware/tom-kicad/symbols/tom-connectors.lib)(options "")(descr ""))
+  (lib (name tom-passives)(type Legacy)(uri /home/tom/git/TomKeddie/prj-artix7-pcie/hardware/tom-kicad/symbols/tom-passives.lib)(options "")(descr ""))
+)
