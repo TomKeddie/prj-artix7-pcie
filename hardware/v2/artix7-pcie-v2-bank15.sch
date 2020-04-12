@@ -409,20 +409,10 @@ Text HLabel 6950 1450 1    50   BiDi ~ 0
 IO_L24_16_N
 Text HLabel 6850 1450 1    50   BiDi ~ 0
 IO_L24_16_P
-Text HLabel 6750 1450 1    50   BiDi ~ 0
-IO_L23_16_N
-Text HLabel 6650 1450 1    50   BiDi ~ 0
-IO_L23_16_P
-Wire Wire Line
-	4550 6800 6650 6800
-Wire Wire Line
-	4550 6900 6750 6900
-Wire Wire Line
-	6650 6800 6650 1450
-Wire Wire Line
-	6750 1450 6750 6900
-NoConn ~ 4550 4000
-NoConn ~ 4550 4100
+Text HLabel 5450 1450 1    50   BiDi ~ 0
+IO_L9_16_N
+Text HLabel 5550 1450 1    50   BiDi ~ 0
+IO_L9_16_P
 Wire Wire Line
 	4550 4500 5750 4500
 Wire Wire Line
@@ -431,4 +421,14 @@ Text HLabel 5750 1450 1    50   BiDi ~ 0
 IO_L11_16_N
 Text HLabel 5650 1450 1    50   BiDi ~ 0
 IO_L11_16_P
+Wire Wire Line
+	5550 1450 5550 4100
+Wire Wire Line
+	5550 4100 4550 4100
+Wire Wire Line
+	4550 4000 5450 4000
+Wire Wire Line
+	5450 4000 5450 1450
+NoConn ~ 4550 6800
+NoConn ~ 4550 6900
 $EndSCHEMATC

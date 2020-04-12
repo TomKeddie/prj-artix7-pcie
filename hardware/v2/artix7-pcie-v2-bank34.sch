@@ -1377,10 +1377,6 @@ Wire Wire Line
 Wire Wire Line
 	1150 3450 1300 3450
 Wire Wire Line
-	5450 2350 5300 2350
-Wire Wire Line
-	5450 2450 5300 2450
-Wire Wire Line
 	5450 6450 5300 6450
 Wire Wire Line
 	5300 6350 5450 6350
@@ -1444,10 +1440,10 @@ Text Label 1150 3550 2    50   ~ 0
 IO_L8_34_P
 Text Label 1150 3650 2    50   ~ 0
 IO_L8_34_N
-Text Label 5450 2350 0    50   ~ 0
-IO_L2_35_P
-Text Label 5450 2450 0    50   ~ 0
-IO_L2_35_N
+Text Label 5450 2150 0    50   ~ 0
+IO_L1_35_P
+Text Label 5450 2250 0    50   ~ 0
+IO_L1_35_N
 Text Label 5450 2550 0    50   ~ 0
 IO_L3_35_P
 Text Label 5450 2650 0    50   ~ 0
@@ -1456,10 +1452,10 @@ Text Label 5450 3350 0    50   ~ 0
 IO_L7_35_P
 Text Label 5450 3450 0    50   ~ 0
 IO_L7_35_N
-Text Label 5450 3550 0    50   ~ 0
-IO_L8_35_P
-Text Label 5450 3650 0    50   ~ 0
-IO_L8_35_N
+Text Label 5450 2950 0    50   ~ 0
+IO_L5_35_P
+Text Label 5450 3050 0    50   ~ 0
+IO_L5_35_N
 Text Label 5450 3750 0    50   ~ 0
 IO_L9_35_P
 Text Label 5450 3850 0    50   ~ 0
@@ -1473,14 +1469,14 @@ IO_L22_35_P
 Text Label 5450 6450 0    50   ~ 0
 IO_L22_35_N
 Text Label 8050 4050 2    50   ~ 0
-IO_L2_35_P
+IO_L1_35_P
 Text Label 8050 4150 2    50   ~ 0
 IO_L3_35_P
 Text Label 8050 4250 2    50   ~ 0
-IO_L8_35_P
-Text Label 8050 4350 2    50   ~ 0
-IO_L7_35_P
+IO_L5_35_P
 Text Label 8050 4450 2    50   ~ 0
+IO_L7_35_P
+Text Label 8050 4350 2    50   ~ 0
 IO_L9_35_P
 Text Label 8050 4550 2    50   ~ 0
 IO_L15_35_P
@@ -1499,14 +1495,14 @@ IO_L7_34_P
 Text Label 8050 5550 2    50   ~ 0
 IO_L8_34_P
 Text Label 8850 4050 0    50   ~ 0
-IO_L2_35_N
+IO_L1_35_N
 Text Label 8850 4150 0    50   ~ 0
 IO_L3_35_N
 Text Label 8850 4250 0    50   ~ 0
-IO_L8_35_N
-Text Label 8850 4350 0    50   ~ 0
-IO_L7_35_N
+IO_L5_35_N
 Text Label 8850 4450 0    50   ~ 0
+IO_L7_35_N
+Text Label 8850 4350 0    50   ~ 0
 IO_L9_35_N
 Text Label 8850 4550 0    50   ~ 0
 IO_L15_35_N
@@ -1526,8 +1522,6 @@ Text Label 8850 5550 0    50   ~ 0
 IO_L8_34_N
 NoConn ~ 5300 2750
 NoConn ~ 5300 2850
-NoConn ~ 5300 2950
-NoConn ~ 5300 3050
 NoConn ~ 5300 3150
 NoConn ~ 5300 3250
 NoConn ~ 5300 3950
@@ -1589,33 +1583,25 @@ NoConn ~ 5300 2050
 $Comp
 L tom-mechanical:TestPoint TP1
 U 1 1 5F37E446
-P 5450 2050
-F 0 "TP1" H 5508 2122 50  0000 L CNN
-F 1 "TestPoint" H 5508 2077 50  0001 L CNN
-F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 5650 2050 50  0001 C CNN
-F 3 "~" H 5650 2050 50  0001 C CNN
-	1    5450 2050
-	1    0    0    -1  
+P 6050 2350
+F 0 "TP1" H 6108 2422 50  0000 L CNN
+F 1 "TestPoint" H 6108 2377 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 6250 2350 50  0001 C CNN
+F 3 "~" H 6250 2350 50  0001 C CNN
+	1    6050 2350
+	0    1    -1   0   
 $EndComp
 $Comp
 L tom-mechanical:TestPoint TP2
 U 1 1 5F37EBC2
-P 5700 2050
-F 0 "TP2" H 5758 2122 50  0000 L CNN
-F 1 "TestPoint" H 5758 2077 50  0001 L CNN
-F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 5900 2050 50  0001 C CNN
-F 3 "~" H 5900 2050 50  0001 C CNN
-	1    5700 2050
-	1    0    0    -1  
+P 6050 2450
+F 0 "TP2" H 6108 2522 50  0000 L CNN
+F 1 "TestPoint" H 6108 2477 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 6250 2450 50  0001 C CNN
+F 3 "~" H 6250 2450 50  0001 C CNN
+	1    6050 2450
+	0    1    1    0   
 $EndComp
-Wire Wire Line
-	5450 2050 5450 2150
-Wire Wire Line
-	5450 2150 5300 2150
-Wire Wire Line
-	5300 2250 5700 2250
-Wire Wire Line
-	5700 2250 5700 2050
 $Comp
 L tom-mechanical:TestPoint TP4
 U 1 1 5F392D5A
@@ -2134,4 +2120,16 @@ $EndComp
 Wire Wire Line
 	8200 5750 8050 5750
 Connection ~ 8200 5750
+Wire Wire Line
+	5300 2350 6050 2350
+Wire Wire Line
+	5300 2450 6050 2450
+Wire Wire Line
+	5300 2250 5450 2250
+Wire Wire Line
+	5450 2150 5300 2150
+Wire Wire Line
+	5300 2950 5450 2950
+Wire Wire Line
+	5300 3050 5450 3050
 $EndSCHEMATC
