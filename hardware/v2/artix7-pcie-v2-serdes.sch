@@ -691,4 +691,6 @@ Wire Wire Line
 Connection ~ 7150 3400
 Wire Wire Line
 	7150 3400 7150 4000
+NoConn ~ 7250 2400
+NoConn ~ 7250 2500
 $EndSCHEMATC

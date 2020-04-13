@@ -1270,12 +1270,12 @@ NoConn ~ 1150 5100
 $Comp
 L tom-mechanical:TestPoint TP7
 U 1 1 5F3C3650
-P 5750 3900
-F 0 "TP7" V 5750 4088 50  0000 L CNN
-F 1 "TestPoint" H 5808 3927 50  0001 L CNN
-F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 5950 3900 50  0001 C CNN
-F 3 "~" H 5950 3900 50  0001 C CNN
-	1    5750 3900
+P 5750 2300
+F 0 "TP7" V 5750 2488 50  0000 L CNN
+F 1 "TestPoint" H 5808 2327 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 5950 2300 50  0001 C CNN
+F 3 "~" H 5950 2300 50  0001 C CNN
+	1    5750 2300
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -1383,8 +1383,6 @@ Wire Wire Line
 	5150 5300 5300 5300
 Text HLabel 5300 3800 2    50   BiDi ~ 0
 IO_L11_14_P
-Wire Wire Line
-	5150 5700 5300 5700
 Text HLabel 4950 900  2    50   Input ~ 0
 VCCO_14
 Wire Wire Line
@@ -1696,12 +1694,12 @@ Wire Wire Line
 $Comp
 L tom-mechanical:TestPoint TP8
 U 1 1 5F3CB4AF
-P 5750 2300
-F 0 "TP8" V 5750 2488 50  0000 L CNN
-F 1 "TestPoint" H 5808 2327 50  0001 L CNN
-F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 5950 2300 50  0001 C CNN
-F 3 "~" H 5950 2300 50  0001 C CNN
-	1    5750 2300
+P 5750 3900
+F 0 "TP8" V 5750 4088 50  0000 L CNN
+F 1 "TestPoint" H 5808 3927 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 5950 3900 50  0001 C CNN
+F 3 "~" H 5950 3900 50  0001 C CNN
+	1    5750 3900
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -1721,4 +1719,5 @@ Wire Wire Line
 	9950 4200 9800 4200
 Wire Wire Line
 	9300 4200 9150 4200
+NoConn ~ 5150 5700
 $EndSCHEMATC

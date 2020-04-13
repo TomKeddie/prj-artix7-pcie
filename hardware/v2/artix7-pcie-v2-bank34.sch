@@ -1389,10 +1389,6 @@ Wire Wire Line
 Wire Wire Line
 	5300 3750 5450 3750
 Wire Wire Line
-	5450 3650 5300 3650
-Wire Wire Line
-	5300 3550 5450 3550
-Wire Wire Line
 	5450 3450 5300 3450
 Wire Wire Line
 	5300 3350 5450 3350
@@ -2132,4 +2128,6 @@ Wire Wire Line
 	5300 2950 5450 2950
 Wire Wire Line
 	5300 3050 5450 3050
+NoConn ~ 5300 3550
+NoConn ~ 5300 3650
 $EndSCHEMATC
