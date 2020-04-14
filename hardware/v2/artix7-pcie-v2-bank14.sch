@@ -1333,7 +1333,7 @@ F 3 "" H 3150 3800 50  0000 C CNN
 	1    3150 3800
 	1    0    0    -1  
 $EndComp
-Text HLabel 5300 4800 2    50   Input ~ 0
+Text HLabel 5300 4800 2    50   Output ~ 0
 IO_L16_14_P
 Text HLabel 5300 4900 2    50   Output ~ 0
 IO_L16_14_N
@@ -1351,7 +1351,7 @@ Text HLabel 5300 4000 2    50   Input ~ 0
 IO_L12_14_P
 Wire Wire Line
 	5150 4000 5300 4000
-Text HLabel 5300 4100 2    50   Output ~ 0
+Text HLabel 5300 4100 2    50   Input ~ 0
 IO_L12_14_N
 Wire Wire Line
 	5150 4100 5300 4100
