@@ -39,11 +39,11 @@ _io = [
     ),
     ("serial", 0,
         Subsignal("tx", Pins("W17"), Misc("PULLUP=TRUE")),
-        Subsignal("rx", Pins("V17")),
+        Subsignal("rx", Pins("W20")),
         IOStandard("LVCMOS33"),
     ),
     ("serial2", 0,
-        Subsignal("tx", Pins("W20"), Misc("PULLUP=TRUE")),
+        Subsignal("tx", Pins("V17"), Misc("PULLUP=TRUE")),
         Subsignal("rx", Pins("W19")),
         IOStandard("LVCMOS33"),
     ),
@@ -60,14 +60,14 @@ _io = [
      Subsignal("id", Pins("U20")), # IO_L8_16_N
      IOStandard("LVCMOS33")
     ),
-    ("TP1", 0, Pins("B1"), IOStandard("LVCMOS15")),
-    ("TP2", 0, Pins("A1"), IOStandard("LVCMOS15")),
+    ("TP1", 0, Pins("C2"), IOStandard("LVCMOS15")),
+    ("TP2", 0, Pins("B2"), IOStandard("LVCMOS15")),
     ("TP3", 0, Pins("AB5"), IOStandard("LVCMOS18")),
     ("TP4", 0, Pins("AA5"), IOStandard("LVCMOS18")),
-    ("TP5", 0, Pins("B15"), IOStandard("LVCMOS25")),
-    ("TP6", 0, Pins("B16"), IOStandard("LVCMOS25")),
-    ("TP7", 0, Pins("V20"), IOStandard("LVCMOS33")),
-    ("TP8", 0, Pins("V22"), IOStandard("LVCMOS33")),
+    ("TP5", 0, Pins("B15"), IOStandard("LVCMOS25")), #
+    ("TP6", 0, Pins("B16"), IOStandard("LVCMOS25")), #
+    ("TP7", 0, Pins("V22"), IOStandard("LVCMOS33")), #
+    ("TP8", 0, Pins("V20"), IOStandard("LVCMOS33")), #
     ("user_btn_n", 0, Pins("U17"), IOStandard("LVCMOS33"), Misc("PULLUP=TRUE")),
     ("user_led_n", 0, Pins("AB10"), IOStandard("LVCMOS33")),
     ("rgb_led", 0,
@@ -87,10 +87,22 @@ _io = [
     # using different io standards here to make sure we have the bank
     # separation correct, voltages don't reflect schematic in some
     # cases.
-    ("J1_35", 0, Pins("B2 C2 D1 E1 G2 H2 J1 K1 J2 K2 L1 M1 N2 P2"), IOStandard("LVCMOS15")),
-    ("J1_34", 0, Pins("R2 R3 U1 T1 V2 U2 Y1 W1 Y2 W2 AB1 AA1 AB2 AB3"), IOStandard("LVCMOS18")),
-    ("J2_14", 0, Pins("AB18 AA18 AB20 AA19 AB22 AB21 AA21 AA20 Y22 Y21 W22 W21 U21 T21"), IOStandard("LVCMOS33")),
-    ("J2_16", 0, Pins("G22 G21 D22 E22 B22 C22 A21 B21 A19 A18 B18 B17 A16 A15"), IOStandard("LVCMOS25")),
+    ("J1_35", 0, Pins("A1 B1 D1 E1 G1 F1 J2 K2 K1 J1 L1 M1 N2 P2"), IOStandard("LVCMOS15")), #
+    ("J1_34", 0, Pins("R2 R3 U1 T1 V2 U2 Y1 W1 Y2 W2 AB1 AA1 AB2 AB3"), IOStandard("LVCMOS18")), #
+    ("J2_14", 0, Pins("AB18 AA18 AB20 AA19 AB22 AB21 AA21 AA20 Y22 Y21 W22 W21 U21 T21"), IOStandard("LVCMOS33")), #
+    ("J2_16", 0, Pins("G22 G21 D22 E22 B22 C22 B21 A21 B17 B18 A19 A18 A15 A16"), IOStandard("LVCMOS25")), #
+    # PCIe
+    ("pcie", 0,
+     Subsignal("tx_p", Pins("B6")),
+     Subsignal("tx_n", Pins("A6")),
+     Subsignal("rx_p", Pins("B10")),
+     Subsignal("rx_n", Pins("A10")),
+     
+     Subsignal("clk_p", Pins("F10")),
+     Subsignal("clk_n", Pins("E10")),
+
+     
+    ),
 ]
 
 class DiffOut(Module, AutoCSR):
@@ -182,6 +194,76 @@ class BaseSoC(SoCCore):
         self.submodules.spi_flash = spi_flash.SpiFlashDualQuad(platform.request("spiflash4x"), with_bitbang=True, endianness="little")
         self.spi_flash.add_clk_primitive(platform.device)
         self.add_csr("spi_flash")
+
+        platform.add_source("xilinx_ip/pcie_7x_0/pcie_7x_0.xci")
+        pcie_pads = platform.request("pcie")
+        #   IBUFDS_GTE2 refclk_ibuf (.O(sys_clk), .ODIV2(), .I(sys_clk_p), .CEB(1'b0), .IB(sys_clk_n));
+        sys_clk = Signal()
+        self.specials += [
+            Instance("IBUFDS_GTE2",
+                     i_I=pcie_pads.clk_p,
+                     i_IB=pcie_pads.clk_n,
+                     i_CEB=0,
+                     o_O=sys_clk),
+        ]
+        self.specials += [
+            Instance("pcie_7x_0",
+                     o_pci_exp_txp=pcie_pads.tx_p,
+                     o_pci_exp_txn=pcie_pads.tx_n,
+                     i_pci_exp_rxp=pcie_pads.rx_p,
+                     i_pci_exp_rxn=pcie_pads.rx_n,
+                     
+                     i_sys_clk=sys_clk,
+                     i_sys_rst_n=1,
+                     
+                     i_s_axis_tx_tready=0,
+                     i_s_axis_tx_tdata=0,
+                     i_s_axis_tx_tkeep=0,
+                     i_s_axis_tx_tlast=0,
+                     i_s_axis_tx_tvalid=1,                     
+                     i_s_axis_tx_tuser=0,
+                     
+                     i_m_axis_rx_tready=0,
+
+                     i_cfg_interrupt=0,
+                     i_cfg_interrupt_assert=0,
+                     i_cfg_interrupt_di=0,
+                     i_cfg_interrupt_stat=0,
+                     
+            )
+            ]
+#     user_clk_out : OUT STD_LOGIC;
+#     user_reset_out : OUT STD_LOGIC;
+#     user_lnk_up : OUT STD_LOGIC;
+#     user_app_rdy : OUT STD_LOGIC;
+#     : OUT STD_LOGIC;
+#    : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
+#    : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+#    : IN STD_LOGIC;
+#     : IN STD_LOGIC;
+#     s_axis_tx_tdata: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+#     m_axis_rx_tdata : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
+#     m_axis_rx_tkeep : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+#     m_axis_rx_tlast : OUT STD_LOGIC;
+#     m_axis_rx_tvalid : OUT STD_LOGIC;
+#     m_axis_rx_tready : IN STD_LOGIC;
+#     m_axis_rx_tuser : OUT STD_LOGIC_VECTOR(21 DOWNTO 0);
+#     cfg_interrupt : IN STD_LOGIC;
+#     cfg_interrupt_rdy : OUT STD_LOGIC;
+#     cfg_interrupt_assert : IN STD_LOGIC;
+#     cfg_interrupt_di : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+#     cfg_interrupt_do : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+#     cfg_interrupt_mmenable : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+#     cfg_interrupt_msienable : OUT STD_LOGIC;
+#     cfg_interrupt_msixenable : OUT STD_LOGIC;
+#     cfg_interrupt_msixfm : OUT STD_LOGIC;
+#     cfg_interrupt_stat : IN STD_LOGIC;
+#     cfg_pciecap_interrupt_msgnum : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+#     sys_clk : IN STD_LOGIC;
+#     sys_rst_n : IN STD_LOGIC
+#                 ),
+# 
+
 
 
 
