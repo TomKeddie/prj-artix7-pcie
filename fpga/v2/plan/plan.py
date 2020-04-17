@@ -91,17 +91,22 @@ _io = [
     ("J1_34", 0, Pins("R2 R3 U1 T1 V2 U2 Y1 W1 Y2 W2 AB1 AA1 AB2 AB3"), IOStandard("LVCMOS18")), #
     ("J2_14", 0, Pins("AB18 AA18 AB20 AA19 AB22 AB21 AA21 AA20 Y22 Y21 W22 W21 U21 T21"), IOStandard("LVCMOS33")), #
     ("J2_16", 0, Pins("G22 G21 D22 E22 B22 C22 B21 A21 B17 B18 A19 A18 A15 A16"), IOStandard("LVCMOS25")), #
-    # PCIe
-    ("pcie", 0,
+    ("S0", 0,
+     Subsignal("tx_p", Pins("B4")),
+     Subsignal("tx_n", Pins("A4")),
+     Subsignal("rx_p", Pins("B8")),
+     Subsignal("rx_n", Pins("A8")),
+     
+     Subsignal("clk_p", Pins("F6")),
+     Subsignal("clk_n", Pins("E6")),
+    ),
+    ("S2", 0,
      Subsignal("tx_p", Pins("B6")),
      Subsignal("tx_n", Pins("A6")),
      Subsignal("rx_p", Pins("B10")),
      Subsignal("rx_n", Pins("A10")),
-     
      Subsignal("clk_p", Pins("F10")),
      Subsignal("clk_n", Pins("E10")),
-
-     
     ),
 ]
 
@@ -125,7 +130,6 @@ class Platform(XilinxPlatform):
         self.add_platform_command("set_property CONFIG_VOLTAGE 3.3 [current_design]")
 
 # CRG ----------------------------------------------------------------------------------------------
-
 class _CRG(Module):
     def __init__(self, platform, sys_clk_freq):
         self.clock_domains.cd_sys       = ClockDomain()
@@ -138,6 +142,79 @@ class _CRG(Module):
 
         self.comb += pll.reset.eq(~platform.request("user_btn_n"))
 
+# PCIe ----------------------------------------------------------------------------------------------
+class PCIe(Module):
+    def __init__(self, platform):
+        platform.add_source("xilinx_ip/pcie_7x_0/pcie_7x_0.xci")
+        s2_pads = platform.request("S2")
+        sys_clk = Signal()
+        self.specials += [
+            Instance("IBUFDS_GTE2",
+                     i_I=s2_pads.clk_p,
+                     i_IB=s2_pads.clk_n,
+                     i_CEB=0,
+                     o_O=sys_clk),
+        ]
+        self.specials += [
+            Instance("pcie_7x_0",
+                     o_pci_exp_txp=s2_pads.tx_p,
+                     o_pci_exp_txn=s2_pads.tx_n,
+                     i_pci_exp_rxp=s2_pads.rx_p,
+                     i_pci_exp_rxn=s2_pads.rx_n,
+                     
+                     i_sys_clk=sys_clk,
+                     i_sys_rst_n=1,
+                     
+                     i_s_axis_tx_tready=0,
+                     i_s_axis_tx_tdata=0,
+                     i_s_axis_tx_tkeep=0,
+                     i_s_axis_tx_tlast=0,
+                     i_s_axis_tx_tvalid=1,                     
+                     i_s_axis_tx_tuser=0,
+                     
+                     i_m_axis_rx_tready=0,
+
+                     i_cfg_interrupt=0,
+                     i_cfg_interrupt_assert=0,
+                     i_cfg_interrupt_di=0,
+                     i_cfg_interrupt_stat=0,
+                     
+            )
+        ]
+# Ethernet ----------------------------------------------------------------------------------------------
+class Ethernet(Module):
+    def __init__(self, platform):
+        platform.add_source("xilinx_ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0.xci")
+        s0_pads = platform.request("S0")
+        sys_clk = ClockSignal("sys")
+        self.specials += [
+            Instance("gig_ethernet_pcs_pma_0",
+                     i_gtrefclk_p=s0_pads.clk_p,            # Differential +ve of reference clock for MGT: very high quality.
+                     i_gtrefclk_n=s0_pads.clk_n,            # Differential -ve of reference clock for MGT: very high quality.
+                     #o_rxuserclk2,
+                     o_txp=s0_pads.tx_p,                   # Differential +ve of serial transmission from PMA to PMD.
+                     o_txn=s0_pads.tx_n,                   # Differential -ve of serial transmission from PMA to PMD.
+                     i_rxp=s0_pads.rx_p,                   # Differential +ve for serial reception from PMD to PMA.
+                     i_rxn=s0_pads.rx_n,                   # Differential -ve for serial reception from PMD to PMA.
+
+                     #i_gmii_tx_clk=sys_clk,           # Transmit clock from client MAC.
+                     #o_gmii_rx_clk,           # Receive clock to client MAC.
+                     i_gmii_txd=0,              # Transmit data from client MAC.
+                     i_gmii_tx_en=1,            # Transmit control signal from client MAC.
+                     i_gmii_tx_er=0,            # Transmit control signal from client MAC.
+                     #o_gmii_rxd,              # Received Data to client MAC.
+                     #o_gmii_rx_dv,            # Received control signal to client MAC.
+                     #o_gmii_rx_er,            # Received control signal to client MAC.
+
+                     i_configuration_vector=0,  # Alternative to MDIO interface.
+
+
+                     #o_status_vector,         # Core status.
+                     i_reset=0,                 # Asynchronous reset for entire core.
+                     i_signal_detect=1          # Input from PMD to indicate presence of optical input.
+            )
+        ]
+        
 
 # BaseSoC ------------------------------------------------------------------------------------------
 
@@ -194,44 +271,9 @@ class BaseSoC(SoCCore):
         self.submodules.spi_flash = spi_flash.SpiFlashDualQuad(platform.request("spiflash4x"), with_bitbang=True, endianness="little")
         self.spi_flash.add_clk_primitive(platform.device)
         self.add_csr("spi_flash")
+#        self.submodules.pcie = PCIe(platform)
+        self.submodules.ethernet = Ethernet(platform)
 
-        platform.add_source("xilinx_ip/pcie_7x_0/pcie_7x_0.xci")
-        pcie_pads = platform.request("pcie")
-        #   IBUFDS_GTE2 refclk_ibuf (.O(sys_clk), .ODIV2(), .I(sys_clk_p), .CEB(1'b0), .IB(sys_clk_n));
-        sys_clk = Signal()
-        self.specials += [
-            Instance("IBUFDS_GTE2",
-                     i_I=pcie_pads.clk_p,
-                     i_IB=pcie_pads.clk_n,
-                     i_CEB=0,
-                     o_O=sys_clk),
-        ]
-        self.specials += [
-            Instance("pcie_7x_0",
-                     o_pci_exp_txp=pcie_pads.tx_p,
-                     o_pci_exp_txn=pcie_pads.tx_n,
-                     i_pci_exp_rxp=pcie_pads.rx_p,
-                     i_pci_exp_rxn=pcie_pads.rx_n,
-                     
-                     i_sys_clk=sys_clk,
-                     i_sys_rst_n=1,
-                     
-                     i_s_axis_tx_tready=0,
-                     i_s_axis_tx_tdata=0,
-                     i_s_axis_tx_tkeep=0,
-                     i_s_axis_tx_tlast=0,
-                     i_s_axis_tx_tvalid=1,                     
-                     i_s_axis_tx_tuser=0,
-                     
-                     i_m_axis_rx_tready=0,
-
-                     i_cfg_interrupt=0,
-                     i_cfg_interrupt_assert=0,
-                     i_cfg_interrupt_di=0,
-                     i_cfg_interrupt_stat=0,
-                     
-            )
-            ]
 #     user_clk_out : OUT STD_LOGIC;
 #     user_reset_out : OUT STD_LOGIC;
 #     user_lnk_up : OUT STD_LOGIC;
