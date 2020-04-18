@@ -1,0 +1,349 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:47:09 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 1657
+License: Customer
+
+Current time: 	Sat Apr 18 05:46:01 PDT 2020
+Time zone: 	Pacific Standard Time (America/Vancouver)
+
+OS: Ubuntu
+OS Version: 5.3.0-46-generic
+OS Architecture: amd64
+Available processors (cores): 8
+
+Display: :1.0
+Screen size: 3440x1440
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 37 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/opt/Xilinx/Vivado/2019.1/tps/lnx64/jre9.0.4
+Java executable location: 	/opt/Xilinx/Vivado/2019.1/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	tom
+User home directory: /home/tom
+User working directory: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/xilinx_ip/pcie_7x_0_ex
+User country: 	CA
+User language: 	en
+User locale: 	en_CA
+
+RDI_BASEROOT: /opt/Xilinx/Vivado
+HDI_APPROOT: /opt/Xilinx/Vivado/2019.1
+RDI_DATADIR: /opt/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: /opt/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: /home/tom/.Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: /home/tom/.Xilinx/Vivado/2019.1/
+Vivado layouts directory: /home/tom/.Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	/opt/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	/home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/xilinx_ip/pcie_7x_0_ex/vivado.log
+Vivado journal file location: 	/home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/xilinx_ip/pcie_7x_0_ex/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-1657-z400
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /opt/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: /opt/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: /opt/Xilinx/Vivado/2019.1
+XILINX_VIVADO: /opt/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: /opt/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	185 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 909 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: START_PROGRESS_DIALOG
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// by (cl):  Sourcing Tcl script '/home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/xilinx_ip/pcie_7x_0/pcie_7x_0_ex.tcl' : addNotify
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: source /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/xilinx_ip/pcie_7x_0/pcie_7x_0_ex.tcl -notrace 
+// Tcl Message: INFO: [open_example_project] Creating new example project... 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 91 MB (+93424kb) [00:00:12]
+// [Engine Memory]: 894 MB (+786467kb) [00:00:12]
+// [GUI Memory]: 105 MB (+9413kb) [00:00:12]
+// [GUI Memory]: 119 MB (+9067kb) [00:00:12]
+// [GUI Memory]: 126 MB (+1077kb) [00:00:13]
+// WARNING: HEventQueue.dispatchEvent() is taking  2989 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2019.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 919 MB. GUI used memory: 54 MB. Current time: 4/18/20, 5:46:02 AM PDT
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// [Engine Memory]: 946 MB (+7192kb) [00:00:15]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: create_project: Time (s): cpu = 00:00:24 ; elapsed = 00:00:06 . Memory (MB): peak = 6406.891 ; gain = 79.836 ; free physical = 1179 ; free virtual = 18594 
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PART_MODIFIED
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [open_example_project] Importing original IP ... 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [open_example_project] Generating the example project IP ... INFO: [open_example_project] Adding example synthesis HDL files ... INFO: [open_example_project] Adding example synthesis miscellaneous files ... INFO: [open_example_project] Adding example XDC files ... INFO: [open_example_project] Adding simulation HDL files ... 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: INFO: [open_example_project] Rebuilding all the top level IPs ... 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: STOP_PROGRESS_DIALOG
+// Tcl Message: INFO: [open_example_project] Open Example Project completed 
+dismissDialog("Sourcing Tcl script '/home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/xilinx_ip/pcie_7x_0/pcie_7x_0_ex.tcl'"); // by (cl)
+// TclEventType: STOP_PROGRESS_DIALOG
+// Tcl Message: update_compile_order -fileset sources_1 
+// [Engine Memory]: 1,038 MB (+46630kb) [00:00:33]
+// HMemoryUtils.trashcanNow. Engine heap size: 996 MB. GUI used memory: 54 MB. Current time: 4/18/20, 5:46:21 AM PDT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sim_1 
+// PAPropertyPanels.initPanels (xilinx_pcie_2_1_ep_7x.v) elapsed time: 0.2s
+// Elapsed time: 17 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, xilinx_pcie_2_1_ep_7x (xilinx_pcie_2_1_ep_7x.v)]", 1, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, xilinx_pcie_2_1_ep_7x (xilinx_pcie_2_1_ep_7x.v)]", 1, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+// Elapsed time: 17 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, xilinx_pcie_2_1_ep_7x (xilinx_pcie_2_1_ep_7x.v), pcie_7x_0_support_i : pcie_7x_0_support (pcie_7x_0_support.v)]", 2, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, xilinx_pcie_2_1_ep_7x (xilinx_pcie_2_1_ep_7x.v), pcie_7x_0_support_i : pcie_7x_0_support (pcie_7x_0_support.v)]", 2, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+// Elapsed time: 530 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, xilinx_pcie_2_1_ep_7x (xilinx_pcie_2_1_ep_7x.v)]", 1, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, xilinx_pcie_2_1_ep_7x (xilinx_pcie_2_1_ep_7x.v)]", 1, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+// Elapsed time: 257 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, xilinx_pcie_2_1_ep_7x (xilinx_pcie_2_1_ep_7x.v)]", 1, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, xilinx_pcie_2_1_ep_7x (xilinx_pcie_2_1_ep_7x.v)]", 1, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "xilinx_pcie_2_1_ep_7x.v", 1, true, false); // k (j, cl) - Popup Trigger
+selectCodeEditor("xilinx_pcie_2_1_ep_7x.v", 149, 62); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,023 MB. GUI used memory: 57 MB. Current time: 4/18/20, 6:16:26 AM PDT
+// Elapsed time: 2603 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, xilinx_pcie_2_1_ep_7x (xilinx_pcie_2_1_ep_7x.v), pcie_7x_0_support_i : pcie_7x_0_support (pcie_7x_0_support.v), gt_common_i_1 : pcie_7x_0_gt_common (pcie_7x_0_gt_common.v)]", 4, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, xilinx_pcie_2_1_ep_7x (xilinx_pcie_2_1_ep_7x.v), pcie_7x_0_support_i : pcie_7x_0_support (pcie_7x_0_support.v), gt_common_i_1 : pcie_7x_0_gt_common (pcie_7x_0_gt_common.v)]", 4, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+selectCodeEditor("pcie_7x_0_gt_common.v", 216, 430); // cl (w, cl)
+selectCodeEditor("pcie_7x_0_gt_common.v", 216, 430, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "pcie_7x_0_gt_common.v", 'c'); // cl (w, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, xilinx_pcie_2_1_ep_7x (xilinx_pcie_2_1_ep_7x.v), pcie_7x_0_support_i : pcie_7x_0_support (pcie_7x_0_support.v)]", 2, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, xilinx_pcie_2_1_ep_7x (xilinx_pcie_2_1_ep_7x.v), pcie_7x_0_support_i : pcie_7x_0_support (pcie_7x_0_support.v)]", 2, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "QPLL_QPLLPD", true); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "QPLL_QPLLPD"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "QPLL_QPLLPD"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "QPLL_QPLLPD"); // l (aT, cl)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "QPLL_QPLLPD"); // l (aT, cl)
+// Elapsed time: 22 seconds
+selectCodeEditor("pcie_7x_0_support.v", 383, 771); // cl (w, cl)
+selectCodeEditor("pcie_7x_0_support.v", 382, 771, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "pcie_7x_0_support.v", 'c'); // cl (w, cl)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "qpll_qplld", true); // l (aT, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,034 MB. GUI used memory: 55 MB. Current time: 4/18/20, 6:46:26 AM PDT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,035 MB. GUI used memory: 55 MB. Current time: 4/18/20, 7:16:26 AM PDT
+// Elapsed time: 2908 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ae (cl)
+selectMenuItem(PAResourceCommand.PACommandNames_OPEN_CHECKPOINT, "Open..."); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_CHECKPOINT
+// Elapsed time: 14 seconds
+setFileChooser("/home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/soc_basesoc___main__/gateware/top_route.dcp");
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 54 MB. Current time: 4/18/20, 7:32:58 AM PDT
+// by (cl):  Open Checkpoint : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton (A, G)
+// Tcl Message: close_project 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_checkpoint /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/soc_basesoc___main__/gateware/top_route.dcp 
+// Tcl Message: Command: open_checkpoint /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/soc_basesoc___main__/gateware/top_route.dcp  Starting open_checkpoint Task  Time (s): cpu = 00:00:00.75 ; elapsed = 00:00:00.18 . Memory (MB): peak = 6491.902 ; gain = 0.000 ; free physical = 2470 ; free virtual = 18164 
+// TclEventType: PROJECT_NEW
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2019.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,335 MB. GUI used memory: 54 MB. Current time: 4/18/20, 7:33:16 AM PDT
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// [Engine Memory]: 1,764 MB (+707053kb) [01:47:33]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,762 MB. GUI used memory: 53 MB. Current time: 4/18/20, 7:33:21 AM PDT
+// TclEventType: DESIGN_NEW
+// Xgd.load filename: /opt/Xilinx/Vivado/2019.1/data/parts/xilinx/artix7/devint/artix7/xc7a15t/xc7a15t.xgd; ZipEntry: xc7a15t_detail.xgd elapsed time: 0.9s
+// [Engine Memory]: 1,871 MB (+19656kb) [01:47:35]
+// Device: addNotify
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 2.9s
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  2542 ms.
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: INFO: [Device 21-403] Loading part xc7a15tfgg484-2 INFO: [Netlist 29-17] Analyzing 363 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2019.1 INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. 
+// Tcl Message: Reading XDEF placement. Reading placer database... Reading XDEF routing. 
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 7207.273 ; gain = 5.938 ; free physical = 1753 ; free virtual = 17447 
+// Tcl Message: Restored from archive | CPU: 1.420000 secs | Memory: 12.235031 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 7207.273 ; gain = 5.938 ; free physical = 1753 ; free virtual = 17447 Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 7207.273 ; gain = 0.000 ; free physical = 1755 ; free virtual = 17449 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 107 instances were transformed.   IOBUF => IOBUF (IBUF, OBUFT): 65 instances   RAM16X1D => RAM32X1D (RAMD32, RAMD32): 16 instances   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 10 instances   RAM32X1D => RAM32X1D (RAMD32, RAMD32): 16 instances  
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: PROJECT_DASHBOARD_GADGET_DELETE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: DESIGN_MODE_CHANGE
+// Device view-level: 0.0
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: INFO: [Project 1-604] Checkpoint was created with Vivado v2019.1 (64-bit) build 2552052 
+// Tcl Message: open_checkpoint: Time (s): cpu = 00:00:43 ; elapsed = 00:00:27 . Memory (MB): peak = 7407.105 ; gain = 915.203 ; free physical = 1606 ; free virtual = 17301 
+// Project name: project_top_route; location: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/soc_basesoc___main__/gateware; part: xc7a15tfgg484-2
+// 'd' command handler elapsed time: 45 seconds
+// Elapsed time: 27 seconds
+dismissDialog("Open Checkpoint"); // by (cl)
+// [GUI Memory]: 133 MB (+1097kb) [01:47:52]
+// [GUI Memory]: 141 MB (+1235kb) [01:47:55]
+// Elapsed time: 16 seconds
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top, Leaf Cells (1795)]", 2); // bd (O, cl)
+// PAPropertyPanels.initPanels (GTPE2_COMMON (GTPE2_COMMON)) elapsed time: 0.5s
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[top, Leaf Cells (1795), GTPE2_COMMON (GTPE2_COMMON)]", 757, false); // bd (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_SCHEMATIC
+// Schematic: addNotify
+// [GUI Memory]: 149 MB (+981kb) [01:48:47]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,911 MB. GUI used memory: 89 MB. Current time: 4/18/20, 8:03:26 AM PDT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,911 MB. GUI used memory: 87 MB. Current time: 4/18/20, 8:33:26 AM PDT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,911 MB. GUI used memory: 86 MB. Current time: 4/18/20, 9:03:26 AM PDT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,911 MB. GUI used memory: 86 MB. Current time: 4/18/20, 9:33:26 AM PDT
+// Elapsed time: 8057 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_CHECKPOINT, "Open Recent"); // ae (cl)
+selectMenuItem(PAResourceItoN.MainMenuMgr_OPEN_RECENT_CHECKPOINT, "/home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/netv2/soc_basesoc_netv2/gateware/top_route.dcp"); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,903 MB. GUI used memory: 71 MB. Current time: 4/18/20, 9:48:16 AM PDT
+// Engine heap size: 1,903 MB. GUI used memory: 96 MB. Current time: 4/18/20, 9:48:17 AM PDT
+// TclEventType: DESIGN_CLOSE
+// by (cl):  Open Checkpoint : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton (A, G)
+// Tcl Message: close_project 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_checkpoint /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/netv2/soc_basesoc_netv2/gateware/top_route.dcp 
+// Tcl Message: Command: open_checkpoint /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/netv2/soc_basesoc_netv2/gateware/top_route.dcp  Starting open_checkpoint Task  Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 7407.105 ; gain = 0.000 ; free physical = 433 ; free virtual = 17192 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2019.1/data/ip'. 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: POWER_CNS_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,901 MB. GUI used memory: 54 MB. Current time: 4/18/20, 9:48:37 AM PDT
+// TclEventType: DESIGN_NEW
+// Device: addNotify
+// [Engine Memory]: 1,978 MB (+14280kb) [04:02:51]
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  1297 ms.
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: INFO: [Device 21-403] Loading part xc7a35tfgg484-2 INFO: [Netlist 29-17] Analyzing 433 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2019.1 INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. 
+// Tcl Message: Reading XDEF placement. Reading placer database... Reading XDEF routing. 
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.98 . Memory (MB): peak = 7407.105 ; gain = 0.000 ; free physical = 262 ; free virtual = 17089 
+// Tcl Message: Restored from archive | CPU: 1.020000 secs | Memory: 10.182648 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.98 . Memory (MB): peak = 7407.105 ; gain = 0.000 ; free physical = 262 ; free virtual = 17089 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 7407.105 ; gain = 0.000 ; free physical = 263 ; free virtual = 17090 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 73 instances were transformed.   IOBUF => IOBUF (IBUF, OBUFT): 32 instances   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances   OBUFTDS => OBUFTDS_DUAL_BUF (INV, OBUFTDS, OBUFTDS): 4 instances   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 36 instances  
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: PROJECT_DASHBOARD_GADGET_DELETE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Device view-level: 0.0
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: DESIGN_MODE_CHANGE
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: INFO: [Project 1-604] Checkpoint was created with Vivado v2019.1 (64-bit) build 2552052 
+// Project name: project_top_route; location: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/netv2/soc_basesoc_netv2/gateware; part: xc7a35tfgg484-2
+// Elapsed time: 22 seconds
+dismissDialog("Open Checkpoint"); // by (cl)
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 2.8s
+// Device view-level: 0.0

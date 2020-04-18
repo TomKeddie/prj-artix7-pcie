@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Apr 18 07:33:34 2020
+# Process ID: 15883
+# Current directory: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/xilinx_ip/pcie_7x_0_ex/pcie_7x_0_ex.runs/synth_1
+# Command line: vivado -log xilinx_pcie_2_1_ep_7x.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source xilinx_pcie_2_1_ep_7x.tcl
+# Log file: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/xilinx_ip/pcie_7x_0_ex/pcie_7x_0_ex.runs/synth_1/xilinx_pcie_2_1_ep_7x.vds
+# Journal file: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/xilinx_ip/pcie_7x_0_ex/pcie_7x_0_ex.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source xilinx_pcie_2_1_ep_7x.tcl -notrace

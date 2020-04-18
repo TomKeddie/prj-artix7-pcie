@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Apr 17 06:28:17 2020
+# Process ID: 29897
+# Current directory: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/xilinx_ip/gig_ethernet_pcs_pma_0_ex
+# Command line: vivado -notrace -source /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/xilinx_ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0_ex.tcl
+# Log file: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/xilinx_ip/gig_ethernet_pcs_pma_0_ex/vivado.log
+# Journal file: /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/xilinx_ip/gig_ethernet_pcs_pma_0_ex/vivado.jou
+#-----------------------------------------------------------
+start_gui
+source /home/tom/git/TomKeddie/prj-artix7-pcie/fpga/v2/plan/xilinx_ip/gig_ethernet_pcs_pma_0/gig_ethernet_pcs_pma_0_ex.tcl -notrace
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
