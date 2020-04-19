@@ -94,477 +94,475 @@ tom-connectors
 JST-2-SMD
 <h3>JST-Right Angle Male Header SMT</h3>
 <p>Specifications:
-<ul><li>Pin count: 2</li>
-<li>Pin pitch: 2mm</li>
-</ul></p>
+0
+0
+0
 <p><a href=”http://www.4uconnector.com/online/object/4udrawing/20404.pdf”>Datasheet referenced for footprint</a></p>
 <p>Example device(s):
 <ul><li>CONN_02</li>
 <li>JST_2MM_MALE</li>
-</ul></p>
-
+0
+0
 0
 4
 4
 tom-connectors
 MICRO_SD_10_PIN
-
-
+0
+0
 0
 12
 11
 tom-connectors
 PCI-EXPRESS
-
-
+0
+0
 0
 70
 36
 tom-connectors
 PMOD_1X6_PTH_RA_PLUG
-
-
+0
+0
 0
 6
 6
 tom-connectors
 PMOD_2X6_PTH_RA_PLUG
-
-
+0
+0
 0
 12
 12
 tom-connectors
 PMOD_2X6_PTH_RA_SOCKET
-
-
+0
+0
 0
 12
 12
 tom-connectors
 PinHeader_1x02_P1.27mm_Vertical
-Through hole straight pin header, 1x02, 1.27mm pitch, single row
-Through hole pin header THT 1x02 1.27mm single row
+0
+0
 0
 2
 2
 tom-connectors
 PinHeader_1x03_P2.54mm_Vertical
-Through hole straight pin header, 1x03, 2.54mm pitch, single row
-Through hole pin header THT 1x03 2.54mm single row
+0
+0
 0
 3
 3
 tom-connectors
 PinHeader_1x04_P2.54mm_Vertical
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
+0
+0
 0
 4
 4
 tom-connectors
 PinHeader_1x06_P2.54mm_Horizontal
-Through hole angled pin header, 1x06, 2.54mm pitch, 6mm pin length, single row
-Through hole angled pin header THT 1x06 2.54mm single row
+0
+0
 0
 6
 6
 tom-connectors
 PinHeader_1x06_P2.54mm_Vertical
-Through hole straight pin header, 1x06, 2.54mm pitch, single row
-Through hole pin header THT 1x06 2.54mm single row
+0
+0
 0
 6
 6
 tom-connectors
 PinHeader_1x06_P2.54mm_Vertical_SMD_Pin1Left
-surface-mounted straight pin header, 1x06, 2.54mm pitch, single row, style 1 (pin 1 left)
-Surface mounted pin header SMD 1x06 2.54mm single row style1 pin1 left
+0
+0
 0
 6
 6
 tom-connectors
 PinHeader_1x06_P2.54mm_Vertical_SMD_Pin1Right
-surface-mounted straight pin header, 1x06, 2.54mm pitch, single row, style 2 (pin 1 right)
-Surface mounted pin header SMD 1x06 2.54mm single row style2 pin1 right
+0
+0
 0
 6
 6
 tom-connectors
 PinHeader_1x09_P2.54mm_Horizontal
-Through hole angled pin header, 1x09, 2.54mm pitch, 6mm pin length, single row
-Through hole angled pin header THT 1x09 2.54mm single row
+0
+0
 0
 9
 9
 tom-connectors
 PinHeader_2x03_P2.54mm_Vertical
-Through hole straight pin header, 2x03, 2.54mm pitch, double rows
-Through hole pin header THT 2x03 2.54mm double row
+0
+0
 0
 6
 6
 tom-connectors
 PinHeader_2x20_P2.54mm_Horizontal_Mirrored
-Through hole angled pin header, 2x20, 2.54mm pitch, 6mm pin length, double rows
-Through hole angled pin header THT 2x20 2.54mm double row
+0
+0
 0
 40
 40
 tom-connectors
 PinHeader_2x22_P1.27mm_Vertical
-Through hole straight pin header, 2x22, 1.27mm pitch, double rows
-Through hole pin header THT 2x22 1.27mm double row
+0
+0
 0
 44
 44
 tom-connectors
 PinHeader_2x22_P1.27mm_Vertical_SMD
-surface-mounted straight pin header, 2x22, 1.27mm pitch, double rows
-Surface mounted pin header SMD 2x22 1.27mm double row
+0
+0
 0
 44
 44
 tom-connectors
 PinSocket_2x03_P2.54mm_Vertical_SMD_SAO
-surface-mounted straight socket strip, 2x03, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated
-Surface mounted socket strip SMD 2x03 2.54mm double row
+0
+0
 0
 6
 6
 tom-connectors
 PinSocket_2x08_P2.54mm_Horizontal
-Through hole angled socket strip, 2x08, 2.54mm pitch, 8.51mm socket length, double cols (from Kicad 4.0.7), script generated
-Through hole angled socket strip THT 2x08 2.54mm double row
+0
+0
 0
 16
 16
 tom-connectors
 PinSocket_2x22_P1.27mm_Vertical
-Through hole straight socket strip, 2x22, 1.27mm pitch, double cols (from Kicad 4.0.7), script generated
-Through hole socket strip THT 2x22 1.27mm double row
+0
+0
 0
 44
 44
 tom-connectors
 PinSocket_2x22_P1.27mm_Vertical_SMD
-surface-mounted straight socket strip, 2x22, 1.27mm pitch, double cols (from Kicad 4.0.7!), script generated
-Surface mounted socket strip SMD 2x22 1.27mm double row
+0
+0
 0
 44
 44
 tom-connectors
 USB-A-PCB
-
-
+0
+0
 0
 4
 3
 tom-connectors
 USB3_A_Aliexpress
-USB 3.0, type A, right angle (http://www.molex.com/pdm_docs/sd/483930003_sd.pdf)
-USB 3.0 type A right angle
+0
+0
 0
 11
 10
 tom-connectors
 USB_C_Receptacle_GT-USB-7010
-USB TYPE C, RA RCPT PCB, SMT, https://github.com/arturo182/GT-USB-7010/raw/master/GT-USB-7010.pdf
-USB C Type-C Receptacle SMD
+0
+0
 0
 24
 17
 tom-connectors
 USB_MICRO_TAOBAO_SMD_PTH
-
-
+0
+0
 0
 13
 7
 tom-mechanical
 Castellation_5.08_2.54
-
-
+0
+0
 0
 1
 1
 tom-mechanical
 PCIe_1x
-
-
+0
+0
 0
 72
 36
 tom-mechanical
 SW_Push_1P1T_NO_CK_KMR2
-CK components KMR2 tactile switch http://www.ckswitches.com/media/1479/kmr2.pdf
-tactile switch kmr2
+0
+0
 0
 4
 2
 tom-mechanical
 SW_SPST_SMD_2PIN_3.5x6.0
-http://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1437566-3&DocType=Customer+Drawing&DocLang=English
-SPST button tactile switch
+0
+0
 0
 2
 2
 tom-mechanical
 SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm
-SMD Solder Jumper, 1x1.5mm Pads, 0.3mm gap, bridged with 1 copper strip
-solder jumper open
+0
+0
 0
 2
 2
 tom-mechanical
 SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm
-SMD Solder Jumper, 1x1.5mm Pads, 0.3mm gap, open
-solder jumper open
+0
+0
 0
 2
 2
 tom-mechanical
 SolderJumper-3_P2.0mm_Open_TrianglePad1.0x1.5mm
-SMD Solder Jumper, 1x1.5mm Triangular Pads, 0.3mm gap, open
-solder jumper open
+0
+0
 0
 5
 3
 tom-mechanical
 TestPoint_Loop_D2.50mm_Drill1.0mm
-wire loop as test point, loop diameter 2.5mm, hole diameter 1.0mm
-test point wire loop bead
+0
+0
 0
 1
 1
 tom-mechanical
 TestPoint_Pad_D1.5mm
-SMD pad as test Point, diameter 1.5mm
-test point SMD pad
+0
+0
 0
 1
 1
 tom-mechanical
 TestPoint_Pad_D3.0mm
-SMD pad as test Point, diameter 3.0mm
-test point SMD pad
+0
+0
 0
 1
 1
 tom-mechanical
 cc-by-sa
-
-
+0
+0
 0
 0
 0
 tom-mechanical
 cc-by-sa-80x15
-
-
+0
+0
 0
 0
 0
 tom-modules
 APXS006
-
-
+0
+0
 0
 10
 10
 tom-modules
 OSC_SIT8008BI
-
-
+0
+0
 0
 4
 4
 tom-modules
 TPS82130SILT
-
-
+0
+0
 0
 9
 9
 tom-opto
 E6C1206RGBC3UDA
-
-
+0
+0
 0
 4
 4
 tom-opto
 LED_RGB_PLCC-6
-RGB LED PLCC-6
-RGB LED PLCC-6
+0
+0
 0
 6
 6
 tom-opto
 PLCC4-BACK
-
-
+0
+0
 0
 4
 4
 tom-opto
 SLD161616DRA2B
-16x16 led matrix lcsc
-
+16
+0
 0
 32
 32
 tom-opto
 SUNLIGHT_SMD_7SEG_SLS0561
-
-
+0
+0
 0
 10
 10
 tom-opto
 XZM2CYK45WT-9-NOMASK
-
-
+0
+0
 0
 2
 2
 tom-passives
 C_0402_1005Metric
-Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
-capacitor
+0
+0
 0
 2
 2
 tom-passives
 C_0603_1608Metric
-Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
-capacitor
+0
+0
 0
 2
 2
 tom-passives
 C_0603_1608Metric_Pad1.05x0.95mm_HandSolder
-Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
-capacitor handsolder
+0
+0
 0
 2
 2
 tom-passives
 C_0805_2012Metric
-Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
-capacitor
+0
+0
 0
 2
 2
 tom-passives
 C_0805_2012Metric_Pad1.15x1.40mm_HandSolder
-Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
-capacitor handsolder
+0
+0
 0
 2
 2
 tom-passives
 C_1206_3216Metric
-Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
-capacitor
+0
+0
 0
 2
 2
 tom-passives
 C_1206_3216Metric_Pad1.42x1.75mm_HandSolder
-Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
-capacitor handsolder
+0
+0
 0
 2
 2
 tom-passives
 Crystal_SMD_0603_5x3.2
-Crystal, Quarz, SMD, 0603, 4 Pads,
-Crystal, Quarz, SMD, 0603, 4 Pads,
+0
+0
 0
 4
 4
 tom-passives
 Crystal_SMD_3225-4Pin_3.2x2.5mm
-SMD Crystal SERIES SMD3225/4 http://www.txccrystal.com/images/pdf/7m-accuracy.pdf, 3.2x2.5mm^2 package
-SMD SMT crystal
+0
+0
 0
 4
 4
 tom-passives
 R_0603_1608Metric
-Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
-resistor
+0
+0
 0
 2
 2
 tom-passives
 R_0603_1608Metric_Pad1.05x0.95mm_HandSolder
-Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
-resistor handsolder
+0
+0
 0
 2
 2
 tom-semiconductors
 BGA-24_5x5_6.0x8.0mm
-
-
+0
+0
 0
 24
 24
 tom-semiconductors
 D_SMA
-Diode SMA (DO-214AC)
-Diode SMA (DO-214AC)
+0
+0
 0
 2
 2
 tom-semiconductors
 QFN-16-1EP_3x3mm_Pitch0.5mm_HS
-16-Lead Plastic Quad Flat, No Lead Package (NG) - 3x3x0.9 mm Body [QFN]; (see Microchip Packaging Specification 00000049BS.pdf)
-QFN 0.5
+16
+0
 0
 20
 17
 tom-semiconductors
 QFP50P900X900X120-48N
-
-
+0
+0
 0
 48
 48
 tom-semiconductors
 SOIC-8_5.23x5.23mm_P1.27mm
-SOIC, 8 Pin (http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf#page=68), generated with kicad-footprint-generator ipc_gullwing_generator.py
-SOIC SO
+0
+0
 0
 8
 8
 tom-semiconductors
 SOT-23-5
-5-pin SOT23 package
-SOT-23-5
+5
+0
 0
 5
 5
 tom-semiconductors
 SOT-23-5_HandSoldering
-5-pin SOT23 package
-SOT-23-5 hand-soldering
+5
+0
 0
 5
 5
 tom-semiconductors
 SSOP-16_3.9x4.9mm_P0.635mm
-SSOP16: plastic shrink small outline package; 16 leads; body width 3.9 mm; lead pitch 0.635; (see NXP SSOP-TSSOP-VSO-REFLOW.pdf and sot519-1_po.pdf)
-SSOP 0.635
+0
+0
 0
 16
 16
 tom-semiconductors
 TO-92-teardrop
-TO-92 leads in-line, narrow, oval pads, drill 0.75mm (see NXP sot054_po.pdf)
-to-92 sc-43 sc-43a sot54 PA33 transistor
 0
-3
-3
+0
+0
