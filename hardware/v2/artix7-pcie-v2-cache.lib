@@ -945,6 +945,17 @@ X 1 1 0 0 100 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# tom-mechanical_mech-only-no-pins
+#
+DEF tom-mechanical_mech-only-no-pins H 0 0 N N 1 F N
+F0 "H" 0 0 50 H V C CNN
+F1 "tom-mechanical_mech-only-no-pins" 0 100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+ENDDRAW
+ENDDEF
+#
 # tom-modules_TPS821x0SILT
 #
 DEF tom-modules_TPS821x0SILT U 0 10 Y Y 1 F N

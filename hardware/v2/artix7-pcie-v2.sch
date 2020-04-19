@@ -634,8 +634,6 @@ F 3 "" H 8950 2000 50  0001 C CNN
 	1    8950 2000
 	1    0    0    -1  
 $EndComp
-Text Notes 7550 7000 0    50   ~ 0
-TODO \n- POWER Good led\n- VCC led ?\n- caps for connectors (J1 and J2)\n- ps caps for clock chip
 Wire Wire Line
 	9250 4750 9250 5100
 Wire Wire Line
@@ -2970,4 +2968,103 @@ F5 49 C3 16 DC D2 B0 60 D2 02 77 D9 9A 7B CA D6 9C BE 9E 33 50 73 4B A0 E6 F4 A5
 14 82 D8 2F 8A 00 00 00 00 49 45 4E 44 AE 42 60 82 
 EndData
 $EndBitmap
+$Comp
+L tom-mechanical:TestPoint TP10
+U 1 1 5EA0EA64
+P 7850 6150
+F 0 "TP10" H 7908 6268 50  0000 L CNN
+F 1 "TestPoint" H 7908 6177 50  0000 L CNN
+F 2 "tom-mechanical:MountingHole_2.7mm_M2.5_DIN965_Pad" H 8050 6150 50  0001 C CNN
+F 3 "~" H 8050 6150 50  0001 C CNN
+	1    7850 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-mechanical:TestPoint TP11
+U 1 1 5EA116C9
+P 8150 6150
+F 0 "TP11" H 8208 6268 50  0000 L CNN
+F 1 "TestPoint" H 8208 6177 50  0000 L CNN
+F 2 "tom-mechanical:MountingHole_2.7mm_M2.5_DIN965_Pad" H 8350 6150 50  0001 C CNN
+F 3 "~" H 8350 6150 50  0001 C CNN
+	1    8150 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-mechanical:TestPoint TP12
+U 1 1 5EA1194B
+P 8450 6150
+F 0 "TP12" H 8508 6268 50  0000 L CNN
+F 1 "TestPoint" H 8508 6177 50  0000 L CNN
+F 2 "tom-mechanical:MountingHole_2.7mm_M2.5_DIN965_Pad" H 8650 6150 50  0001 C CNN
+F 3 "~" H 8650 6150 50  0001 C CNN
+	1    8450 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-mechanical:TestPoint TP13
+U 1 1 5EA11BCE
+P 8700 6150
+F 0 "TP13" H 8758 6268 50  0000 L CNN
+F 1 "TestPoint" H 8758 6177 50  0000 L CNN
+F 2 "tom-mechanical:MountingHole_2.7mm_M2.5_DIN965_Pad" H 8900 6150 50  0001 C CNN
+F 3 "~" H 8900 6150 50  0001 C CNN
+	1    8700 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0154
+U 1 1 5EA1220C
+P 7850 6150
+F 0 "#PWR0154" H 7850 5900 50  0001 C CNN
+F 1 "GND" H 7855 5977 50  0000 C CNN
+F 2 "" H 7850 6150 50  0001 C CNN
+F 3 "" H 7850 6150 50  0001 C CNN
+	1    7850 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0155
+U 1 1 5EA12460
+P 8150 6150
+F 0 "#PWR0155" H 8150 5900 50  0001 C CNN
+F 1 "GND" H 8155 5977 50  0000 C CNN
+F 2 "" H 8150 6150 50  0001 C CNN
+F 3 "" H 8150 6150 50  0001 C CNN
+	1    8150 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0156
+U 1 1 5EA1265F
+P 8450 6150
+F 0 "#PWR0156" H 8450 5900 50  0001 C CNN
+F 1 "GND" H 8455 5977 50  0000 C CNN
+F 2 "" H 8450 6150 50  0001 C CNN
+F 3 "" H 8450 6150 50  0001 C CNN
+	1    8450 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0157
+U 1 1 5EA128CE
+P 8700 6150
+F 0 "#PWR0157" H 8700 5900 50  0001 C CNN
+F 1 "GND" H 8705 5977 50  0000 C CNN
+F 2 "" H 8700 6150 50  0001 C CNN
+F 3 "" H 8700 6150 50  0001 C CNN
+	1    8700 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-mechanical:mech-only-no-pins H?
+U 1 1 5EA59A1F
+P 7350 6850
+F 0 "H?" H 7375 6896 50  0000 L CNN
+F 1 "mask silk image" H 7375 6805 50  0000 L CNN
+F 2 "artix7-pcie-v2:mask" H 7350 6850 50  0001 C CNN
+F 3 "" H 7350 6850 50  0001 C CNN
+	1    7350 6850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
