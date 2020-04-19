@@ -1,4 +1,4 @@
-update=Sat 18 Apr 2020 05:33:30 PM PDT
+update=Sun 19 Apr 2020 09:28:39 AM PDT
 version=1
 last_client=kicad
 [general]
@@ -249,7 +249,7 @@ dPairWidth=0.127
 dPairGap=0.1778
 dPairViaGap=0.25
 [pcbnew/Netclasses/1]
-Name=J2_14_DP0.5/0.5
+Name=J1_34_DP0.5/0.5
 Clearance=0.127
 TrackWidth=0.127
 ViaDiameter=0.55
@@ -260,7 +260,7 @@ dPairWidth=0.127
 dPairGap=0.1778
 dPairViaGap=0.25
 [pcbnew/Netclasses/2]
-Name=J2_16_DP0.5/0.5
+Name=J1_35_DP0.5/0.5
 Clearance=0.127
 TrackWidth=0.127
 ViaDiameter=0.55
@@ -271,7 +271,7 @@ dPairWidth=0.127
 dPairGap=0.1778
 dPairViaGap=0.25
 [pcbnew/Netclasses/3]
-Name=MGTREFCLK_C_DP1/1
+Name=J2_14_DP0.5/0.5
 Clearance=0.127
 TrackWidth=0.127
 ViaDiameter=0.55
@@ -282,7 +282,7 @@ dPairWidth=0.127
 dPairGap=0.1778
 dPairViaGap=0.25
 [pcbnew/Netclasses/4]
-Name=MGTREFCLK_DP1/1
+Name=J2_16_DP0.5/0.5
 Clearance=0.127
 TrackWidth=0.127
 ViaDiameter=0.55
@@ -293,7 +293,7 @@ dPairWidth=0.127
 dPairGap=0.1778
 dPairViaGap=0.25
 [pcbnew/Netclasses/5]
-Name=S0_RX_DP0.127/0.127
+Name=MGTREFCLK_C_DP1/1
 Clearance=0.127
 TrackWidth=0.127
 ViaDiameter=0.55
@@ -304,7 +304,7 @@ dPairWidth=0.127
 dPairGap=0.1778
 dPairViaGap=0.25
 [pcbnew/Netclasses/6]
-Name=S0_TX_C_DP0.127/0.127
+Name=MGTREFCLK_DP1/1
 Clearance=0.127
 TrackWidth=0.127
 ViaDiameter=0.55
@@ -315,7 +315,7 @@ dPairWidth=0.127
 dPairGap=0.1778
 dPairViaGap=0.25
 [pcbnew/Netclasses/7]
-Name=S0_USB2_DP0.5/0.5
+Name=S0_RX_DP0.127/0.127
 Clearance=0.127
 TrackWidth=0.127
 ViaDiameter=0.55
@@ -326,7 +326,7 @@ dPairWidth=0.127
 dPairGap=0.1778
 dPairViaGap=0.25
 [pcbnew/Netclasses/8]
-Name=S2_RX_DP0.127/0.127
+Name=S0_TX_C_DP0.127/0.127
 Clearance=0.127
 TrackWidth=0.127
 ViaDiameter=0.55
@@ -337,7 +337,7 @@ dPairWidth=0.127
 dPairGap=0.1778
 dPairViaGap=0.25
 [pcbnew/Netclasses/9]
-Name=S2_TX_C_DP0.127/0.127
+Name=S0_USB2_DP0.5/0.5
 Clearance=0.127
 TrackWidth=0.127
 ViaDiameter=0.55
@@ -348,6 +348,28 @@ dPairWidth=0.127
 dPairGap=0.1778
 dPairViaGap=0.25
 [pcbnew/Netclasses/10]
+Name=S2_RX_DP0.127/0.127
+Clearance=0.127
+TrackWidth=0.127
+ViaDiameter=0.55
+ViaDrill=0.25
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.127
+dPairGap=0.1778
+dPairViaGap=0.25
+[pcbnew/Netclasses/11]
+Name=S2_TX_C_DP0.127/0.127
+Clearance=0.127
+TrackWidth=0.127
+ViaDiameter=0.55
+ViaDrill=0.25
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.127
+dPairGap=0.1778
+dPairViaGap=0.25
+[pcbnew/Netclasses/12]
 Name=S2_TX_DP0.127/0.127
 Clearance=0.127
 TrackWidth=0.127
