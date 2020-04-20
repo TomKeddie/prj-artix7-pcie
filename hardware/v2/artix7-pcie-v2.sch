@@ -1103,15 +1103,15 @@ Wire Wire Line
 	1200 5400 1200 5800
 Connection ~ 1200 5800
 Wire Wire Line
-	1200 5800 900  5800
+	1200 5800 650  5800
 Wire Wire Line
 	1050 5400 1050 5900
 Connection ~ 1050 5900
 Wire Wire Line
-	1050 5900 900  5900
-Text Label 900  5800 1    50   ~ 0
+	1050 5900 850  5900
+Text Label 600  5800 1    50   ~ 0
 CLK_SCL
-Text Label 900  5900 3    50   ~ 0
+Text Label 600  5900 3    50   ~ 0
 CLK_SDA
 $Comp
 L tom-passives:CRYSTAL_4PIN X1
@@ -1185,42 +1185,42 @@ CLKIN_N
 $Comp
 L tom-passives:C C?
 U 1 1 5EA5C2D9
-P 3400 5750
+P 3500 5950
 AR Path="/5E98B37D/5EA5C2D9" Ref="C?"  Part="1" 
 AR Path="/5EA5C2D9" Ref="C41"  Part="1" 
-F 0 "C41" V 3171 5750 40  0000 C CNN
-F 1 "0.1uF/6.3V/X5R/PCIE" V 3247 5750 40  0000 C CNN
-F 2 "tom-passives:C_0402_1005Metric" H 3438 5600 30  0001 C CNN
-F 3 "" H 3400 5750 60  0001 C CNN
-	1    3400 5750
+F 0 "C41" V 3271 5950 40  0000 C CNN
+F 1 "0.1uF/6.3V/X5R/PCIE" V 3347 5950 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 3538 5800 30  0001 C CNN
+F 3 "" H 3500 5950 60  0001 C CNN
+	1    3500 5950
 	-1   0    0    1   
 $EndComp
 $Comp
 L tom-passives:C C?
 U 1 1 5EA5CB84
-P 3300 5450
+P 3000 5950
 AR Path="/5E98B37D/5EA5CB84" Ref="C?"  Part="1" 
 AR Path="/5EA5CB84" Ref="C40"  Part="1" 
-F 0 "C40" V 3071 5450 40  0000 C CNN
-F 1 "0.1uF/6.3V/X5R/PCIE" V 3147 5450 40  0000 C CNN
-F 2 "tom-passives:C_0402_1005Metric" H 3338 5300 30  0001 C CNN
-F 3 "" H 3300 5450 60  0001 C CNN
-	1    3300 5450
+F 0 "C40" V 2771 5950 40  0000 C CNN
+F 1 "0.1uF/6.3V/X5R/PCIE" V 2847 5950 40  0000 C CNN
+F 2 "tom-passives:C_0402_1005Metric" H 3038 5800 30  0001 C CNN
+F 3 "" H 3000 5950 60  0001 C CNN
+	1    3000 5950
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	3400 6400 3400 5950
+	3500 6400 3500 6150
 Wire Wire Line
-	3300 5650 3300 6300
+	3000 6150 3000 6300
 Wire Wire Line
-	3300 6300 2700 6300
+	3000 6300 2700 6300
 Wire Wire Line
-	3400 5550 3400 5150
+	3500 5750 3500 5250
 Wire Wire Line
-	3300 5250 3300 5150
-Text Label 3300 5150 1    50   ~ 0
+	3000 5750 3000 5250
+Text Label 3000 5150 1    50   ~ 0
 CLKIN_P
-Text Label 3400 5150 1    50   ~ 0
+Text Label 3500 5150 1    50   ~ 0
 CLKIN_N
 Text Label 2700 6300 0    50   ~ 0
 OUT2_P
@@ -1404,7 +1404,7 @@ Connection ~ 10800 1400
 Wire Wire Line
 	10800 1400 10800 1850
 Wire Wire Line
-	2700 6400 3400 6400
+	2700 6400 3500 6400
 $Comp
 L tom-mechanical:TestPoint TP9
 U 1 1 5EC3742E
@@ -3057,14 +3057,65 @@ F 3 "" H 8700 6150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L tom-mechanical:mech-only-no-pins H?
+L tom-mechanical:mech-only-no-pins H1
 U 1 1 5EA59A1F
 P 7350 6850
-F 0 "H?" H 7375 6896 50  0000 L CNN
+F 0 "H1" H 7375 6896 50  0000 L CNN
 F 1 "mask silk image" H 7375 6805 50  0000 L CNN
 F 2 "artix7-pcie-v2:mask" H 7350 6850 50  0001 C CNN
 F 3 "" H 7350 6850 50  0001 C CNN
 	1    7350 6850
 	1    0    0    -1  
 $EndComp
+$Comp
+L tom-passives:R R52
+U 1 1 5EB1B352
+P 3250 5250
+F 0 "R52" H 3321 5288 40  0000 L CNN
+F 1 "100R/1%" H 3321 5212 40  0000 L CNN
+F 2 "tom-passives:R_0402_1005Metric" V 3180 5250 30  0001 C CNN
+F 3 "" H 3250 5250 30  0000 C CNN
+	1    3250 5250
+	0    -1   -1   0   
+$EndComp
+Connection ~ 3000 5250
+Wire Wire Line
+	3000 5250 3000 5150
+Connection ~ 3500 5250
+Wire Wire Line
+	3500 5250 3500 5150
+$Comp
+L tom-mechanical:TestPoint TP?
+U 1 1 5EBA7F24
+P 650 5800
+AR Path="/5E6D5E13/5EBA7F24" Ref="TP?"  Part="1" 
+AR Path="/5EBA7F24" Ref="TP14"  Part="1" 
+F 0 "TP14" H 708 5872 50  0000 L CNN
+F 1 "SCL" H 708 5827 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 850 5800 50  0001 C CNN
+F 3 "~" H 850 5800 50  0001 C CNN
+	1    650  5800
+	1    0    0    -1  
+$EndComp
+Connection ~ 650  5800
+Wire Wire Line
+	650  5800 600  5800
+$Comp
+L tom-mechanical:TestPoint TP?
+U 1 1 5EBBEE9A
+P 850 5600
+AR Path="/5E6D5E13/5EBBEE9A" Ref="TP?"  Part="1" 
+AR Path="/5EBBEE9A" Ref="TP15"  Part="1" 
+F 0 "TP15" H 908 5672 50  0000 L CNN
+F 1 "SDA" H 908 5627 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 1050 5600 50  0001 C CNN
+F 3 "~" H 1050 5600 50  0001 C CNN
+	1    850  5600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	850  5600 850  5900
+Connection ~ 850  5900
+Wire Wire Line
+	850  5900 600  5900
 $EndSCHEMATC
