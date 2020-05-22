@@ -1,69 +1,62 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>KiCad BOM Example 5</title>
-    </head>
-    <body>
-    <h1>/home/tom/git/TomKeddie/prj-artix7-pcie/hardware/v2/artix7-pcie-v2.sch</h1>
-    <p>Fri 27 Mar 2020 07:37:06 AM PDT</p>
-    <p>Eeschema 5.1.5-52549c5~84~ubuntu19.10.1</p>
-    <p><b>Component Count:</b>181</p>
-    <table>
-    <tr><th style='width:640px'>Ref</th><th>Qnty</th><th>Value</th><th>Part</th><th>Footprint</th><th>Description</th><th>Vendor</th></tr>
-    <tr><td>C1</td><td>1</td><td>47uF/6.3V/X5R</td><td>tom-passives:C</td><td>tom-passives:C_1206_3216Metric</td><td></td><td></td></tr>
-    <tr><td>C2, C17, C20, C21, C25, C27, C29, C30, C31, C32, C33</td><td>11</td><td>0.1uF/6.3V/X5R</td><td>tom-passives:C</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>C3, C4, C22, C24, C26, C28, C40, C41</td><td>8</td><td>0.1uF/6.3V/X5R/PCIE</td><td>tom-passives:C</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>C5, C8, C11, C13, C37</td><td>5</td><td>10uF/25V/X7R</td><td>tom-passives:C</td><td>tom-passives:C_1206_3216Metric</td><td></td><td></td></tr>
-    <tr><td>C6, C9, C15, C16, C38</td><td>5</td><td>3.3nF/25V</td><td>tom-passives:C</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>C7, C10, C35, C36, C39</td><td>5</td><td>22uF/6.3V/X7S</td><td>tom-passives:C</td><td>tom-passives:C_1206_3216Metric</td><td></td><td></td></tr>
-    <tr><td>C12, C14</td><td>2</td><td>1uF/6.3V/X5R</td><td>tom-passives:C</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>C18, C23, C42, C44, C60, C67, C68, C78, C85, C86</td><td>10</td><td>100uF/6.3V/X5R</td><td>tom-passives:C</td><td>tom-passives:C_1206_3216Metric</td><td></td><td></td></tr>
-    <tr><td>C19, C34, C43, C45, C46, C50, C61, C62, C70, C71, C72, C73, C79, C80, C87, C88, C89, C90</td><td>18</td><td>4.7uF/6.3V/X5R</td><td>tom-passives:C</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>C49, C51, C52, C53, C54, C55, C56, C58, C59, C63, C64, C65, C66, C69, C74, C75, C76, C77, C81, C82, C83, C84, C91, C92, C93, C94, C95, C96, C97, C98</td><td>30</td><td>0.47uF/6.3V/X5R</td><td>tom-passives:C</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>D1</td><td>1</td><td>DONE</td><td>tom-opto:LED</td><td>tom-passives:C_0402_1005Metric</td><td>Light emitting diode</td><td></td></tr>
-    <tr><td>D2</td><td>1</td><td>E6C1206RGBC3UDA</td><td>tom-opto:E6C1206RGBC3UDA</td><td>tom-opto:E6C1206RGBC3UDA</td><td>LCSC RGB LED 1206</td><td></td></tr>
-    <tr><td>D3, D4</td><td>2</td><td>SBR3U20SA-13‎</td><td>tom-passives:DIODE</td><td>tom-semiconductors:D_SMA</td><td></td><td></td></tr>
-    <tr><td>D5</td><td>1</td><td>PWR</td><td>tom-opto:LED</td><td>tom-passives:C_0402_1005Metric</td><td>Light emitting diode</td><td></td></tr>
-    <tr><td>J1, J2</td><td>2</td><td>Conn_02x20_Odd_Even</td><td>tom-connectors:Conn_02x20_Odd_Even</td><td>artix7-pcie-v2:Socket_Strip_Angled_2x20</td><td>Generic connector, double row, 02x20, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr>
-    <tr><td>J3</td><td>1</td><td>JTAG_EN</td><td>tom-connectors:Conn_01x02</td><td>tom-connectors:PinHeader_1x02_P1.27mm_Vertical</td><td>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr>
-    <tr><td>J4</td><td>1</td><td>USB3_A</td><td>tom-connectors:USB3_A</td><td>tom-connectors:USB3_A_Aliexpress</td><td>USB 3.0 A connector</td><td></td></tr>
-    <tr><td>J5</td><td>1</td><td>USB3_A_AS_PCIE</td><td>tom-connectors:USB3_A_AS_PCIE</td><td>tom-connectors:USB3_A_Aliexpress</td><td>USB 3.0 A connector</td><td></td></tr>
-    <tr><td>J6</td><td>1</td><td>JTAG</td><td>tom-connectors:Conn_01x06</td><td>tom-connectors:PinHeader_2x03_P2.54mm_Vertical</td><td>Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr>
-    <tr><td>J7</td><td>1</td><td>Conn_01x02</td><td>tom-connectors:Conn_01x02</td><td>tom-connectors:JST-2-SMD</td><td>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr>
-    <tr><td>J8</td><td>1</td><td>SER</td><td>tom-connectors:Conn_01x06</td><td>tom-connectors:PinHeader_2x03_P2.54mm_Vertical</td><td>Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr>
-    <tr><td>J10</td><td>1</td><td>USB_B_Micro</td><td>tom-connectors:USB_B_Micro</td><td>tom-connectors:USB_MICRO_TAOBAO_SMD_PTH</td><td>USB Micro Type B connector</td><td></td></tr>
-    <tr><td>R1, R51</td><td>2</td><td>1K/5%</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R2, R3, R5, R7</td><td>4</td><td>4.7k/5%</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R4, R30</td><td>2</td><td>1k/5%</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R6</td><td>1</td><td>2.4k/5%</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R8</td><td>1</td><td>1k/1%</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R9, R10</td><td>2</td><td>10K/5%</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R11, R15, R33, R40, R41, R46, R47, R48, R49</td><td>9</td><td>0R</td><td>tom-passives:R</td><td>tom-passives:C_0603_1608Metric</td><td></td><td></td></tr>
-    <tr><td>R12, R16, R22, R24, R36</td><td>5</td><td>100k/5%</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R13, R17, R23, R25, R38</td><td>5</td><td>100k/1%</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R14</td><td>1</td><td>24.9k/1%</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R18</td><td>1</td><td>213k/1%</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R19, R21</td><td>2</td><td>0R</td><td>tom-passives:R</td><td>tom-passives:R_0603_1608Metric</td><td></td><td></td></tr>
-    <tr><td>R20, R26, R27, R43, R45, R50</td><td>6</td><td>0R</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R28</td><td>1</td><td>100R/1%</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R29, R37</td><td>2</td><td>1.5k</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R31, R32</td><td>2</td><td>124k/1%</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R34, R35</td><td>2</td><td>270R/5%</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R39</td><td>1</td><td>316k/1%</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>R42, R44</td><td>2</td><td>DNP</td><td>tom-passives:R</td><td>tom-passives:C_0402_1005Metric</td><td></td><td></td></tr>
-    <tr><td>SW1</td><td>1</td><td>PROG</td><td>tom-mechanical:SW_SPST</td><td>tom-mechanical:SW_Push_1P1T_NO_CK_KMR2</td><td>Single Pole Single Throw (SPST) switch</td><td></td></tr>
-    <tr><td>SW2</td><td>1</td><td>SW_SPST</td><td>tom-mechanical:SW_SPST</td><td>tom-mechanical:SW_Push_1P1T_NO_CK_KMR2</td><td>Single Pole Single Throw (SPST) switch</td><td></td></tr>
-    <tr><td>U1</td><td>1</td><td>XC7A75T-FGG484</td><td>artix7-pcie-v2:XC7A75T-FGG484</td><td>artix7-pcie-v2:Xilinx_FGG484</td><td>Artix 7 T 75 XC7A75T-FGG484</td><td></td></tr>
-    <tr><td>U2</td><td>1</td><td>W25Q64JVSSIM</td><td>tom-semiconductors:W25Q128</td><td>artix7-pcie-v2:WSON-8-1EP_8x6mm_P1.27mm</td><td>External EEPROM with SPI interface in 8-pin package</td><td></td></tr>
-    <tr><td>U3</td><td>1</td><td>LP5907MFX</td><td>tom-semiconductors:LP5907MFX</td><td>tom-semiconductors:SOT-23-5</td><td></td><td></td></tr>
-    <tr><td>U4</td><td>1</td><td>5P49V6965A000NLGI</td><td>artix7-pcie-v2:5P49V6965A000NLGI</td><td>artix7-pcie-v2:QFN50P400X400X100-25N-D</td><td>Clock Generators & Support Products VersaClock 6E Standard Part</td><td></td></tr>
-    <tr><td>U5, U8</td><td>2</td><td>TPS82130SILT</td><td>tom-modules:TPS821x0SILT</td><td>tom-modules:TPS82130SILT</td><td>3A Step-Down Converter (Vin 3-17)(Vout 0.9-6)</td><td></td></tr>
-    <tr><td>U6, U7, U9</td><td>3</td><td>TPS82150SILT</td><td>tom-modules:TPS821x0SILT</td><td>tom-modules:TPS82130SILT</td><td>3A Step-Down Converter (Vin 3-17)(Vout 0.9-6)</td><td></td></tr>
-    <tr><td>X1</td><td>1</td><td>25MHz/10pF</td><td>tom-passives:CRYSTAL_4PIN</td><td>tom-passives:Crystal_SMD_3225-4Pin_3.2x2.5mm</td><td></td><td></td></tr><!--TABLEROW-->
-    </table>
-    </body>
-</html>
-    
+"Source:","/home/tom/git/TomKeddie/prj-artix7-pcie/hardware/v2/artix7-pcie-v2.sch"
+"Date:","Fri 22 May 2020 10:43:14 AM PDT"
+"Tool:","Eeschema 5.1.5-52549c5~86~ubuntu19.10.1"
+"Generator:","/usr/share/kicad/plugins/bom_csv_grouped_by_value_with_fp.py"
+"Component Count:","191"
+"Ref","Qnty","Value","Cmp name","Footprint","Description","Vendor"
+"C1, ","1","47uF/6.3V/X5R","C","tom-passives:C_1206_3216Metric","",""
+"C2, C17, C20, C21, C25, C27, C29, C30, C31, C32, C33, ","11","0.1uF/6.3V/X5R","C","tom-passives:C_0402_1005Metric","",""
+"C3, C4, C22, C24, C26, C28, C40, C41, C47, C48, ","10","0.1uF/6.3V/X5R/PCIE","C","tom-passives:C_0402_1005Metric","",""
+"C5, C8, C11, C13, C37, ","5","10uF/25V/X7R","C","tom-passives:C_1206_3216Metric","",""
+"C6, C9, C15, C16, C38, ","5","3.3nF/25V","C","tom-passives:C_0402_1005Metric","",""
+"C7, C10, C35, C36, C39, ","5","22uF/6.3V/X7S","C","tom-passives:C_1206_3216Metric","",""
+"C12, C14, ","2","1uF/6.3V/X5R","C","tom-passives:C_0402_1005Metric","",""
+"C18, C23, C42, C44, C60, C67, C68, C78, C85, C86, ","10","100uF/6.3V/X5R","C","tom-passives:C_1206_3216Metric","",""
+"C19, C34, C43, C45, C46, C50, C61, C62, C70, C71, C72, C73, C79, C80, C87, C88, C89, C90, ","18","4.7uF/6.3V/X5R","C","tom-passives:C_0402_1005Metric","",""
+"C49, C51, C52, C53, C54, C55, C56, C58, C59, C63, C64, C65, C66, C69, C74, C75, C76, C77, C81, C82, C83, C84, C91, C92, C93, C94, C95, C96, C97, C98, ","30","0.47uF/6.3V/X5R","C","tom-passives:C_0402_1005Metric","",""
+"D1, ","1","DONE","LED","tom-passives:C_0402_1005Metric","Light emitting diode",""
+"D2, ","1","E6C1206RGBC3UDA","E6C1206RGBC3UDA","tom-opto:E6C1206RGBC3UDA","LCSC RGB LED 1206",""
+"D3, D4, ","2","SBR3U20SA-13","DIODE","tom-semiconductors:D_SMA","",""
+"D5, ","1","PWR","LED","tom-passives:C_0402_1005Metric","Light emitting diode",""
+"H1, ","1","mask silk image","mech-only-no-pins","artix7-pcie-v2:mask","",""
+"J1, J2, ","2","Conn_02x20_Odd_Even","Conn_02x20_Odd_Even","artix7-pcie-v2:Socket_Strip_Angled_2x20","Generic connector, double row, 02x20, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J3, ","1","JTAG_EN","Conn_01x02","tom-connectors:PinHeader_1x02_P1.27mm_Vertical","Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J4, ","1","USB3_A","USB3_A","tom-connectors:USB3_A_Aliexpress","USB 3.0 A connector",""
+"J5, ","1","USB3_A_AS_PCIE","USB3_A_AS_PCIE","tom-connectors:USB3_A_Aliexpress","USB 3.0 A connector",""
+"J6, ","1","JTAG","Conn_01x06","tom-connectors:PinHeader_2x03_P2.54mm_Vertical","Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J7, ","1","Conn_01x02","Conn_01x02","tom-connectors:JST-2-SMD","Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J8, ","1","SER","Conn_01x06","tom-connectors:PinHeader_2x03_P2.54mm_Vertical","Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J10, ","1","USB_B_Micro","USB_B_Micro","tom-connectors:USB_MICRO_TAOBAO_SMD_PTH","USB Micro Type B connector",""
+"R1, R51, ","2","1K/5%","R","tom-passives:R_0402_1005Metric","",""
+"R2, R3, R5, R7, ","4","4.7k/5%","R","tom-passives:R_0402_1005Metric","",""
+"R4, R30, ","2","1k/5%","R","tom-passives:R_0402_1005Metric","",""
+"R6, ","1","2.4k/5%","R","tom-passives:R_0402_1005Metric","",""
+"R8, ","1","1k/1%","R","tom-passives:R_0402_1005Metric","",""
+"R9, R10, ","2","10K/5%","R","tom-passives:R_0402_1005Metric","",""
+"R11, R15, R19, R21, R33, R40, R41, R46, R47, R48, R49, ","11","0R","R","tom-passives:R_0603_1608Metric_NoPaste","",""
+"R12, R16, R22, R24, R36, ","5","100k/5%","R","tom-passives:R_0402_1005Metric","",""
+"R13, R17, R23, R25, R38, ","5","100k/1%","R","tom-passives:R_0402_1005Metric","",""
+"R14, ","1","24.9k/1%","R","tom-passives:R_0402_1005Metric","",""
+"R18, ","1","213k/1%","R","tom-passives:R_0402_1005Metric","",""
+"R20, R50, ","2","0R","R","tom-passives:R_0402_1005Metric_NoPaste","",""
+"R26, R27, R43, R45, ","4","0R","R","tom-passives:R_0402_1005Metric","",""
+"R28, R52, ","2","100R/1%","R","tom-passives:R_0402_1005Metric","",""
+"R29, R37, ","2","1.5k","R","tom-passives:R_0402_1005Metric","",""
+"R31, R32, ","2","124k/1%","R","tom-passives:R_0402_1005Metric","",""
+"R34, R35, ","2","270R/5%","R","tom-passives:R_0402_1005Metric","",""
+"R39, ","1","316k/1%","R","tom-passives:R_0402_1005Metric","",""
+"R42, R44, ","2","DNP","R","tom-passives:R_0402_1005Metric_NoPaste","",""
+"SW1, ","1","PROG","SW_SPST","tom-mechanical:SW_Push_1P1T_NO_CK_KMR2","Single Pole Single Throw (SPST) switch",""
+"SW2, ","1","USER","SW_SPST","tom-mechanical:SW_Push_1P1T_NO_CK_KMR2","Single Pole Single Throw (SPST) switch",""
+"TP1, TP2, TP3, TP4, TP5, TP6, TP7, TP8, ","8","TestPoint","TestPoint","tom-mechanical:TestPoint_Pad_D1.5mm","test point",""
+"TP9, ","1","TestPoint","TestPoint","tom-mechanical:TestPoint_Loop_D2.50mm_Drill1.0mm","test point",""
+"TP10, TP11, TP12, TP13, ","4","TestPoint","TestPoint","tom-mechanical:MountingHole_2.7mm_M2.5_DIN965_Pad","test point",""
+"TP14, ","1","SCL","TestPoint","tom-mechanical:TestPoint_Pad_D1.5mm","test point",""
+"TP15, ","1","SDA","TestPoint","tom-mechanical:TestPoint_Pad_D1.5mm","test point",""
+"U1, ","1","XC7A75T-FGG484","XC7A75T-FGG484","artix7-pcie-v2:Xilinx_FGG484","Artix 7 T 75 XC7A75T-FGG484",""
+"U2, ","1","W25Q64JVSSIM","W25Q128","artix7-pcie-v2:WSON-8-1EP_8x6mm_P1.27mm","External EEPROM with SPI interface in 8-pin package",""
+"U3, ","1","LP5907MFX","LP5907MFX","tom-semiconductors:SOT-23-5","",""
+"U4, ","1","5P49V6965A000NLGI","5P49V6965A000NLGI","artix7-pcie-v2:QFN50P400X400X100-25N-D","Clock Generators & Support Products VersaClock 6E Standard Part",""
+"U5, U8, ","2","TPS82130SILT","TPS821x0SILT","tom-modules:TPS82130SILT","3A Step-Down Converter (Vin 3-17)(Vout 0.9-6)",""
+"U6, U7, U9, ","3","TPS82150SILT","TPS821x0SILT","tom-modules:TPS82130SILT","3A Step-Down Converter (Vin 3-17)(Vout 0.9-6)",""
+"X1, ","1","25MHz/10pF","CRYSTAL_4PIN","tom-passives:Crystal_SMD_3225-4Pin_3.2x2.5mm","",""
