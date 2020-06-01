@@ -54,7 +54,7 @@
 "TP15, ","1","SDA","TestPoint","tom-mechanical:TestPoint_Pad_D1.5mm","test point",""
 "U1, ","1","XC7A75T-FGG484","XC7A75T-FGG484","artix7-pcie-v2:Xilinx_FGG484","Artix 7 T 75 XC7A75T-FGG484",""
 "U2, ","1","MX25L51245GZ2I-10G","W25Q128","artix7-pcie-v2:WSON-8-1EP_8x6mm_P1.27mm","External EEPROM with SPI interface in 8-pin package","1092-1247-ND"
-"U3, ","1","LP5907MFX","LP5907MFX","tom-semiconductors:SOT-23-5","","‎296-39062-1-ND‎"
+"U3, ","1","LP5907MFX","LP5907MFX","tom-semiconductors:SOT-23-5","","296-40359-1-ND"
 "U4, ","1","5P49V6965A000NLGI","5P49V6965A000NLGI","artix7-pcie-v2:QFN50P400X400X100-25N-D","Clock Generators & Support Products VersaClock 6E Standard Part","800-3818-ND"
 "U5, U8, ","2","TPS82130SILT","TPS821x0SILT","tom-modules:TPS82130SILT","3A Step-Down Converter (Vin 3-17)(Vout 0.9-6)","296-47436-1-ND"
 "U6, U7, U9, ","3","TPS82150SILT","TPS821x0SILT","tom-modules:TPS82130SILT","3A Step-Down Converter (Vin 3-17)(Vout 0.9-6)","296-47090-1-ND"

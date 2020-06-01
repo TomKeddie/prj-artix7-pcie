@@ -23,7 +23,7 @@ F 0 "U3" H 9300 4575 50  0000 C CNN
 F 1 "LP5907MFX" H 9300 4484 50  0000 C CNN
 F 2 "tom-semiconductors:SOT-23-5" H 9300 4250 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lp5907.pdf" H 9300 4250 50  0001 C CNN
-F 4 "‎296-39062-1-ND‎" H 9300 4250 50  0001 C CNN "Vendor"
+F 4 "296-40359-1-ND" H 9300 4250 50  0001 C CNN "Vendor"
 	1    9300 4250
 	1    0    0    -1  
 $EndComp
