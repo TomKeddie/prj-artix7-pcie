@@ -1,3 +1,6 @@
 [submodule "hardware/tom-kicad"]
 	path = hardware/tom-kicad
 	url = git@github.com:TomKeddie/tom-kicad.git
+[submodule "fpga/v2/verilog-i2c"]
+	path = fpga/v2/verilog-i2c
+	url = https://github.com/alexforencich/verilog-i2c.git
