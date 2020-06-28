@@ -1,0 +1,104 @@
+{{ <!--
+########################################
+# I2C, OneByteAddresses
+# VC6+KHz Init (2.6)
+# 2020-06-27 3:20:20 PM
+########################################
+-->}}
+
+<aardvark>
+<configure i2c="1" spi="0" gpio="0" tpower="1" pullups="1" />
+<i2c_write addr="0xD4" radix="16">78 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">77 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">73 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">74 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">75 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">76 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">00 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">01 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">78 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">77 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">73 0C</i2c_write>
+<i2c_write addr="0xD4" radix="16">74 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">75 0C</i2c_write>
+<i2c_write addr="0xD4" radix="16">76 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">78 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">77 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">73 39</i2c_write>
+<i2c_write addr="0xD4" radix="16">74 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">75 39</i2c_write>
+<i2c_write addr="0xD4" radix="16">76 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">78 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">77 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">73 66</i2c_write>
+<i2c_write addr="0xD4" radix="16">74 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">75 66</i2c_write>
+<i2c_write addr="0xD4" radix="16">76 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">78 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">77 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">73 93</i2c_write>
+<i2c_write addr="0xD4" radix="16">74 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">75 93</i2c_write>
+<i2c_write addr="0xD4" radix="16">76 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">01 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">78 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">77 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">73 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">74 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">75 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">76 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">78 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">77 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">73 0C</i2c_write>
+<i2c_write addr="0xD4" radix="16">74 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">75 0C</i2c_write>
+<i2c_write addr="0xD4" radix="16">76 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">78 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">77 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">73 39</i2c_write>
+<i2c_write addr="0xD4" radix="16">74 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">75 39</i2c_write>
+<i2c_write addr="0xD4" radix="16">76 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">78 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">77 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">73 66</i2c_write>
+<i2c_write addr="0xD4" radix="16">74 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">75 66</i2c_write>
+<i2c_write addr="0xD4" radix="16">76 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">78 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">77 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">73 93</i2c_write>
+<i2c_write addr="0xD4" radix="16">74 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">75 93</i2c_write>
+<i2c_write addr="0xD4" radix="16">76 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 01</i2c_write>
+<i2c_write addr="0xD4" radix="16">72 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">01 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">6A 00 00 00 00 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">00 01 03 FF 00 00 00 00 00 00 FF FD C0 00 B6 B4 92 A8 CC D1 D0 00 04 8C 03 A0 00 00 00 9F FF F0 80</i2c_write>
+<i2c_write addr="0xD4" radix="16">20 80 00 00 00 00 00 00 00 00 00 04 00 00 00 00 20 00 81 02 00 00 00 00 00 00 00 04 00 00 00 E0 20</i2c_write>
+<i2c_write addr="0xD4" radix="16">40 00 81 01 1E B8 50 00 00 00 00 04 00 00 00 90 12 80 00 00 00 00 00 00 00 00 00 04 00 00 00 00 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">60 BB 04 7B 05 7B 05 BB 04 FF 34</i2c_write>
+<i2c_write addr="0xD4" radix="16">76 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">76 20</i2c_write>
+<i2c_write addr="0xD4" radix="16">1C 00</i2c_write>
+<i2c_write addr="0xD4" radix="16">1C 80</i2c_write>
+</aardvark>
