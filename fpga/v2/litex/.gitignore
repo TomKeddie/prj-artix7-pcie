@@ -1,0 +1,15 @@
+litedram/
+liteeth/
+liteiclink/
+litejesd204b/
+litepcie/
+litesata/
+litescope/
+litesdcard/
+litespi/
+litevideo/
+litex/
+litex-boards/
+migen/
+soc_soccore_arcticserdes/
+venv/
