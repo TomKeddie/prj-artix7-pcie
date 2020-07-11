@@ -17,6 +17,11 @@ set_property PULLUP TRUE [get_ports serial_tx]
 set_property LOC W19 [get_ports serial_rx]
 set_property IOSTANDARD LVCMOS33 [get_ports serial_rx]
 
+# user_btn_n:0
+set_property LOC U17 [get_ports user_btn_n]
+set_property IOSTANDARD LVCMOS33 [get_ports user_btn_n]
+set_property PULLUP TRUE [get_ports user_btn_n]
+
 # serial2:0.tx
 set_property LOC W17 [get_ports serial2_tx]
 set_property IOSTANDARD LVCMOS33 [get_ports serial2_tx]
@@ -49,4 +54,4 @@ set_property IOSTANDARD LVCMOS33 [get_ports clk_i2c_sda]
 ################################################################################
 # Clock constraints
 ################################################################################
-create_clock -name clk100 -period 10.0 [get_nets clk]
+create_clock -name clk100 -period 10.0 [get_nets cfgmclk]

@@ -11,18 +11,26 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="7117287146797fs"></ZoomStartTime>
-      <ZoomEndTime time="46577742570641fs"></ZoomEndTime>
-      <Cursor1Time time="40001000000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="323500000001fs"></ZoomEndTime>
+      <Cursor1Time time="60000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="239"></NameColumnWidth>
-      <ValueColumnWidth column_width="94"></ValueColumnWidth>
+      <ValueColumnWidth column_width="74"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="25" />
+   <WVObjectSize size="35" />
    <wvobject type="logic" fp_name="/top_tb/top/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/i2c_start">
+      <obj_property name="ElementShortName">i2c_start</obj_property>
+      <obj_property name="ObjectShortName">i2c_start</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_tb/serial_tx">
       <obj_property name="ElementShortName">serial_tx</obj_property>
@@ -65,10 +73,6 @@
       <obj_property name="ObjectShortName">counter[0:31]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/top/reset">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/top_tb/top/state">
       <obj_property name="ElementShortName">state[2:0]</obj_property>
       <obj_property name="ObjectShortName">state[2:0]</obj_property>
@@ -77,29 +81,33 @@
       <obj_property name="ElementShortName">state_next[2:0]</obj_property>
       <obj_property name="ObjectShortName">state_next[2:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/top_tb/top/data_in">
-      <obj_property name="ElementShortName">data_in[7:0]</obj_property>
-      <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
+   <wvobject fp_name="divider60" type="divider">
+      <obj_property name="label">i2c_master</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/top_tb/top/data_in_index">
-      <obj_property name="ElementShortName">data_in_index[7:0]</obj_property>
-      <obj_property name="ObjectShortName">data_in_index[7:0]</obj_property>
+   <wvobject type="array" fp_name="/top_tb/top/i2c_master/cmd_address">
+      <obj_property name="ElementShortName">cmd_address[6:0]</obj_property>
+      <obj_property name="ObjectShortName">cmd_address[6:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/top/data_in_write">
-      <obj_property name="ElementShortName">data_in_write</obj_property>
-      <obj_property name="ObjectShortName">data_in_write</obj_property>
+   <wvobject type="logic" fp_name="/top_tb/top/i2c_master/cmd_start">
+      <obj_property name="ElementShortName">cmd_start</obj_property>
+      <obj_property name="ObjectShortName">cmd_start</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/top/data_in_ready">
-      <obj_property name="ElementShortName">data_in_ready</obj_property>
-      <obj_property name="ObjectShortName">data_in_ready</obj_property>
+   <wvobject type="logic" fp_name="/top_tb/top/i2c_master/cmd_read">
+      <obj_property name="ElementShortName">cmd_read</obj_property>
+      <obj_property name="ObjectShortName">cmd_read</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/top/data_in_valid">
-      <obj_property name="ElementShortName">data_in_valid</obj_property>
-      <obj_property name="ObjectShortName">data_in_valid</obj_property>
+   <wvobject type="logic" fp_name="/top_tb/top/i2c_master/cmd_write">
+      <obj_property name="ElementShortName">cmd_write</obj_property>
+      <obj_property name="ObjectShortName">cmd_write</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/top_tb/top/data_in_last">
-      <obj_property name="ElementShortName">data_in_last</obj_property>
-      <obj_property name="ObjectShortName">data_in_last</obj_property>
+   <wvobject type="logic" fp_name="/top_tb/top/i2c_master/cmd_write_multiple">
+      <obj_property name="ElementShortName">cmd_write_multiple</obj_property>
+      <obj_property name="ObjectShortName">cmd_write_multiple</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/i2c_master/cmd_stop">
+      <obj_property name="ElementShortName">cmd_stop</obj_property>
+      <obj_property name="ObjectShortName">cmd_stop</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/top_tb/top/i2c_master/cmd_valid">
       <obj_property name="ElementShortName">cmd_valid</obj_property>
@@ -108,6 +116,22 @@
    <wvobject type="logic" fp_name="/top_tb/top/i2c_master/cmd_ready">
       <obj_property name="ElementShortName">cmd_ready</obj_property>
       <obj_property name="ObjectShortName">cmd_ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top/i2c_master/data_in">
+      <obj_property name="ElementShortName">data_in[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/i2c_master/data_in_valid">
+      <obj_property name="ElementShortName">data_in_valid</obj_property>
+      <obj_property name="ObjectShortName">data_in_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/i2c_master/data_in_ready">
+      <obj_property name="ElementShortName">data_in_ready</obj_property>
+      <obj_property name="ObjectShortName">data_in_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/i2c_master/data_in_last">
+      <obj_property name="ElementShortName">data_in_last</obj_property>
+      <obj_property name="ObjectShortName">data_in_last</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/top/i2c_master/state_reg">
       <obj_property name="ElementShortName">state_reg[4:0]</obj_property>
@@ -120,5 +144,21 @@
    <wvobject type="logic" fp_name="/top_tb/top/i2c_master/busy">
       <obj_property name="ElementShortName">busy</obj_property>
       <obj_property name="ObjectShortName">busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider120" type="divider">
+      <obj_property name="label">i2c_init</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/sda_i">
+      <obj_property name="ElementShortName">sda_i</obj_property>
+      <obj_property name="ObjectShortName">sda_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/sda_o">
+      <obj_property name="ElementShortName">sda_o</obj_property>
+      <obj_property name="ObjectShortName">sda_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/sda_t">
+      <obj_property name="ElementShortName">sda_t</obj_property>
+      <obj_property name="ObjectShortName">sda_t</obj_property>
    </wvobject>
 </wave_config>
