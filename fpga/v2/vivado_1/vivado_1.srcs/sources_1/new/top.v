@@ -21,6 +21,8 @@
 
 
 module top(
+           input  clk100_p,
+           input  clk100_n,
            output serial_tx,
            output serial_rx,
            output serial2_tx,
@@ -35,16 +37,21 @@ module top(
 
   // 65MHz
   wire            clk;
+  wire            clk100;
+  wire            clk100_in;
   wire            cfgmclk;
-  reg [0:31]      counter = 32'h0000_0000;
-  wire [0:2]      probe0;
+  reg [31:0]      counter = 32'h0000_0000;
+  wire [2:0]      probe0;
+  wire [7:0]      probe1;
   reg             led_b = 1'b0;
   reg             led_g = 1'b1;
   reg             reset = 1'b1;
 
-  wire [0:0]      probe_out0;
-  reg [0:0]       probe_out0_1d = 1'b0;
-  wire [0:0]      probe_in0;
+  wire [1:0]      probe_out0;
+  reg [1:0]       probe_out0_1d = 1'b0;
+  wire [3:0]      probe_in0;
+  wire [0:0]      probe_in1;
+  wire [7:0]      probe_in2;
 
   reg             i2c_start = 1'b0;
 
@@ -66,15 +73,46 @@ module top(
             .O(clk)
             );
   
+  IBUFDS IBUFDS(
+	.I(clk100_p),
+	.IB(clk100_n),
+	.O(clk100_in)
+);
+
+wire pll_fb;
+wire clk100_locked;
+
+assign probe_in1[0] = clk100_locked;
+
+PLLE2_ADV #(
+	.CLKFBOUT_MULT(5'd16),
+	.CLKIN1_PERIOD(10.0),
+	.CLKOUT0_DIVIDE(5'd16),
+	.CLKOUT0_PHASE(1'd0),
+	.DIVCLK_DIVIDE(1'd1),
+	.REF_JITTER1(0.01),
+	.STARTUP_WAIT("FALSE")
+) PLLE2_ADV (
+	.CLKFBIN(pll_fb),
+	.CLKIN1(clk100_in),
+	.RST(reset),
+	.CLKFBOUT(pll_fb),
+	.CLKOUT0(clk100),
+	.LOCKED(clk100_locked)
+);
+
   
   ila_0 ila_0 (
-	           .clk(clk), // input wire clk
-	           .probe0(probe0) // input wire [2:0] probe0
+	           .clk(clk),
+	           .probe0(probe0),
+	           .probe1(probe1)
                );
 
   vio_0 vio_0 (
                .clk(clk),
                .probe_in0(probe_in0),
+               .probe_in1(probe_in1),
+               .probe_in2(probe_in2),
                .probe_out0(probe_out0)
                );
   
@@ -133,19 +171,29 @@ module top(
   wire       sda_o;
   wire       sda_t;
 
-  parameter IDLE  = 3'b000, WRITE_START = 3'b001, WRITE_REG = 3'b010, WRITE_DATA = 3'b011, WRITE_DONE = 3'b100;
-  reg [2:0]  state = IDLE;
-  reg [2:0]  state_next = IDLE;
+  parameter STATE_IDLE        = 4'b0000, 
+    STATE_SRAM_WRITE_START         = 4'b0001,
+    STATE_SRAM_WRITE_REG      = 4'b0010, 
+    STATE_SRAM_WRITE_DATA     = 4'b0011, 
+    STATE_RESET_READ_ADDR     = 4'b0100,
+    STATE_RESET_READ_ADDR_DATA= 4'b0101,
+    STATE_RESET_READ_CMD      = 4'b0110,
+    STATE_RESET_READ_DATA     = 4'b0111,
+    STATE_DONE                = 4'b1000;
+  reg [3:0]  state      = STATE_IDLE;
+  reg [3:0]  state_next = STATE_IDLE;
 
   assign scl_i = clk_i2c_scl;
   assign clk_i2c_scl = (scl_t == 1'b1) ? 1'bz : (scl_o == 1'b0) ? 1'b0 : 1'bz;
   assign sda_i = clk_i2c_sda;
   assign clk_i2c_sda = (sda_t == 1'b1) ? 1'bz : (sda_o == 1'b0) ? 1'b0 : 1'bz;
 
-  assign i2c_data_out_ready = 1'b1;
+  assign i2c_data_out_ready             = 1'b1;
+  assign probe_in2 = i2c_data_out_reg;
 
   reg [7:0]  i2c_data_in_index_reg      = 8'h00; 
   reg [7:0]  i2c_data_in_reg            = 8'h00;
+  reg [7:0]  i2c_data_out_reg           = 8'h00;
   reg        i2c_data_in_write_reg      = 1'b0;
   reg        i2c_data_in_last_reg       = 1'b0;
   reg [6:0]  i2c_cmd_address_reg        = 7'h6a;
@@ -155,7 +203,7 @@ module top(
   reg        i2c_cmd_write_reg          = 1'b0;
   reg        i2c_cmd_write_multiple_reg = 1'b0;
 
-  assign i2c_cmd_valid = i2c_cmd_write_multiple_reg & i2c_cmd_ready;
+  assign i2c_cmd_valid = (i2c_cmd_write_multiple_reg || i2c_cmd_read_reg) & i2c_cmd_ready;
   assign i2c_data_in_valid = i2c_data_in_write_reg & i2c_data_in_ready;
 
   assign i2c_data_in = i2c_data_in_reg;
@@ -167,12 +215,14 @@ module top(
   assign i2c_cmd_read = i2c_cmd_read_reg;
   assign i2c_cmd_write = i2c_cmd_write_reg;
   assign i2c_cmd_write_multiple = i2c_cmd_write_multiple_reg;
-  
-  
+
+  assign probe_in0 = state;
+  assign probe1 = {4'b0, state};
+   
   // reset
   always @(posedge clk) begin
     if (reset) begin
-      state <= IDLE;
+      state <= STATE_IDLE;
     end
     else begin
       state <= state_next;
@@ -180,53 +230,85 @@ module top(
   end 
   // state
   always @(posedge clk) begin
-    i2c_cmd_start_reg <= 1'b0;
-    i2c_data_in_write_reg <= 1'b0;
+    i2c_cmd_start_reg          <= 1'b0;
+    i2c_cmd_stop_reg           <= 1'b0;
+    i2c_data_in_write_reg      <= 1'b0;
     i2c_cmd_write_multiple_reg <= 1'b0;
-    probe_out0_1d <= probe_out0;
+    i2c_cmd_read_reg           <= 1'b0;
+    probe_out0_1d              <= probe_out0;
     case(state)
       default :
-        // IDLE 
+        // STATE_IDLE 
         if (i2c_start == 1'b1 && i2c_busy == 1'b0) begin
-          state_next <= WRITE_START;
+          state_next <= STATE_RESET_READ_ADDR;
         end
-      WRITE_START :
+      STATE_SRAM_WRITE_START :
         begin
-          i2c_cmd_start_reg <= 1'b1;
           i2c_cmd_write_multiple_reg <= 1'b1;
+          i2c_cmd_stop_reg <= 1'b1;
           if (i2c_cmd_ready == 1'b1) begin
-            state_next <= WRITE_REG;
+            state_next <= STATE_SRAM_WRITE_REG;
           end
         end
-      WRITE_REG :
+      STATE_SRAM_WRITE_REG :
         begin
           // start at address 0
+          i2c_cmd_write_multiple_reg <= 1'b1;
+          i2c_cmd_stop_reg <= 1'b1;
           i2c_data_in_write_reg <= 1'b1;
           if (i2c_data_in_ready == 1'b1) begin
-            state_next <= WRITE_DATA;
+            state_next <= STATE_SRAM_WRITE_DATA;
           end
         end
-      WRITE_DATA :
+      STATE_SRAM_WRITE_DATA :
+        begin
+          i2c_cmd_write_multiple_reg <= 1'b1;
+          i2c_cmd_stop_reg <= 1'b1;
+          i2c_data_in_write_reg <= 1'b1;
+          if (i2c_data_in_ready == 1'b1 && i2c_data_in_last_reg == 1'b1) begin
+            state_next <= STATE_DONE;
+          end
+        end
+      STATE_RESET_READ_ADDR :
+        begin
+          i2c_cmd_write_multiple_reg <= 1'b1;
+          if (i2c_cmd_ready == 1'b1) begin
+            state_next <= STATE_RESET_READ_ADDR_DATA;
+          end
+        end
+      STATE_RESET_READ_ADDR_DATA :
         begin
           i2c_data_in_write_reg <= 1'b1;
           if (i2c_data_in_ready == 1'b1 && i2c_data_in_last_reg == 1'b1) begin
-            state_next <= WRITE_DONE;
+            state_next <= STATE_RESET_READ_CMD;
           end
         end
-      WRITE_DONE :
+      STATE_RESET_READ_CMD :
         begin
-          if (user_btn_n == 1'b0 || (probe_out0 == 1'b1 && probe_out0_1d == 1'b0)) begin
-            state_next <= IDLE;
+          i2c_cmd_read_reg <= 1'b1;
+          if (i2c_cmd_ready == 1'b1) begin
+            state_next <= STATE_RESET_READ_DATA;
+          end
+        end
+      STATE_RESET_READ_DATA:
+        begin
+          if (i2c_data_out_valid == 1'b1) begin
+            i2c_data_out_reg <= i2c_data_out;
+            state_next       <= STATE_DONE;
+          end                   
+        end
+      STATE_DONE :
+        begin
+          if (user_btn_n == 1'b0 || (probe_out0[0] == 1'b1 && probe_out0_1d[0] == 1'b0)) begin
+            state_next <= STATE_IDLE;
+          end
+          if ((probe_out0[1] == 1'b1 && probe_out0_1d[1] == 1'b0)) begin
+            state_next <= STATE_RESET_READ_ADDR;
           end
         end
     endcase
   end
-  
-  // data
-  // Size: 0x20, Offset: 0x00, Data: 0x0103FF000000000000FFFDC000B6B492A8CCD1D000048C03A00000009FFFF080
-  // Size: 0x20, Offset: 0x20, Data: 0x800000000000000000000400000000200081020000000000000004000000E020
-  // Size: 0x20, Offset: 0x40, Data: 0x0081011EB8500000000004000000901280000000000000000000040000000000
-  // Size: 0xA, Offset: 0x60, Data: 0xBB047B057B05BB04FF34
+
   parameter bits0 = 8'h20*8;
   parameter bits1 = 8'h20*8;
   parameter bits2 = 8'h20*8;
@@ -235,20 +317,20 @@ module top(
   parameter [0:bits0-1] i2cdata0 = 256'h0103FF000000000000FFFDC000B6B492A8CCD1D000048C03A00000009FFFF080;
   parameter [0:bits1-1] i2cdata1 = 256'h800000000000000000000400000000200081020000000000000004000000E020;
   parameter [0:bits2-1] i2cdata2 = 256'h0081011EB8500000000004000000901280000000000000000000040000000000;
-  parameter [0:bits3-1] i2cdata3 = 88'hBB047B057B05BB04FF34;
+  parameter [0:bits3-1] i2cdata3 = 88'hBB0473057305BB04FF34;
   
   parameter [0:bits0+bits1+bits2+bits3-1] i2cdata = {i2cdata0, i2cdata1, i2cdata2, i2cdata3};
   parameter bits = bits0 + bits1 + bits2 + bits3;
   
   always @(posedge clk) begin
-    i2c_data_in_last_reg <= 1'b0;
-    led_g <= 1'b0; // on
+    i2c_data_in_last_reg   <= 1'b0;
+    led_g                  <= 1'b0; // on
     case(state)
-      WRITE_REG : 
+      STATE_SRAM_WRITE_REG : 
         begin
           i2c_data_in_reg <= 8'h00;
         end
-      WRITE_DATA:
+      STATE_SRAM_WRITE_DATA:
         begin
           i2c_data_in_reg <= i2cdata[i2c_data_in_index_reg*8+7 -: 8];
           if (i2c_data_in_ready == 1'b1 && i2c_data_in_last == 1'b0) begin
@@ -257,6 +339,11 @@ module top(
           if (i2c_data_in_index_reg == bits/8-1) begin
             i2c_data_in_last_reg <= 1'b1;
           end
+        end
+      STATE_RESET_READ_ADDR_DATA :
+        begin
+          i2c_data_in_reg <= 8'h76;
+          i2c_data_in_last_reg <= 1'b1;
         end
       default:
         begin    
@@ -344,7 +431,7 @@ module top(
                           * Configuration
                           */
                          .prescale(16'd100),  // 65Mhz/20000 = 325kHz
-                         .stop_on_idle(0)
+                         .stop_on_idle(1'b0)
                          );
 
 endmodule

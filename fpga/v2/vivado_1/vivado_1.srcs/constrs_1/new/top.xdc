@@ -8,6 +8,14 @@ set_property CONFIG_VOLTAGE 3.3 [current_design]
 ################################################################################
 # IO constraints
 ################################################################################
+# clk100:0.p
+set_property LOC Y18 [get_ports clk100_p]
+set_property IOSTANDARD LVDS_25 [get_ports clk100_p]
+
+# clk100:0.n
+set_property LOC Y19 [get_ports clk100_n]
+set_property IOSTANDARD LVDS_25 [get_ports clk100_n]
+
 # serial:0.tx
 set_property LOC V17 [get_ports serial_tx]
 set_property IOSTANDARD LVCMOS33 [get_ports serial_tx]
@@ -54,4 +62,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports clk_i2c_sda]
 ################################################################################
 # Clock constraints
 ################################################################################
-create_clock -name clk100 -period 10.0 [get_nets cfgmclk]
+create_clock -name clk65 -period 10.0 [get_nets cfgmclk]
+create_clock -name clk100 -period 10.0 [get_nets clk100_p]
+
+set_clock_groups -asynchronous -group {clk65} -group {clk100}
