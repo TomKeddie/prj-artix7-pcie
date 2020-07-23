@@ -171,17 +171,23 @@ PLLE2_ADV #(
   wire       sda_o;
   wire       sda_t;
 
-  parameter STATE_IDLE        = 4'b0000, 
-    STATE_SRAM_WRITE_START         = 4'b0001,
-    STATE_SRAM_WRITE_REG      = 4'b0010, 
-    STATE_SRAM_WRITE_DATA     = 4'b0011, 
-    STATE_RESET_READ_ADDR     = 4'b0100,
-    STATE_RESET_READ_ADDR_DATA= 4'b0101,
-    STATE_RESET_READ_CMD      = 4'b0110,
-    STATE_RESET_READ_DATA     = 4'b0111,
-    STATE_DONE                = 4'b1000;
-  reg [3:0]  state      = STATE_IDLE;
-  reg [3:0]  state_next = STATE_IDLE;
+  parameter STATE_IDLE              = 4'b00000, 
+    STATE_SRAM_WRITE_START        = 5'b00001,
+    STATE_SRAM_WRITE_REG          = 5'b00010, 
+    STATE_SRAM_WRITE_DATA         = 5'b00011, 
+    STATE_RESET_READ_ADDR         = 5'b00100,
+    STATE_RESET_READ_ADDR_DATA    = 5'b00101,
+    STATE_RESET_READ_CMD          = 5'b00110,
+    STATE_RESET_READ_DATA         = 5'b00111,
+    STATE_RESET_WRITE_1_ADDR      = 5'b01000,
+    STATE_RESET_WRITE_1_DATA_1    = 5'b01001,
+    STATE_RESET_WRITE_1_DATA_2    = 5'b01010,
+    STATE_RESET_WRITE_2_ADDR      = 5'b01100,
+    STATE_RESET_WRITE_2_DATA_1    = 5'b01101,
+    STATE_RESET_WRITE_2_DATA_2    = 5'b01110,
+    STATE_DONE                    = 5'b11111;
+  reg [4:0]  state                = STATE_IDLE;
+  reg [4:0]  state_next           = STATE_IDLE;
 
   assign scl_i = clk_i2c_scl;
   assign clk_i2c_scl = (scl_t == 1'b1) ? 1'bz : (scl_o == 1'b0) ? 1'b0 : 1'bz;
@@ -189,11 +195,9 @@ PLLE2_ADV #(
   assign clk_i2c_sda = (sda_t == 1'b1) ? 1'bz : (sda_o == 1'b0) ? 1'b0 : 1'bz;
 
   assign i2c_data_out_ready             = 1'b1;
-  assign probe_in2 = i2c_data_out_reg;
 
   reg [7:0]  i2c_data_in_index_reg      = 8'h00; 
   reg [7:0]  i2c_data_in_reg            = 8'h00;
-  reg [7:0]  i2c_data_out_reg           = 8'h00;
   reg        i2c_data_in_write_reg      = 1'b0;
   reg        i2c_data_in_last_reg       = 1'b0;
   reg [6:0]  i2c_cmd_address_reg        = 7'h6a;
@@ -202,6 +206,8 @@ PLLE2_ADV #(
   reg        i2c_cmd_read_reg           = 1'b0;
   reg        i2c_cmd_write_reg          = 1'b0;
   reg        i2c_cmd_write_multiple_reg = 1'b0;
+
+  reg [7:0]  i2c_reset_register_data    = 8'h00;
 
   assign i2c_cmd_valid = (i2c_cmd_write_multiple_reg || i2c_cmd_read_reg) & i2c_cmd_ready;
   assign i2c_data_in_valid = i2c_data_in_write_reg & i2c_data_in_ready;
@@ -240,7 +246,7 @@ PLLE2_ADV #(
       default :
         // STATE_IDLE 
         if (i2c_start == 1'b1 && i2c_busy == 1'b0) begin
-          state_next <= STATE_RESET_READ_ADDR;
+          state_next <= STATE_SRAM_WRITE_START;
         end
       STATE_SRAM_WRITE_START :
         begin
@@ -266,7 +272,7 @@ PLLE2_ADV #(
           i2c_cmd_stop_reg <= 1'b1;
           i2c_data_in_write_reg <= 1'b1;
           if (i2c_data_in_ready == 1'b1 && i2c_data_in_last_reg == 1'b1) begin
-            state_next <= STATE_DONE;
+            state_next <= STATE_RESET_READ_ADDR;
           end
         end
       STATE_RESET_READ_ADDR :
@@ -286,6 +292,7 @@ PLLE2_ADV #(
       STATE_RESET_READ_CMD :
         begin
           i2c_cmd_read_reg <= 1'b1;
+          i2c_cmd_stop_reg <= 1'b1;
           if (i2c_cmd_ready == 1'b1) begin
             state_next <= STATE_RESET_READ_DATA;
           end
@@ -293,9 +300,53 @@ PLLE2_ADV #(
       STATE_RESET_READ_DATA:
         begin
           if (i2c_data_out_valid == 1'b1) begin
-            i2c_data_out_reg <= i2c_data_out;
-            state_next       <= STATE_DONE;
+            i2c_reset_register_data <= i2c_data_out;
+            state_next              <= STATE_RESET_WRITE_1_ADDR;
           end                   
+        end
+      STATE_RESET_WRITE_1_ADDR :
+        begin
+          i2c_cmd_write_multiple_reg <= 1'b1;
+          i2c_cmd_stop_reg           <= 1'b1;
+          if (i2c_cmd_ready == 1'b1) begin
+            state_next <= STATE_RESET_WRITE_1_DATA_1;
+          end
+        end
+      STATE_RESET_WRITE_1_DATA_1 :
+        begin
+          i2c_data_in_write_reg <= 1'b1;
+          if (i2c_data_in_ready == 1'b1 && i2c_data_in_valid == 1'b1) begin
+            state_next <= STATE_RESET_WRITE_1_DATA_2;
+          end
+        end
+      STATE_RESET_WRITE_1_DATA_2 :
+        begin
+          i2c_data_in_write_reg <= 1'b1;
+          if (i2c_data_in_ready == 1'b1 && i2c_data_in_valid == 1'b1) begin
+            state_next <= STATE_RESET_WRITE_2_ADDR;
+          end
+        end
+      STATE_RESET_WRITE_2_ADDR :
+        begin
+          i2c_cmd_write_multiple_reg <= 1'b1;
+          i2c_cmd_stop_reg           <= 1'b1;
+          if (i2c_cmd_ready == 1'b1) begin
+            state_next <= STATE_RESET_WRITE_2_DATA_1;
+          end
+        end
+      STATE_RESET_WRITE_2_DATA_1 :
+        begin
+          i2c_data_in_write_reg <= 1'b1;
+          if (i2c_data_in_ready == 1'b1 && i2c_data_in_valid == 1'b1) begin
+            state_next <= STATE_RESET_WRITE_2_DATA_2;
+          end
+        end
+      STATE_RESET_WRITE_2_DATA_2 :
+        begin
+          i2c_data_in_write_reg <= 1'b1;
+          if (i2c_data_in_ready == 1'b1 && i2c_data_in_valid == 1'b1) begin
+            state_next <= STATE_DONE;
+          end
         end
       STATE_DONE :
         begin
@@ -343,6 +394,20 @@ PLLE2_ADV #(
       STATE_RESET_READ_ADDR_DATA :
         begin
           i2c_data_in_reg <= 8'h76;
+          i2c_data_in_last_reg <= 1'b1;
+        end
+      STATE_RESET_WRITE_1_DATA_1, STATE_RESET_WRITE_2_DATA_1 :
+        begin
+          i2c_data_in_reg <= 8'h76;
+        end
+      STATE_RESET_WRITE_1_DATA_2 :
+        begin
+          i2c_data_in_reg      <= i2c_reset_register_data | 8'b00100000; // reset on
+          i2c_data_in_last_reg <= 1'b1;
+        end
+      STATE_RESET_WRITE_2_DATA_2 :
+        begin
+          i2c_data_in_reg      <= i2c_reset_register_data & 8'b11011111; // reset off
           i2c_data_in_last_reg <= 1'b1;
         end
       default:
