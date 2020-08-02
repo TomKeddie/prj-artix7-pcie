@@ -32,6 +32,7 @@ F 0 "J4" H 2557 2967 50  0000 C CNN
 F 1 "USB3_A" H 2557 2876 50  0000 C CNN
 F 2 "tom-connectors:USB3_A_Aliexpress" H 2650 2350 50  0001 C CNN
 F 3 "~" H 2650 2350 50  0001 C CNN
+F 4 "2057-USB-A3-S-RA-ND" H 2500 2250 50  0001 C CNN "Digikey"
 	1    2500 2250
 	1    0    0    -1  
 $EndComp
@@ -500,6 +501,7 @@ F 0 "J5" H 2557 5217 50  0000 C CNN
 F 1 "USB3_A_AS_PCIE" H 2557 5126 50  0000 C CNN
 F 2 "tom-connectors:USB3_A_Aliexpress" H 2650 4600 50  0001 C CNN
 F 3 "~" H 2650 4600 50  0001 C CNN
+F 4 "2057-USB-A3-S-RA-ND" H 2500 4500 50  0001 C CNN "Digikey"
 	1    2500 4500
 	1    0    0    -1  
 $EndComp
