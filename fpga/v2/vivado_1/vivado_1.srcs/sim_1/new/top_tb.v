@@ -24,6 +24,7 @@ module top_tb(
 
     );
      
+    reg clkin_p = 1'b0;
     wire serial_tx;
     wire serial_rx;
     wire serial2_tx;
@@ -35,6 +36,8 @@ module top_tb(
     wire clk_i2c_sda;
     
     top top(
+    .clkin_p(clkin_p),
+    .clkin_n(!clkin_p),
     .serial_tx(serial_tx),
     .serial_rx(serial_rx),
     .serial2_tx(serial2_tx),
@@ -46,4 +49,6 @@ module top_tb(
     .clk_i2c_sda(clk_i2c_sda) 
     );
 
+always 
+    #20  clkin_p =  !clkin_p; 
 endmodule

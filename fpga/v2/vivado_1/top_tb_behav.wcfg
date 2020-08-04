@@ -11,18 +11,34 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="14860500000000fs"></ZoomStartTime>
-      <ZoomEndTime time="15016500000001fs"></ZoomEndTime>
-      <Cursor1Time time="15000000000000fs"></Cursor1Time>
+      <ZoomStartTime time="7440064382555fs"></ZoomStartTime>
+      <ZoomEndTime time="7440197790689fs"></ZoomEndTime>
+      <Cursor1Time time="7440175556000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="227"></NameColumnWidth>
+      <NameColumnWidth column_width="187"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="20" />
+   <WVObjectSize size="37" />
    <wvobject type="logic" fp_name="/top_tb/top/i2c_master/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/clkin_p">
+      <obj_property name="ElementShortName">clkin_p</obj_property>
+      <obj_property name="ObjectShortName">clkin_p</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/clkin_n">
+      <obj_property name="ElementShortName">clkin_n</obj_property>
+      <obj_property name="ObjectShortName">clkin_n</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top/state">
+      <obj_property name="ElementShortName">state[4:0]</obj_property>
+      <obj_property name="ObjectShortName">state[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider478" type="divider">
+      <obj_property name="label">i2c_master</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/top_tb/top/i2c_master/cmd_address">
       <obj_property name="ElementShortName">cmd_address[6:0]</obj_property>
@@ -99,5 +115,57 @@
    <wvobject type="logic" fp_name="/top_tb/top/i2c_master/mode_read_reg">
       <obj_property name="ElementShortName">mode_read_reg</obj_property>
       <obj_property name="ObjectShortName">mode_read_reg</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/i2c_master/mode_stop_next">
+      <obj_property name="ElementShortName">mode_stop_next</obj_property>
+      <obj_property name="ObjectShortName">mode_stop_next</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/i2c_master/mode_stop_reg">
+      <obj_property name="ElementShortName">mode_stop_reg</obj_property>
+      <obj_property name="ObjectShortName">mode_stop_reg</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/clk_i2c_scl">
+      <obj_property name="ElementShortName">clk_i2c_scl</obj_property>
+      <obj_property name="ObjectShortName">clk_i2c_scl</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/clk_i2c_sda">
+      <obj_property name="ElementShortName">clk_i2c_sda</obj_property>
+      <obj_property name="ObjectShortName">clk_i2c_sda</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top/shifter0">
+      <obj_property name="ElementShortName">shifter0[27:0]</obj_property>
+      <obj_property name="ObjectShortName">shifter0[27:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top/j1_34">
+      <obj_property name="ElementShortName">j1_34[13:0]</obj_property>
+      <obj_property name="ObjectShortName">j1_34[13:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/top_tb/top/j1_35">
+      <obj_property name="ElementShortName">j1_35[13:0]</obj_property>
+      <obj_property name="ObjectShortName">j1_35[13:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/rgb_led_r">
+      <obj_property name="ElementShortName">rgb_led_r</obj_property>
+      <obj_property name="ObjectShortName">rgb_led_r</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/rgb_led_g">
+      <obj_property name="ElementShortName">rgb_led_g</obj_property>
+      <obj_property name="ObjectShortName">rgb_led_g</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/rgb_led_b">
+      <obj_property name="ElementShortName">rgb_led_b</obj_property>
+      <obj_property name="ObjectShortName">rgb_led_b</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/led_b">
+      <obj_property name="ElementShortName">led_b</obj_property>
+      <obj_property name="ObjectShortName">led_b</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/led_g">
+      <obj_property name="ElementShortName">led_g</obj_property>
+      <obj_property name="ObjectShortName">led_g</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/top_tb/top/led_r">
+      <obj_property name="ElementShortName">led_r</obj_property>
+      <obj_property name="ObjectShortName">led_r</obj_property>
    </wvobject>
 </wave_config>
