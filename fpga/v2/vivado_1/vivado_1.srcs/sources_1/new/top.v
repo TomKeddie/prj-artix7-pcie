@@ -243,33 +243,19 @@ assign probe_in1[1] = pll1_locked;
   wire       sda_o;
   wire       sda_t;
 
-  parameter STATE_IDLE              = 4'b00000, 
-    STATE_SRAM_WRITE_START        = 5'b00001,
-    STATE_SRAM_WRITE_REG          = 5'b00010, 
-    STATE_SRAM_WRITE_DATA         = 5'b00011, 
-    STATE_RESET_READ_ADDR         = 5'b00100,
-    STATE_RESET_READ_ADDR_DATA    = 5'b00101,
-    STATE_RESET_READ_CMD          = 5'b00110,
-    STATE_RESET_READ_DATA         = 5'b00111,
-    STATE_RESET_WRITE_1_ADDR      = 5'b01000,
-    STATE_RESET_WRITE_1_DATA_1    = 5'b01001,
-    STATE_RESET_WRITE_1_DATA_2    = 5'b01010,
-    STATE_RESET_WRITE_2_ADDR      = 5'b01100,
-    STATE_RESET_WRITE_2_DATA_1    = 5'b01101,
-    STATE_RESET_WRITE_2_DATA_2    = 5'b01110,
-    STATE_CAL_READ_ADDR           = 5'b10100,
-    STATE_CAL_READ_ADDR_DATA      = 5'b10101,
-    STATE_CAL_READ_CMD            = 5'b10110,
-    STATE_CAL_READ_DATA           = 5'b10111,
-    STATE_CAL_WRITE_1_ADDR        = 5'b11000,
-    STATE_CAL_WRITE_1_DATA_1      = 5'b11001,
-    STATE_CAL_WRITE_1_DATA_2      = 5'b11010,
-    STATE_CAL_WRITE_2_ADDR        = 5'b11100,
-    STATE_CAL_WRITE_2_DATA_1      = 5'b11101,
-    STATE_CAL_WRITE_2_DATA_2      = 5'b11110,
-    STATE_DONE                    = 5'b11111;
-  reg [4:0]  state                = STATE_IDLE;
-  reg [4:0]  state_next           = STATE_IDLE;
+  parameter STATE_IDLE            = 4'b0000, 
+    STATE_SRAM_WRITE_START        = 4'b0001,
+    STATE_SRAM_WRITE_REG          = 4'b0010, 
+    STATE_SRAM_WRITE_DATA         = 4'b0011, 
+    STATE_CAL_WRITE_1_ADDR        = 4'b1000,
+    STATE_CAL_WRITE_1_REG         = 4'b1001,
+    STATE_CAL_WRITE_1_DATA        = 4'b1010,
+    STATE_CAL_WRITE_2_ADDR        = 4'b1100,
+    STATE_CAL_WRITE_2_REG         = 4'b1101,
+    STATE_CAL_WRITE_2_DATA        = 4'b1110,
+    STATE_DONE                    = 4'b1111;
+  reg [3:0]  state                = STATE_IDLE;
+  reg [3:0]  state_next           = STATE_IDLE;
 
   assign scl_i = clk_i2c_scl;
   assign clk_i2c_scl = (scl_t == 1'b1) ? 1'bz : (scl_o == 1'b0) ? 1'b0 : 1'bz;
@@ -288,8 +274,6 @@ assign probe_in1[1] = pll1_locked;
   reg        i2c_cmd_read_reg           = 1'b0;
   reg        i2c_cmd_write_reg          = 1'b0;
   reg        i2c_cmd_write_multiple_reg = 1'b0;
-
-  reg [7:0]  i2c_register_data    = 8'h00;
 
   assign i2c_cmd_valid = (i2c_cmd_write_multiple_reg || i2c_cmd_read_reg) & i2c_cmd_ready;
   assign i2c_data_in_valid = i2c_data_in_write_reg & i2c_data_in_ready;
@@ -310,7 +294,7 @@ assign probe_in1[1] = pll1_locked;
   // reset
   always @(posedge clk65_cfg) begin
     if (reset) begin
-      state <= STATE_DONE;
+      state <= STATE_IDLE;
     end
     else begin
       state <= state_next;
@@ -328,7 +312,7 @@ assign probe_in1[1] = pll1_locked;
       default :
         // STATE_IDLE 
         if (i2c_start == 1'b1 && i2c_busy == 1'b0) begin
-          state_next <= STATE_DONE;
+          state_next <= STATE_SRAM_WRITE_START;
         end
       STATE_SRAM_WRITE_START :
         begin
@@ -354,132 +338,231 @@ assign probe_in1[1] = pll1_locked;
           i2c_cmd_stop_reg <= 1'b1;
           i2c_data_in_write_reg <= 1'b1;
           if (i2c_data_in_ready == 1'b1 && i2c_data_in_last_reg == 1'b1) begin
-            state_next <= STATE_RESET_READ_ADDR;
+            state_next <= STATE_CAL_WRITE_1_ADDR;
           end
-        end
-      STATE_RESET_READ_ADDR :
-        begin
-          i2c_cmd_write_multiple_reg <= 1'b1;
-          if (i2c_cmd_ready == 1'b1) begin
-            state_next <= STATE_RESET_READ_ADDR_DATA;
-          end
-        end
-      STATE_RESET_READ_ADDR_DATA :
-        begin
-          i2c_data_in_write_reg <= 1'b1;
-          if (i2c_data_in_ready == 1'b1 && i2c_data_in_last_reg == 1'b1) begin
-            state_next <= STATE_RESET_READ_CMD;
-          end
-        end
-      STATE_RESET_READ_CMD :
-        begin
-          i2c_cmd_read_reg <= 1'b1;
-          i2c_cmd_stop_reg <= 1'b1;
-          if (i2c_cmd_ready == 1'b1) begin
-            state_next <= STATE_RESET_READ_DATA;
-          end
-        end
-      STATE_RESET_READ_DATA :
-        begin
-          if (i2c_data_out_valid == 1'b1) begin
-            i2c_register_data <= i2c_data_out;
-            state_next        <= STATE_RESET_WRITE_1_ADDR;
-          end                   
-        end
-      STATE_RESET_WRITE_1_ADDR, STATE_RESET_WRITE_2_ADDR :
-        begin
-          i2c_cmd_write_multiple_reg <= 1'b1;
-          i2c_cmd_stop_reg           <= 1'b1;
-          if (i2c_cmd_ready == 1'b1) begin
-            state_next <= (state == STATE_RESET_WRITE_1_ADDR) ? STATE_RESET_WRITE_1_DATA_1 : STATE_RESET_WRITE_2_DATA_1;
-          end
-        end
-      STATE_RESET_WRITE_1_DATA_1,STATE_RESET_WRITE_1_DATA_2 :
-        begin
-          i2c_data_in_write_reg <= 1'b1;
-          if (i2c_data_in_ready == 1'b1 && i2c_data_in_valid == 1'b1) begin
-            state_next <= (state == STATE_RESET_WRITE_1_DATA_1) ? STATE_RESET_WRITE_1_DATA_2 : STATE_RESET_WRITE_2_ADDR;
-          end
-        end
-      STATE_RESET_WRITE_2_DATA_1, STATE_RESET_WRITE_2_DATA_2 :
-        begin
-          i2c_data_in_write_reg <= 1'b1;
-          if (i2c_data_in_ready == 1'b1 && i2c_data_in_valid == 1'b1) begin
-            state_next <= (state == STATE_RESET_WRITE_2_DATA_1) ? STATE_RESET_WRITE_2_DATA_2 : STATE_CAL_READ_ADDR;
-          end
-        end
-      STATE_CAL_READ_ADDR :
-        begin
-          i2c_cmd_write_multiple_reg <= 1'b1;
-          if (i2c_cmd_ready == 1'b1) begin
-            state_next <= STATE_CAL_READ_ADDR_DATA;
-          end
-        end
-      STATE_CAL_READ_ADDR_DATA :
-        begin
-          i2c_data_in_write_reg <= 1'b1;
-          if (i2c_data_in_ready == 1'b1 && i2c_data_in_last_reg == 1'b1) begin
-            state_next <= STATE_CAL_READ_CMD;
-          end
-        end
-      STATE_CAL_READ_CMD :
-        begin
-          i2c_cmd_read_reg <= 1'b1;
-          i2c_cmd_stop_reg <= 1'b1;
-          if (i2c_cmd_ready == 1'b1) begin
-            state_next <= STATE_CAL_READ_DATA;
-          end
-        end
-      STATE_CAL_READ_DATA :
-        begin
-          if (i2c_data_out_valid == 1'b1) begin
-            i2c_register_data <= i2c_data_out;
-            state_next        <= STATE_CAL_WRITE_1_ADDR;
-          end                   
         end
       STATE_CAL_WRITE_1_ADDR, STATE_CAL_WRITE_2_ADDR :
         begin
           i2c_cmd_write_multiple_reg <= 1'b1;
           i2c_cmd_stop_reg           <= 1'b1;
           if (i2c_cmd_ready == 1'b1) begin
-            state_next <= (state == STATE_CAL_WRITE_1_ADDR) ? STATE_CAL_WRITE_1_DATA_1 : STATE_CAL_WRITE_2_DATA_1;
+            state_next <= (state == STATE_CAL_WRITE_1_ADDR) ? STATE_CAL_WRITE_1_REG : STATE_CAL_WRITE_2_REG;
           end
         end
-      STATE_CAL_WRITE_1_DATA_1,STATE_CAL_WRITE_1_DATA_2 :
+      STATE_CAL_WRITE_1_REG,STATE_CAL_WRITE_1_DATA :
         begin
           i2c_data_in_write_reg <= 1'b1;
           if (i2c_data_in_ready == 1'b1 && i2c_data_in_valid == 1'b1) begin
-            state_next <= (state == STATE_CAL_WRITE_1_DATA_1) ? STATE_CAL_WRITE_1_DATA_2 : STATE_CAL_WRITE_2_ADDR;
+            state_next <= (state == STATE_CAL_WRITE_1_REG) ? STATE_CAL_WRITE_1_DATA : STATE_CAL_WRITE_2_ADDR;
           end
         end
-      STATE_CAL_WRITE_2_DATA_1, STATE_CAL_WRITE_2_DATA_2 :
+      STATE_CAL_WRITE_2_REG, STATE_CAL_WRITE_2_DATA :
         begin
           i2c_data_in_write_reg <= 1'b1;
           if (i2c_data_in_ready == 1'b1 && i2c_data_in_valid == 1'b1) begin
-            state_next <= (state == STATE_CAL_WRITE_2_DATA_1) ? STATE_CAL_WRITE_2_DATA_2 : STATE_DONE;
+            state_next <= (state == STATE_CAL_WRITE_2_REG) ? STATE_CAL_WRITE_2_DATA : STATE_DONE;
           end
         end
       STATE_DONE :
         begin
           if (user_btn_n == 1'b0 || (probe_out0[0] == 1'b1 && probe_out0_1d[0] == 1'b0)) begin
-            state_next <= STATE_IDLE;
+            state_next <= STATE_SRAM_WRITE_START;
           end
         end
     endcase
   end
 
-  parameter bits0 = 8'h20*8;
-  parameter bits1 = 8'h20*8;
-  parameter bits2 = 8'h20*8;
-  parameter bits3 = 8'h0A*8;
+
+  parameter [631:0] i2cdata =  {
+                           // 0x165 = 357 * 25 = 8925
+                           // 2900 / 25 = 116 = 0x74
+                           // 17
+                           8'h07,
+                           // 18
+                           8'h40,
+                           // no fractional portion
+                           // 19
+                           8'h00,
+                           // 1a
+                           8'h00,
+                           // 1b
+                           8'h00,
+                           // default
+                           // 1c
+                           8'h05,
+                           // 1d
+                           8'h6f,
+                           // 1e
+                           8'hba,
+                           // 1f
+                           8'h32,
+                           // 20
+                           8'h00,
+                           // 21
+                           8'h81,
+                           // 22
+                           8'h00,
+                           // 23
+                           8'h00,
+                           // 24
+                           8'h00,
+                           // 25
+                           8'h00,
+                           // 26
+                           8'h00,
+                           // 27
+                           8'h00,
+                           // 28
+                           8'h00,
+                           // 29
+                           8'h00,
+                           // 2a
+                           8'h00,
+                           // 2b
+                           8'h00,
+                           // 2c
+                           8'h00,
+                           // 2d
+                           8'h00,
+                           // 2e
+                           8'he0,
+                           // 2f
+                           8'h00,
+                           //=================================
+                           // FOD2
+                           // default
+                           // 30
+                           8'h00,
+                           // FOD2 uses PLL and OUT2 uses FOD2
+                           // 31
+                           8'h81,
+                           // fod2 is 50MHz - 2900/2/50 = 29
+                           // frac = 0
+                           // 32
+                           8'h00,
+                           // 33
+                           8'h00,
+                           // 34
+                           8'h00,
+                           // 35
+                           8'h00,
+                           // defaults
+                           // 36
+                           8'h00,
+                           // 37
+                           8'h00,
+                           // 38
+                           8'h00,
+                           // 39
+                           8'h00,
+                           // 3a
+                           8'h00,
+                           // 3b
+                           8'h00,
+                           // 3c
+                           8'h00,
+                           // int = 29 = 0x1d
+                           // 3d
+                           8'h01,
+                           // 3e
+                           8'hd0,
+                           // default
+                           // 3f
+                           8'h00,
+                           //=================================
+                           // FOD3
+                           // default
+                           // 40
+                           8'h00,
+                           // FOD3 uses PLL and OUT3 uses FOD3
+                           // 41
+                           8'h81,
+                           // fod3 is 156.25MHz - 2900/2/156.25 = 9.28
+                           // fod3 frac = 2^24 * 0.28 = 4697620.58 = 0x47ae14
+                           // 42
+                           8'h00,
+                           // 43
+                           8'h11,
+                           // 44
+                           8'hEB,
+                           // 45
+                           8'h85,
+                           // defaults
+                           // 46
+                           8'h00,
+                           // 47
+                           8'h00,
+                           // 48
+                           8'h00,
+                           // 49
+                           8'h00,
+                           // 4a
+                           8'h00,
+                           // 4b
+                           8'h00,
+                           // 4c
+                           8'h00,
+                           // fod3 int = 9 = 0x09
+                           // 4d
+                           8'h00,
+                           // 4e
+                           8'h90,
+                           // defaults
+                           // 4f
+                           8'h00,
+                           // 50
+                           8'h00,
+                           // 51
+                           8'h81,
+                           // 52
+                           8'h00,
+                           // 53
+                           8'h00,
+                           // 54
+                           8'h00,
+                           // 55
+                           8'h00,
+                           // 56
+                           8'h00,
+                           // 57
+                           8'h00,
+                           // 58
+                           8'h00,
+                           // 59
+                           8'h00,
+                           // 5a
+                           8'h00,
+                           // 5b
+                           8'h00,
+                           // 5c
+                           8'h00,
+                           // 5d
+                           8'h00,
+                           // 5e
+                           8'he0,
+                           // 5f
+                           8'h00,
+                           // defaults
+                           // 60
+                           8'hbb,
+                           // 61
+                           8'h01,
+                           // out2 LVDS 2.5V = 0x70
+                           // 62
+                           8'h78,
+                           // out2 output enable
+                           // 63
+                           8'h01,
+                           // out3 LVDS 2.5V = 0x70
+                           // 64
+                           8'h70,
+                           // out3 output enable
+                           // 65
+                           8'h01
+                           };
+
   
-  parameter [0:bits0-1] i2cdata0 = 256'h0103FF000000000000FFFDC000B6B492A8CCD1D000048C03A00000009FFFF080;
-  parameter [0:bits1-1] i2cdata1 = 256'h800000000000000000000400000000200081020000000000000004000000E020;
-  parameter [0:bits2-1] i2cdata2 = 256'h0081011EB8500000000004000000901280000000000000000000040000000000;
-  parameter [0:bits3-1] i2cdata3 = 88'hBB0473057305BB04FF34;
-  
-  parameter [0:bits0+bits1+bits2+bits3-1] i2cdata = {i2cdata0, i2cdata1, i2cdata2, i2cdata3};
-  parameter bits = bits0 + bits1 + bits2 + bits3;
+  parameter i2cdata_bit_count = 16'd632;
   
   always @(posedge clk65_cfg) begin
     i2c_data_in_last_reg   <= 1'b0;
@@ -487,79 +570,40 @@ assign probe_in1[1] = pll1_locked;
     case(state)
       STATE_SRAM_WRITE_REG : 
         begin
-          i2c_data_in_reg <= 8'h00;
+          i2c_data_in_reg <= 8'h17;
         end
       STATE_SRAM_WRITE_DATA:
         begin
           i2c_data_in_reg <= i2cdata[i2c_data_in_index_reg*8+7 -: 8];
           if (i2c_data_in_ready == 1'b1 && i2c_data_in_last == 1'b0) begin
-            i2c_data_in_index_reg <= i2c_data_in_index_reg + 1;
+            i2c_data_in_index_reg <= i2c_data_in_index_reg - 1;
           end
-          if (i2c_data_in_index_reg == bits/8-1) begin
+          if (i2c_data_in_index_reg == 16'd0) begin
             i2c_data_in_last_reg <= 1'b1;
           end
         end
-      STATE_RESET_READ_ADDR_DATA, STATE_RESET_WRITE_1_DATA_1, STATE_RESET_WRITE_2_DATA_1 :
-        begin
-          i2c_data_in_reg <= 8'h76;
-          i2c_data_in_last_reg <= (state == STATE_RESET_READ_ADDR_DATA) ? 1'b1 : 1'b0;
-        end
-      STATE_RESET_WRITE_1_DATA_2, STATE_RESET_WRITE_2_DATA_2 :
-        begin
-          i2c_data_in_reg      <= (state == STATE_RESET_WRITE_1_DATA_2) ? (i2c_register_data | 8'b00100000) : (i2c_register_data & 8'b11011111); 
-          i2c_data_in_last_reg <= 1'b1;
-        end
-      STATE_CAL_READ_ADDR_DATA, STATE_CAL_WRITE_1_DATA_1, STATE_CAL_WRITE_2_DATA_1 :
+      STATE_CAL_WRITE_1_REG, STATE_CAL_WRITE_2_REG :
         begin
           i2c_data_in_reg <= 8'h1c;
-          i2c_data_in_last_reg <= (state == STATE_CAL_READ_ADDR_DATA) ? 1'b1 : 1'b0;
         end
-      STATE_CAL_WRITE_1_DATA_2, STATE_CAL_WRITE_2_DATA_2 :
+      STATE_CAL_WRITE_1_DATA :
         begin
-          i2c_data_in_reg      <= (state == STATE_CAL_WRITE_1_DATA_2) ? (i2c_register_data | 8'b10000000) : (i2c_register_data & 8'b01111111); 
+          i2c_data_in_reg      <= 8'h05;
+          i2c_data_in_last_reg <= 1'b1;
+        end
+      STATE_CAL_WRITE_2_DATA :
+        begin
+          i2c_data_in_reg      <= 8'h85;
           i2c_data_in_last_reg <= 1'b1;
         end
       default:
         begin    
-          i2c_data_in_index_reg <= 8'h0;
+          i2c_data_in_index_reg <= i2cdata_bit_count/16'd8 - 1;
           led_g <= 1'b1; // off
         end
     endcase
   end 
   
-  // ! i2c_init i2c_init (
-  // !     .clk(clk),
-  // !     .rst(reset),
-  // ! 
-  // !     /*
-  // !      * I2C master interface
-  // !      */
-  // !     .cmd_address(i2c_cmd_address),
-  // !     .cmd_start(i2c_cmd_start),
-  // !     .cmd_read(i2c_cmd_read),
-  // !     .cmd_write(i2c_cmd_write),
-  // !     .cmd_write_multiple(i2c_cmd_write_multiple),
-  // !     .cmd_stop(i2c_cmd_stop),
-  // !     .cmd_valid(i2c_cmd_valid),
-  // !     .cmd_ready(i2c_cmd_ready),
-  // ! 
-  // !     .data_out(i2c_data_in),
-  // !     .data_out_valid(i2c_data_in_valid),
-  // !     .data_out_ready(i2c_data_in_ready),
-  // !     .data_out_last(i2c_data_in_last),
-  // ! 
-  // !     /*
-  // !      * Status
-  // !      */
-  // !     .busy(i2c_busy),
-  // ! 
-  // !     /*
-  // !      * Configuration
-  // !      */
-  // !     .start(i2c_start)
-  // ! );
-
-
   i2c_master i2c_master (
                          .clk(clk65_cfg),
                          .rst(reset),
@@ -604,7 +648,7 @@ assign probe_in1[1] = pll1_locked;
                          /*
                           * Configuration
                           */
-                         .prescale(16'd100),  // 65Mhz/20000 = 325kHz
+                         .prescale(16'd200),
                          .stop_on_idle(1'b0)
                          );
 
