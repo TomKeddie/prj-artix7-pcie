@@ -23,7 +23,7 @@ _io = [
     ("clk100", 0,
         Subsignal("p", Pins("Y18")),
         Subsignal("n", Pins("Y19")),
-        IOStandard("DIFF_HSTL_I")),
+        IOStandard("LVDS_25")),
     ("flash", 0,
         Subsignal("cs_n", Pins("T19")),
         Subsignal("mosi", Pins("P22")),
@@ -69,11 +69,11 @@ _io = [
     ("TP7", 0, Pins("V22"), IOStandard("LVCMOS33")), #
     ("TP8", 0, Pins("V20"), IOStandard("LVCMOS33")), #
     ("user_btn_n", 0, Pins("U17"), IOStandard("LVCMOS33"), Misc("PULLUP=TRUE")),
-    ("user_led_n", 0, Pins("AB10"), IOStandard("LVCMOS33")),
+    ("user_led_n", 0, Pins("P16"), IOStandard("LVCMOS33"), Inverted()),
     ("rgb_led", 0,
-        Subsignal("r", Pins("P15")),  # IO_L7_13_P
-        Subsignal("g", Pins("P16")),  # IO_L7_13_N
-        Subsignal("b", Pins("P14")),  # IO_L8_13_N
+        Subsignal("r", Pins("P15"), Inverted()),  # IO_L7_13_P
+        Subsignal("g", Pins("P16"), Inverted()),  # IO_L7_13_N
+        Subsignal("b", Pins("P14"), Inverted()),  # IO_L8_13_N
         IOStandard("LVCMOS33"),
     ),
     ("pcie_ctrl", 0,
@@ -87,26 +87,26 @@ _io = [
     # using different io standards here to make sure we have the bank
     # separation correct, voltages don't reflect schematic in some
     # cases.
-    ("J1_35", 0, Pins("A1 B1 D1 E1 G1 F1 J2 K2 K1 J1 L1 M1 N2 P2"), IOStandard("LVCMOS15")), #
+    ("J1_35", 0, Pins("A1 B1 D1 E1 F1 G1 J2 K2 J1 K1 L1 M1 N2 P2"), IOStandard("LVCMOS15")), #
     ("J1_34", 0, Pins("R2 R3 U1 T1 V2 U2 Y1 W1 Y2 W2 AB1 AA1 AB2 AB3"), IOStandard("LVCMOS18")), #
     ("J2_14", 0, Pins("AB18 AA18 AB20 AA19 AB22 AB21 AA21 AA20 Y22 Y21 W22 W21 U21 T21"), IOStandard("LVCMOS33")), #
-    ("J2_16", 0, Pins("G22 G21 D22 E22 B22 C22 B21 A21 B17 B18 A19 A18 A15 A16"), IOStandard("LVCMOS25")), #
+    ("J2_16", 0, Pins("G22 G21 D22 E22 B22 C22 A21 B21 B17 B18 A19 A18 A15 A16"), IOStandard("LVCMOS25")), #
     ("S0", 0,
      Subsignal("tx_p", Pins("B4")),
      Subsignal("tx_n", Pins("A4")),
      Subsignal("rx_p", Pins("B8")),
      Subsignal("rx_n", Pins("A8")),
      
-     Subsignal("clk_p", Pins("F6")),
-     Subsignal("clk_n", Pins("E6")),
+     Subsignal("clk_p", Pins("F6"), IOStandard("LVDS_25")),
+     Subsignal("clk_n", Pins("E6"), IOStandard("LVDS_25")),
     ),
     ("S2", 0,
      Subsignal("tx_p", Pins("B6")),
      Subsignal("tx_n", Pins("A6")),
      Subsignal("rx_p", Pins("B10")),
      Subsignal("rx_n", Pins("A10")),
-     Subsignal("clk_p", Pins("F10")),
-     Subsignal("clk_n", Pins("E10")),
+     Subsignal("clk_p", Pins("F10"), IOStandard("LVDS_25")),
+     Subsignal("clk_n", Pins("E10"), IOStandard("LVDS_25")),
     ),
 ]
 

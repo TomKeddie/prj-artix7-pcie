@@ -172,6 +172,118 @@ set_property LOC AB3 [get_ports j1_34[13]]
 set_property IOSTANDARD LVCMOS18 [get_ports j1_34[13]]
 
 
+# j2_14:0
+set_property LOC AB18 [get_ports j2_14[0]]
+set_property IOSTANDARD LVCMOS33 [get_ports j2_14[0]]
+
+# j2_14:0
+set_property LOC AA18 [get_ports j2_14[1]]
+set_property IOSTANDARD LVCMOS33 [get_ports j2_14[1]]
+
+# j2_14:0
+set_property LOC AB20 [get_ports j2_14[2]]
+set_property IOSTANDARD LVCMOS33 [get_ports j2_14[2]]
+
+# j2_14:0
+set_property LOC AA19 [get_ports j2_14[3]]
+set_property IOSTANDARD LVCMOS33 [get_ports j2_14[3]]
+
+# j2_14:0
+set_property LOC AB22 [get_ports j2_14[4]]
+set_property IOSTANDARD LVCMOS33 [get_ports j2_14[4]]
+
+# j2_14:0
+set_property LOC AB21 [get_ports j2_14[5]]
+set_property IOSTANDARD LVCMOS33 [get_ports j2_14[5]]
+
+# j2_14:0
+set_property LOC AA21 [get_ports j2_14[6]]
+set_property IOSTANDARD LVCMOS33 [get_ports j2_14[6]]
+
+# j2_14:0
+set_property LOC AA20 [get_ports j2_14[7]]
+set_property IOSTANDARD LVCMOS33 [get_ports j2_14[7]]
+
+# j2_14:0
+set_property LOC Y22 [get_ports j2_14[8]]
+set_property IOSTANDARD LVCMOS33 [get_ports j2_14[8]]
+
+# j2_14:0
+set_property LOC Y21 [get_ports j2_14[9]]
+set_property IOSTANDARD LVCMOS33 [get_ports j2_14[9]]
+
+# j2_14:0
+set_property LOC W22 [get_ports j2_14[10]]
+set_property IOSTANDARD LVCMOS33 [get_ports j2_14[10]]
+
+# j2_14:0
+set_property LOC W21 [get_ports j2_14[11]]
+set_property IOSTANDARD LVCMOS33 [get_ports j2_14[11]]
+
+# j2_14:0
+set_property LOC U21 [get_ports j2_14[12]]
+set_property IOSTANDARD LVCMOS33 [get_ports j2_14[12]]
+
+# j2_14:0
+set_property LOC T21 [get_ports j2_14[13]]
+set_property IOSTANDARD LVCMOS33 [get_ports j2_14[13]]
+
+# j2_16:0
+set_property LOC G22 [get_ports j2_16[0]]
+set_property IOSTANDARD LVCMOS25 [get_ports j2_16[0]]
+
+# j2_16:0
+set_property LOC G21 [get_ports j2_16[1]]
+set_property IOSTANDARD LVCMOS25 [get_ports j2_16[1]]
+
+# j2_16:0
+set_property LOC D22 [get_ports j2_16[2]]
+set_property IOSTANDARD LVCMOS25 [get_ports j2_16[2]]
+
+# j2_16:0
+set_property LOC E22 [get_ports j2_16[3]]
+set_property IOSTANDARD LVCMOS25 [get_ports j2_16[3]]
+
+# j2_16:0
+set_property LOC B22 [get_ports j2_16[4]]
+set_property IOSTANDARD LVCMOS25 [get_ports j2_16[4]]
+
+# j2_16:0
+set_property LOC C22 [get_ports j2_16[5]]
+set_property IOSTANDARD LVCMOS25 [get_ports j2_16[5]]
+
+# j2_16:0
+set_property LOC A21 [get_ports j2_16[6]]
+set_property IOSTANDARD LVCMOS25 [get_ports j2_16[6]]
+
+# j2_16:0
+set_property LOC B21 [get_ports j2_16[7]]
+set_property IOSTANDARD LVCMOS25 [get_ports j2_16[7]]
+
+# j2_16:0
+set_property LOC B17 [get_ports j2_16[8]]
+set_property IOSTANDARD LVCMOS25 [get_ports j2_16[8]]
+
+# j2_16:0
+set_property LOC B18 [get_ports j2_16[9]]
+set_property IOSTANDARD LVCMOS25 [get_ports j2_16[9]]
+
+# j2_16:0
+set_property LOC A19 [get_ports j2_16[10]]
+set_property IOSTANDARD LVCMOS25 [get_ports j2_16[10]]
+
+# j2_16:0
+set_property LOC A18 [get_ports j2_16[11]]
+set_property IOSTANDARD LVCMOS25 [get_ports j2_16[11]]
+
+# j2_16:0
+set_property LOC A15 [get_ports j2_16[12]]
+set_property IOSTANDARD LVCMOS25 [get_ports j2_16[12]]
+
+# j2_16:0
+set_property LOC A16 [get_ports j2_16[13]]
+set_property IOSTANDARD LVCMOS25 [get_ports j2_16[13]]
+
 # S0:0.clk_p
 set_property LOC F6 [get_ports s0_clk_p]
 
