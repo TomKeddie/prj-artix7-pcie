@@ -36,7 +36,9 @@ module top(
            inout  clk_i2c_sda,
            input  user_btn_n,
            output [13:0] j1_34,
-           output [13:0] j1_35
+           output [13:0] j1_35,
+           output [13:0] j2_16,
+           output [13:0] j2_14
            );
 
   // 65MHz
@@ -205,6 +207,8 @@ assign probe_in1[1] = pll1_locked;
   assign rgb_led_b = led_b;
   assign j1_34 = shifter0[13:0];
   assign j1_35 = shifter0[27:14];
+  assign j2_14 = ~shifter0[13:0];
+  assign j2_16 = ~shifter0[27:14];
 
   wire i2c_bus_control;
   wire i2c_bus_active;
