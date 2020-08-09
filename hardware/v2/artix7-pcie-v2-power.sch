@@ -28,17 +28,6 @@ F 4 "296-39062-1-ND" H 9300 4250 50  0001 C CNN "Vendor"
 	1    0    0    -1  
 $EndComp
 $Comp
-L tom-passives:R R20
-U 1 1 5E4ACBD4
-P 8400 3900
-F 0 "R20" H 8471 3938 40  0000 L CNN
-F 1 "0R" H 8471 3862 40  0000 L CNN
-F 2 "tom-passives:R_0402_1005Metric_NoPaste" H 8471 3824 30  0001 L CNN
-F 3 "" H 8400 3900 30  0001 C CNN
-	1    8400 3900
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR049
 U 1 1 5E4B7E48
 P 9300 4500
@@ -62,7 +51,6 @@ F 3 "" H 8400 4350 60  0000 C CNN
 	1    8400 4350
 	1    0    0    -1  
 $EndComp
-Connection ~ 8400 4150
 $Comp
 L tom-passives:C C14
 U 1 1 5E4EEB65
@@ -96,8 +84,6 @@ F 3 "" H 8400 4550 50  0001 C CNN
 	1    8400 4550
 	1    0    0    -1  
 $EndComp
-Text Label 8450 4150 0    50   ~ 0
-VIN_MGTAVTT
 Text Notes 4550 3100 0    118  ~ 0
 Sequence #2 1.8V\nVCCAUX (est 114mA)
 Text Notes 1100 3200 0    118  ~ 0
@@ -105,12 +91,12 @@ Sequence #1 1.0V\nVCCINT/VCCBRAM\n(est 1.567A + 567mA)
 $Comp
 L power:VCC #PWR047
 U 1 1 5E7381EF
-P 950 700
-F 0 "#PWR047" H 950 550 50  0001 C CNN
-F 1 "VCC" H 967 873 50  0000 C CNN
-F 2 "" H 950 700 50  0001 C CNN
-F 3 "" H 950 700 50  0001 C CNN
-	1    950  700 
+P 950 1250
+F 0 "#PWR047" H 950 1100 50  0001 C CNN
+F 1 "VCC" H 967 1423 50  0000 C CNN
+F 2 "" H 950 1250 50  0001 C CNN
+F 3 "" H 950 1250 50  0001 C CNN
+	1    950  1250
 	1    0    0    -1  
 $EndComp
 Text Notes 8400 5200 0    118  ~ 0
@@ -118,12 +104,12 @@ Sequence #4 1.2V\nVTT (156mA est)
 $Comp
 L power:+3V3 #PWR0101
 U 1 1 5F0892E4
-P 8400 3600
-F 0 "#PWR0101" H 8400 3450 50  0001 C CNN
-F 1 "+3V3" H 8415 3773 50  0000 C CNN
-F 2 "" H 8400 3600 50  0001 C CNN
-F 3 "" H 8400 3600 50  0001 C CNN
-	1    8400 3600
+P 8400 4100
+F 0 "#PWR0101" H 8400 3950 50  0001 C CNN
+F 1 "+3V3" H 8415 4273 50  0000 C CNN
+F 2 "" H 8400 4100 50  0001 C CNN
+F 3 "" H 8400 4100 50  0001 C CNN
+	1    8400 4100
 	1    0    0    -1  
 $EndComp
 $Sheet
@@ -312,20 +298,17 @@ Connection ~ 3500 1450
 $Comp
 L power:+1V0 #PWR033
 U 1 1 5E8FFE21
-P 4000 800
-F 0 "#PWR033" H 4000 650 50  0001 C CNN
-F 1 "+1V0" H 4015 973 50  0000 C CNN
-F 2 "" H 4000 800 50  0001 C CNN
-F 3 "" H 4000 800 50  0001 C CNN
-	1    4000 800 
+P 3500 800
+F 0 "#PWR033" H 3500 650 50  0001 C CNN
+F 1 "+1V0" H 3515 973 50  0000 C CNN
+F 2 "" H 3500 800 50  0001 C CNN
+F 3 "" H 3500 800 50  0001 C CNN
+	1    3500 800 
 	1    0    0    -1  
 $EndComp
-Connection ~ 3500 800 
 Wire Wire Line
 	3000 1300 3100 1300
 Connection ~ 3000 1300
-Text Label 1400 1350 2    50   ~ 0
-VIN_1.0V
 Text Label 3100 1300 0    50   ~ 0
 PG_1.0V
 Text Label 3000 1850 2    50   ~ 0
@@ -362,12 +345,12 @@ Text Notes 1600 2600 0    50   ~ 0
 $Comp
 L power:VCC #PWR0105
 U 1 1 5E77FBE5
-P 4400 700
-F 0 "#PWR0105" H 4400 550 50  0001 C CNN
-F 1 "VCC" H 4417 873 50  0000 C CNN
-F 2 "" H 4400 700 50  0001 C CNN
-F 3 "" H 4400 700 50  0001 C CNN
-	1    4400 700 
+P 4400 1250
+F 0 "#PWR0105" H 4400 1100 50  0001 C CNN
+F 1 "VCC" H 4417 1423 50  0000 C CNN
+F 2 "" H 4400 1250 50  0001 C CNN
+F 3 "" H 4400 1250 50  0001 C CNN
+	1    4400 1250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -539,24 +522,23 @@ PG_1.0V
 $Comp
 L power:+1V8 #PWR0120
 U 1 1 5E7AA3E3
-P 7450 800
-F 0 "#PWR0120" H 7450 650 50  0001 C CNN
-F 1 "+1V8" H 7465 973 50  0000 C CNN
-F 2 "" H 7450 800 50  0001 C CNN
-F 3 "" H 7450 800 50  0001 C CNN
-	1    7450 800 
+P 6950 800
+F 0 "#PWR0120" H 6950 650 50  0001 C CNN
+F 1 "+1V8" H 6965 973 50  0000 C CNN
+F 2 "" H 6950 800 50  0001 C CNN
+F 3 "" H 6950 800 50  0001 C CNN
+	1    6950 800 
 	1    0    0    -1  
 $EndComp
-Connection ~ 6950 800 
 $Comp
 L power:VCC #PWR0121
 U 1 1 5E7B5B7B
-P 8000 700
-F 0 "#PWR0121" H 8000 550 50  0001 C CNN
-F 1 "VCC" H 8017 873 50  0000 C CNN
-F 2 "" H 8000 700 50  0001 C CNN
-F 3 "" H 8000 700 50  0001 C CNN
-	1    8000 700 
+P 8000 1250
+F 0 "#PWR0121" H 8000 1100 50  0001 C CNN
+F 1 "VCC" H 8017 1423 50  0000 C CNN
+F 2 "" H 8000 1250 50  0001 C CNN
+F 3 "" H 8000 1250 50  0001 C CNN
+	1    8000 1250
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -569,17 +551,6 @@ F 2 "tom-modules:TPS82130SILT" H 9250 1640 60  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tps82130.pdf" H 9250 1701 60  0001 C CNN
 F 4 "296-47090-1-ND" H 8450 1400 50  0001 C CNN "Vendor"
 	1    8450 1400
-	1    0    0    -1  
-$EndComp
-$Comp
-L tom-passives:R R33
-U 1 1 5E7B5B8F
-P 8000 1000
-F 0 "R33" H 8071 1038 40  0000 L CNN
-F 1 "0R" H 8071 962 40  0000 L CNN
-F 2 "tom-passives:R_0603_1608Metric_NoPaste" H 8071 924 30  0001 L CNN
-F 3 "" H 8000 1000 30  0001 C CNN
-	1    8000 1000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -695,8 +666,6 @@ Connection ~ 10050 1450
 Wire Wire Line
 	10550 1450 10550 800 
 Connection ~ 10550 1450
-Text Label 8450 1350 2    50   ~ 0
-VIN_3.3V
 Text Label 10050 1850 2    50   ~ 0
 FB_3.3V
 Text Label 8450 1750 2    50   ~ 0
@@ -756,12 +725,12 @@ Sequence #3 2.5V\nVCCO Bank 16\n(allow 500mA per bank)
 $Comp
 L power:VCC #PWR0128
 U 1 1 5E7F8230
-P 950 3450
-F 0 "#PWR0128" H 950 3300 50  0001 C CNN
-F 1 "VCC" H 967 3623 50  0000 C CNN
-F 2 "" H 950 3450 50  0001 C CNN
-F 3 "" H 950 3450 50  0001 C CNN
-	1    950  3450
+P 950 4000
+F 0 "#PWR0128" H 950 3850 50  0001 C CNN
+F 1 "VCC" H 967 4173 50  0000 C CNN
+F 2 "" H 950 4000 50  0001 C CNN
+F 3 "" H 950 4000 50  0001 C CNN
+	1    950  4000
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -776,19 +745,6 @@ F 4 "296-47090-1-ND" H 1400 4150 50  0001 C CNN "Vendor"
 	1    1400 4150
 	1    0    0    -1  
 $EndComp
-$Comp
-L tom-passives:R R15
-U 1 1 5E7F8244
-P 950 3750
-F 0 "R15" H 1021 3788 40  0000 L CNN
-F 1 "0R" H 1021 3712 40  0000 L CNN
-F 2 "tom-passives:R_0603_1608Metric_NoPaste" H 1021 3674 30  0001 L CNN
-F 3 "" H 950 3750 30  0001 C CNN
-	1    950  3750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	950  4100 950  4000
 $Comp
 L tom-passives:C C8
 U 1 1 5E7F8250
@@ -913,8 +869,6 @@ Wire Wire Line
 Wire Wire Line
 	3500 3550 3000 3550
 Connection ~ 3500 4200
-Text Label 1400 4100 2    50   ~ 0
-VIN_16
 Text Label 3000 4600 2    50   ~ 0
 FB_16
 Text Label 1400 4500 2    50   ~ 0
@@ -950,7 +904,7 @@ Wire Wire Line
 	950  4100 1400 4100
 Text Label 1400 4300 2    50   ~ 0
 PG_1.8V
-Text Label 3700 3550 0    50   ~ 0
+Text Label 3700 4200 0    50   ~ 0
 VCCO_16
 Text HLabel 1050 6550 0    50   Output ~ 0
 VCCO_16
@@ -990,12 +944,12 @@ Sequence #3 1.8V\nVCCO Banks 34 & 35\n(allow 500mA per bank)
 $Comp
 L power:VCC #PWR0136
 U 1 1 5E9B76BC
-P 4400 3450
-F 0 "#PWR0136" H 4400 3300 50  0001 C CNN
-F 1 "VCC" H 4417 3623 50  0000 C CNN
-F 2 "" H 4400 3450 50  0001 C CNN
-F 3 "" H 4400 3450 50  0001 C CNN
-	1    4400 3450
+P 4400 4000
+F 0 "#PWR0136" H 4400 3850 50  0001 C CNN
+F 1 "VCC" H 4417 4173 50  0000 C CNN
+F 2 "" H 4400 4000 50  0001 C CNN
+F 3 "" H 4400 4000 50  0001 C CNN
+	1    4400 4000
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1008,17 +962,6 @@ F 2 "tom-modules:TPS82130SILT" H 5650 4390 60  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/tps82130.pdf" H 5650 4451 60  0001 C CNN
 F 4 "296-47436-1-ND" H 4850 4150 50  0001 C CNN "Vendor"
 	1    4850 4150
-	1    0    0    -1  
-$EndComp
-$Comp
-L tom-passives:R R21
-U 1 1 5E9B76D5
-P 4400 3750
-F 0 "R21" H 4471 3788 40  0000 L CNN
-F 1 "0R" H 4471 3712 40  0000 L CNN
-F 2 "tom-passives:R_0603_1608Metric_NoPaste" H 4471 3674 30  0001 L CNN
-F 3 "" H 4400 3750 30  0001 C CNN
-	1    4400 3750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1150,8 +1093,6 @@ Connection ~ 6950 4200
 Wire Wire Line
 	6450 4050 6550 4050
 Connection ~ 6450 4050
-Text Label 4850 4100 2    50   ~ 0
-VIN_34_35
 Text Label 6550 4050 0    50   ~ 0
 PG_34_35
 Text Label 6450 4600 2    50   ~ 0
@@ -1190,89 +1131,9 @@ Wire Wire Line
 Text Label 7100 4200 0    50   ~ 0
 VCCO_34_35
 Wire Wire Line
-	950  3450 950  3500
-Wire Wire Line
 	4400 4100 4850 4100
 Text Label 4850 4300 2    50   ~ 0
 PG_1.8V
-Wire Wire Line
-	950  750  950  700 
-Wire Wire Line
-	4400 700  4400 750 
-Wire Wire Line
-	8000 700  8000 750 
-Wire Wire Line
-	8400 3650 8400 3600
-Wire Wire Line
-	4400 3450 4400 3500
-$Comp
-L power:PWR_FLAG #FLG0101
-U 1 1 5ED3D8BD
-P 8400 4150
-F 0 "#FLG0101" H 8400 4225 50  0001 C CNN
-F 1 "PWR_FLAG" V 8400 4277 50  0000 L CNN
-F 2 "" H 8400 4150 50  0001 C CNN
-F 3 "~" H 8400 4150 50  0001 C CNN
-	1    8400 4150
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG0102
-U 1 1 5ED40F3B
-P 4400 4100
-F 0 "#FLG0102" H 4400 4175 50  0001 C CNN
-F 1 "PWR_FLAG" V 4400 4227 50  0000 L CNN
-F 2 "" H 4400 4100 50  0001 C CNN
-F 3 "~" H 4400 4100 50  0001 C CNN
-	1    4400 4100
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG0106
-U 1 1 5ED4236D
-P 950 4100
-F 0 "#FLG0106" H 950 4175 50  0001 C CNN
-F 1 "PWR_FLAG" V 950 4227 50  0000 L CNN
-F 2 "" H 950 4100 50  0001 C CNN
-F 3 "~" H 950 4100 50  0001 C CNN
-	1    950  4100
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG0107
-U 1 1 5ED435A9
-P 950 1350
-F 0 "#FLG0107" H 950 1425 50  0001 C CNN
-F 1 "PWR_FLAG" V 950 1477 50  0000 L CNN
-F 2 "" H 950 1350 50  0001 C CNN
-F 3 "~" H 950 1350 50  0001 C CNN
-	1    950  1350
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG0108
-U 1 1 5ED46783
-P 4400 1350
-F 0 "#FLG0108" H 4400 1425 50  0001 C CNN
-F 1 "PWR_FLAG" V 4400 1477 50  0000 L CNN
-F 2 "" H 4400 1350 50  0001 C CNN
-F 3 "~" H 4400 1350 50  0001 C CNN
-	1    4400 1350
-	0    -1   -1   0   
-$EndComp
-Text Label 4850 1350 2    50   ~ 0
-VIN_1.8V
-$Comp
-L power:PWR_FLAG #FLG0109
-U 1 1 5ED4A156
-P 8000 1350
-F 0 "#FLG0109" H 8000 1425 50  0001 C CNN
-F 1 "PWR_FLAG" V 8000 1477 50  0000 L CNN
-F 2 "" H 8000 1350 50  0001 C CNN
-F 3 "~" H 8000 1350 50  0001 C CNN
-	1    8000 1350
-	0    -1   -1   0   
-$EndComp
 Text HLabel 1050 6750 0    50   Output ~ 0
 VCCO_34
 Text HLabel 1050 6950 0    50   Output ~ 0
@@ -1313,17 +1174,6 @@ F 3 "" H 2200 6750 30  0001 C CNN
 $EndComp
 Wire Wire Line
 	2450 6750 2500 6750
-$Comp
-L tom-passives:R R46
-U 1 1 5E824AC3
-P 3750 800
-F 0 "R46" H 3821 838 40  0000 L CNN
-F 1 "0R" H 3821 762 40  0000 L CNN
-F 2 "tom-passives:R_0603_1608Metric_NoPaste" H 3821 724 30  0001 L CNN
-F 3 "" H 3750 800 30  0001 C CNN
-	1    3750 800 
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	1050 6950 1600 6950
 Wire Wire Line
@@ -1360,52 +1210,6 @@ F 3 "~" H 1050 6650 50  0001 C CNN
 	1    1050 6650
 	0    -1   -1   0   
 $EndComp
-$Comp
-L power:PWR_FLAG #FLG0103
-U 1 1 5E868D97
-P 4000 800
-F 0 "#FLG0103" H 4000 875 50  0001 C CNN
-F 1 "PWR_FLAG" V 4000 927 50  0000 L CNN
-F 2 "" H 4000 800 50  0001 C CNN
-F 3 "~" H 4000 800 50  0001 C CNN
-	1    4000 800 
-	-1   0    0    1   
-$EndComp
-Connection ~ 4000 800 
-$Comp
-L tom-passives:R R47
-U 1 1 5E86B9DE
-P 7200 800
-F 0 "R47" H 7271 838 40  0000 L CNN
-F 1 "0R" H 7271 762 40  0000 L CNN
-F 2 "tom-passives:R_0603_1608Metric_NoPaste" H 7271 724 30  0001 L CNN
-F 3 "" H 7200 800 30  0001 C CNN
-	1    7200 800 
-	0    1    1    0   
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG0116
-U 1 1 5E86EBA5
-P 7450 800
-F 0 "#FLG0116" H 7450 875 50  0001 C CNN
-F 1 "PWR_FLAG" V 7450 927 50  0000 L CNN
-F 2 "" H 7450 800 50  0001 C CNN
-F 3 "~" H 7450 800 50  0001 C CNN
-	1    7450 800 
-	-1   0    0    1   
-$EndComp
-Connection ~ 7450 800 
-$Comp
-L tom-passives:R R48
-U 1 1 5E872631
-P 10800 1450
-F 0 "R48" H 10871 1488 40  0000 L CNN
-F 1 "0R" H 10871 1412 40  0000 L CNN
-F 2 "tom-passives:R_0603_1608Metric_NoPaste" H 10871 1374 30  0001 L CNN
-F 3 "" H 10800 1450 30  0001 C CNN
-	1    10800 1450
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	10850 950  10850 1150
 Wire Wire Line
@@ -1415,99 +1219,8 @@ Wire Wire Line
 Wire Wire Line
 	11050 950  11050 1150
 Connection ~ 11050 1150
-$Comp
-L power:PWR_FLAG #FLG0117
-U 1 1 5E879A77
-P 11050 1450
-F 0 "#FLG0117" H 11050 1525 50  0001 C CNN
-F 1 "PWR_FLAG" V 11050 1577 50  0000 L CNN
-F 2 "" H 11050 1450 50  0001 C CNN
-F 3 "~" H 11050 1450 50  0001 C CNN
-	1    11050 1450
-	-1   0    0    1   
-$EndComp
-Connection ~ 11050 1450
-$Comp
-L tom-passives:R R49
-U 1 1 5E890F46
-P 3700 3950
-F 0 "R49" H 3771 3988 40  0000 L CNN
-F 1 "0R" H 3771 3912 40  0000 L CNN
-F 2 "tom-passives:R_0603_1608Metric_NoPaste" H 3771 3874 30  0001 L CNN
-F 3 "" H 3700 3950 30  0001 C CNN
-	1    3700 3950
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3700 4200 3500 4200
-Wire Wire Line
-	3700 3550 3700 3700
-$Comp
-L power:PWR_FLAG #FLG0118
-U 1 1 5E897E1D
-P 3700 3700
-F 0 "#FLG0118" H 3700 3775 50  0001 C CNN
-F 1 "PWR_FLAG" V 3700 3827 50  0000 L CNN
-F 2 "" H 3700 3700 50  0001 C CNN
-F 3 "~" H 3700 3700 50  0001 C CNN
-	1    3700 3700
-	0    1    1    0   
-$EndComp
-Connection ~ 3700 3700
-$Comp
-L tom-passives:R R50
-U 1 1 5E8A0F7B
-P 10050 4150
-F 0 "R50" H 10121 4188 40  0000 L CNN
-F 1 "0R" H 10121 4112 40  0000 L CNN
-F 2 "tom-passives:R_0402_1005Metric_NoPaste" H 10121 4074 30  0001 L CNN
-F 3 "" H 10050 4150 30  0001 C CNN
-	1    10050 4150
-	0    1    1    0   
-$EndComp
-Connection ~ 9800 4150
-$Comp
-L power:PWR_FLAG #FLG0119
-U 1 1 5E8A6D37
-P 10300 4150
-F 0 "#FLG0119" H 10300 4225 50  0001 C CNN
-F 1 "PWR_FLAG" V 10300 4277 50  0000 L CNN
-F 2 "" H 10300 4150 50  0001 C CNN
-F 3 "~" H 10300 4150 50  0001 C CNN
-	1    10300 4150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	10300 4150 10450 4150
-Connection ~ 10300 4150
-Text Label 3100 800  0    50   ~ 0
-VOUT_1V
-Text Label 6500 800  0    50   ~ 0
-VOUT_1.8V
-Text Label 3100 3550 0    50   ~ 0
-VOUT_16
-$Comp
-L tom-passives:R R19
-U 1 1 5E77FBFE
-P 4400 1000
-F 0 "R19" H 4471 1038 40  0000 L CNN
-F 1 "0R" H 4471 962 40  0000 L CNN
-F 2 "tom-passives:R_0603_1608Metric_NoPaste" H 4471 924 30  0001 L CNN
-F 3 "" H 4400 1000 30  0001 C CNN
-	1    4400 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L tom-passives:R R11
-U 1 1 5E8F1439
-P 950 1000
-F 0 "R11" H 1021 1038 40  0000 L CNN
-F 1 "0R" H 1021 962 40  0000 L CNN
-F 2 "tom-passives:R_0603_1608Metric_NoPaste" H 1021 924 30  0001 L CNN
-F 3 "" H 950 1000 30  0001 C CNN
-	1    950  1000
-	1    0    0    -1  
-$EndComp
 $Comp
 L tom-modules:TPS821x0SILT U7
 U 1 1 5E77FBEF
@@ -1534,10 +1247,6 @@ F 4 "296-47436-1-ND" H 1400 1400 50  0001 C CNN "Vendor"
 $EndComp
 Text Label 6450 3550 0    50   ~ 0
 VOUT_34_35
-Text Label 9700 4150 1    50   ~ 0
-VOUT_MGTAVTT
-Text Label 10100 800  0    50   ~ 0
-VOUT_3.3V
 Wire Wire Line
 	10550 800  10050 800 
 $Comp
@@ -1551,4 +1260,16 @@ F 3 "" H 10050 1050 30  0001 C CNN
 	1    10050 1050
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	950  4000 950  4100
+Connection ~ 3500 800 
+Connection ~ 6950 800 
+Wire Wire Line
+	10550 1450 11050 1450
+Wire Wire Line
+	8400 4100 8400 4150
+Connection ~ 8400 4150
+Wire Wire Line
+	9800 4150 10450 4150
+Connection ~ 9800 4150
 $EndSCHEMATC

@@ -400,14 +400,14 @@ Connection ~ 1200 2100
 Wire Wire Line
 	1200 2100 1200 1400
 $Comp
-L tom-passives:C C?
+L tom-passives:CP_Small C?
 U 1 1 5E7EC0F9
 P 6300 2050
 AR Path="/5E98B37D/5E7EC0F9" Ref="C?"  Part="1" 
 AR Path="/5E48AFE6/5F1FEEB3/5E7EC0F9" Ref="C42"  Part="1" 
 F 0 "C42" V 6250 1250 40  0000 L CNN
 F 1 "100uF/6.3V/X5R" V 6350 1250 40  0000 L CNN
-F 2 "tom-passives:C_1206_3216Metric" H 6338 1900 30  0001 C CNN
+F 2 "tom-passives:CP_EIA-3216-12_Kemet-S" H 6338 1900 30  0001 C CNN
 F 3 "" H 6300 2050 60  0001 C CNN
 F 4 "478-12404-1-ND" H 6300 2050 50  0001 C CNN "Vendor"
 	1    6300 2050
@@ -447,11 +447,6 @@ Wire Wire Line
 Connection ~ 6300 1850
 Wire Wire Line
 	6300 1850 6500 1850
-Wire Wire Line
-	6050 2250 6300 2250
-Connection ~ 6300 2250
-Wire Wire Line
-	6300 2250 6500 2250
 $Comp
 L tom-passives:C C?
 U 1 1 5E811793
@@ -486,14 +481,14 @@ VCCBRAM
 Wire Wire Line
 	6050 3000 6300 3000
 $Comp
-L tom-passives:C C?
+L tom-passives:CP_Small C?
 U 1 1 5E829A46
 P 6300 4350
 AR Path="/5E98B37D/5E829A46" Ref="C?"  Part="1" 
 AR Path="/5E48AFE6/5F1FEEB3/5E829A46" Ref="C44"  Part="1" 
 F 0 "C44" V 6250 3550 40  0000 L CNN
 F 1 "100uF/6.3V/X5R" V 6350 3550 40  0000 L CNN
-F 2 "tom-passives:C_1206_3216Metric" H 6338 4200 30  0001 C CNN
+F 2 "tom-passives:CP_EIA-3216-12_Kemet-S" H 6338 4200 30  0001 C CNN
 F 3 "" H 6300 4350 60  0001 C CNN
 F 4 "478-12404-1-ND" H 6300 4350 50  0001 C CNN "Vendor"
 	1    6300 4350
@@ -510,8 +505,6 @@ F 3 "" H 6100 4550 50  0001 C CNN
 	1    6100 4550
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6300 4550 6100 4550
 Wire Wire Line
 	6300 4150 6100 4150
 Text Label 3350 1400 0    50   ~ 0
@@ -536,10 +529,7 @@ Wire Wire Line
 	6300 4150 6500 4150
 Connection ~ 6300 4150
 Connection ~ 6500 4150
-Connection ~ 6300 4550
 Connection ~ 6500 4550
-Wire Wire Line
-	6500 4550 6300 4550
 $Comp
 L tom-passives:C C?
 U 1 1 5E896C49
@@ -918,4 +908,22 @@ Wire Wire Line
 	6500 4150 6700 4150
 Wire Wire Line
 	6500 4550 6700 4550
+Wire Wire Line
+	6300 1950 6300 1850
+Wire Wire Line
+	6050 2250 6300 2250
+Wire Wire Line
+	6300 2150 6300 2250
+Connection ~ 6300 2250
+Wire Wire Line
+	6300 2250 6500 2250
+Wire Wire Line
+	6300 4150 6300 4250
+Wire Wire Line
+	6100 4550 6300 4550
+Wire Wire Line
+	6300 4450 6300 4550
+Connection ~ 6300 4550
+Wire Wire Line
+	6300 4550 6500 4550
 $EndSCHEMATC

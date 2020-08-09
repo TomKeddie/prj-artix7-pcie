@@ -184,32 +184,24 @@ Wire Wire Line
 Wire Wire Line
 	7800 1500 7800 1800
 Wire Wire Line
-	7800 1800 5800 1800
+	7800 1800 5700 1800
 Wire Wire Line
-	5800 1800 5800 1900
+	5700 1800 5700 1900
 Wire Wire Line
-	5800 1900 3450 1900
+	5700 1900 3450 1900
 Wire Wire Line
 	7700 1600 8250 1600
 Text Label 8550 1100 0    50   ~ 0
 CFG_FLASH_MOSI_D0
-Wire Wire Line
-	7900 1400 9350 1400
 Connection ~ 7900 1400
 Wire Wire Line
 	8250 1600 8250 1100
-Wire Wire Line
-	8250 1100 9350 1100
 Wire Wire Line
 	6250 1400 6250 1900
 Wire Wire Line
 	6250 1900 8350 1900
 Wire Wire Line
 	8350 1900 8350 1200
-Wire Wire Line
-	8350 1200 9350 1200
-Wire Wire Line
-	9350 1300 8450 1300
 Wire Wire Line
 	8450 1300 8450 2000
 Wire Wire Line
@@ -218,7 +210,7 @@ Connection ~ 6150 1500
 Wire Wire Line
 	6150 1500 6400 1500
 Wire Wire Line
-	9350 1500 8550 1500
+	9350 1500 8750 1500
 Wire Wire Line
 	8550 1500 8550 2100
 Wire Wire Line
@@ -390,7 +382,7 @@ L tom-passives:R R1
 U 1 1 5E7A8CB7
 P 4150 2850
 F 0 "R1" H 4221 2888 40  0000 L CNN
-F 1 "1K/5%" H 4221 2812 40  0000 L CNN
+F 1 "4.7k/5%" H 4221 2812 40  0000 L CNN
 F 2 "tom-passives:R_0402_1005Metric" V 4080 2850 30  0001 C CNN
 F 3 "" H 4150 2850 30  0000 C CNN
 	1    4150 2850
@@ -476,7 +468,7 @@ L tom-passives:R R4
 U 1 1 5E7FB45A
 P 5850 2450
 F 0 "R4" H 5921 2488 40  0000 L CNN
-F 1 "1k/5%" H 5921 2412 40  0000 L CNN
+F 1 "1k/1%" H 5921 2412 40  0000 L CNN
 F 2 "tom-passives:R_0402_1005Metric" V 5780 2450 30  0001 C CNN
 F 3 "" H 5850 2450 30  0000 C CNN
 	1    5850 2450
@@ -541,7 +533,7 @@ U 1 1 5E83A5C8
 P 5450 3300
 F 0 "SW1" H 5450 3535 50  0000 C CNN
 F 1 "PROG" H 5450 3444 50  0000 C CNN
-F 2 "tom-mechanical:SW_Push_1P1T_NO_CK_KMR2" H 5450 3300 50  0001 C CNN
+F 2 "tom-mechanical:SW_Push_1P1T_NO_Vertical_Wuerth_434133025816" H 5450 3300 50  0001 C CNN
 F 3 "~" H 5450 3300 50  0001 C CNN
 	1    5450 3300
 	1    0    0    -1  
@@ -603,7 +595,7 @@ U 1 1 5E8375C3
 P 8950 1800
 F 0 "SW2" H 8950 2035 50  0000 C CNN
 F 1 "USER" H 8950 1944 50  0000 C CNN
-F 2 "tom-mechanical:SW_Push_1P1T_NO_CK_KMR2" H 8950 1800 50  0001 C CNN
+F 2 "tom-mechanical:SW_Push_1P1T_NO_Vertical_Wuerth_434133025816" H 8950 1800 50  0001 C CNN
 F 3 "~" H 8950 1800 50  0001 C CNN
 	1    8950 1800
 	0    -1   1    0   
@@ -613,7 +605,7 @@ L tom-passives:R R30
 U 1 1 5E83B4C1
 P 8950 2500
 F 0 "R30" V 8765 2500 40  0000 C CNN
-F 1 "1k/5%" V 8841 2500 40  0000 C CNN
+F 1 "1k/1%" V 8841 2500 40  0000 C CNN
 F 2 "tom-passives:R_0402_1005Metric" V 8880 2500 30  0001 C CNN
 F 3 "" H 8950 2500 30  0000 C CNN
 	1    8950 2500
@@ -989,36 +981,6 @@ F 10 "800-3818-ND" H 1300 6200 50  0001 C CNN "Vendor"
 	1    1300 6200
 	1    0    0    -1  
 $EndComp
-$Comp
-L tom-passives:C C?
-U 1 1 5E96B2FA
-P 3200 6600
-AR Path="/5E98B37D/5E96B2FA" Ref="C?"  Part="1" 
-AR Path="/5E96B2FA" Ref="C3"  Part="1" 
-F 0 "C3" V 2971 6600 40  0000 C CNN
-F 1 "0.1uF/6.3V/X5R/PCIE" V 3047 6600 40  0000 C CNN
-F 2 "tom-passives:C_0402_1005Metric" H 3238 6450 30  0001 C CNN
-F 3 "" H 3200 6600 60  0001 C CNN
-	1    3200 6600
-	0    -1   -1   0   
-$EndComp
-$Comp
-L tom-passives:C C?
-U 1 1 5E9713AB
-P 3550 6700
-AR Path="/5E98B37D/5E9713AB" Ref="C?"  Part="1" 
-AR Path="/5E9713AB" Ref="C4"  Part="1" 
-F 0 "C4" V 3321 6700 40  0000 C CNN
-F 1 "0.1uF/6.3V/X5R/PCIE" V 3397 6700 40  0000 C CNN
-F 2 "tom-passives:C_0402_1005Metric" H 3588 6550 30  0001 C CNN
-F 3 "" H 3550 6700 60  0001 C CNN
-	1    3550 6700
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	3400 6600 3900 6600
-Wire Wire Line
-	3900 6700 3750 6700
 Wire Wire Line
 	1700 5100 1800 5100
 Connection ~ 1800 5100
@@ -1063,10 +1025,6 @@ F 3 "" H 2000 7500 50  0001 C CNN
 $EndComp
 NoConn ~ 2700 6900
 NoConn ~ 2700 7000
-Text Label 2700 6600 0    50   ~ 0
-OUT3_P
-Text Label 2700 6700 0    50   ~ 0
-OUT3_N
 NoConn ~ 1300 5700
 NoConn ~ 1300 6200
 NoConn ~ 1300 6300
@@ -1077,7 +1035,7 @@ L tom-passives:R R10
 U 1 1 5EA0D58D
 P 1200 5150
 F 0 "R10" H 1271 5188 40  0000 L CNN
-F 1 "10K/5%" H 1271 5112 40  0000 L CNN
+F 1 "4.7k/5%" H 1271 5112 40  0000 L CNN
 F 2 "tom-passives:R_0402_1005Metric" V 1130 5150 30  0001 C CNN
 F 3 "" H 1200 5150 30  0000 C CNN
 	1    1200 5150
@@ -1088,7 +1046,7 @@ L tom-passives:R R9
 U 1 1 5EA10B13
 P 1050 5150
 F 0 "R9" H 1121 5188 40  0000 L CNN
-F 1 "10K/5%" H 1121 5112 40  0000 L CNN
+F 1 "4.7k/5%" H 1121 5112 40  0000 L CNN
 F 2 "tom-passives:R_0402_1005Metric" V 980 5150 30  0001 C CNN
 F 3 "" H 1050 5150 30  0000 C CNN
 	1    1050 5150
@@ -1162,10 +1120,6 @@ Text Label 850  6400 0    50   ~ 0
 XOUT
 Text Label 850  6500 0    50   ~ 0
 XIN
-Wire Wire Line
-	3350 6700 2700 6700
-Wire Wire Line
-	2700 6600 3000 6600
 NoConn ~ 2700 6000
 NoConn ~ 2700 6100
 Text Label 3700 7250 2    50   ~ 0
@@ -1196,50 +1150,12 @@ Text Label 10650 3150 0    50   ~ 0
 CLKIN_P
 Text Label 10650 3250 0    50   ~ 0
 CLKIN_N
-$Comp
-L tom-passives:C C?
-U 1 1 5EA5C2D9
-P 3500 5950
-AR Path="/5E98B37D/5EA5C2D9" Ref="C?"  Part="1" 
-AR Path="/5EA5C2D9" Ref="C41"  Part="1" 
-F 0 "C41" V 3271 5950 40  0000 C CNN
-F 1 "0.1uF/6.3V/X5R/PCIE" V 3347 5950 40  0000 C CNN
-F 2 "tom-passives:C_0402_1005Metric" H 3538 5800 30  0001 C CNN
-F 3 "" H 3500 5950 60  0001 C CNN
-	1    3500 5950
-	-1   0    0    1   
-$EndComp
-$Comp
-L tom-passives:C C?
-U 1 1 5EA5CB84
-P 3000 5950
-AR Path="/5E98B37D/5EA5CB84" Ref="C?"  Part="1" 
-AR Path="/5EA5CB84" Ref="C40"  Part="1" 
-F 0 "C40" V 2771 5950 40  0000 C CNN
-F 1 "0.1uF/6.3V/X5R/PCIE" V 2847 5950 40  0000 C CNN
-F 2 "tom-passives:C_0402_1005Metric" H 3038 5800 30  0001 C CNN
-F 3 "" H 3000 5950 60  0001 C CNN
-	1    3000 5950
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	3500 6400 3500 6150
-Wire Wire Line
-	3000 6150 3000 6300
 Wire Wire Line
 	3000 6300 2700 6300
-Wire Wire Line
-	3500 5750 3500 5250
-Wire Wire Line
-	3000 5750 3000 5250
 Text Label 3000 5150 1    50   ~ 0
 CLKIN_P
 Text Label 3500 5150 1    50   ~ 0
 CLKIN_N
-Text Label 2700 6300 0    50   ~ 0
-OUT2_P
-Text Label 2700 6400 0    50   ~ 0
-OUT2_N
 Wire Wire Line
 	10600 3450 10650 3450
 Wire Wire Line
@@ -1625,7 +1541,7 @@ L tom-passives:R R51
 U 1 1 5EC2D6C3
 P 6400 5200
 F 0 "R51" H 6471 5238 40  0000 L CNN
-F 1 "1K/5%" H 6471 5162 40  0000 L CNN
+F 1 "4.7k/5%" H 6471 5162 40  0000 L CNN
 F 2 "tom-passives:R_0402_1005Metric" V 6330 5200 30  0001 C CNN
 F 3 "" H 6400 5200 30  0000 C CNN
 	1    6400 5200
@@ -3132,4 +3048,104 @@ Wire Wire Line
 Connection ~ 850  5900
 Wire Wire Line
 	850  5900 600  5900
+Wire Wire Line
+	3000 5250 3000 6300
+Wire Wire Line
+	3500 5250 3500 6400
+Wire Wire Line
+	2700 6600 3900 6600
+Wire Wire Line
+	2700 6700 3900 6700
+$Comp
+L tom-mechanical:TestPoint TP16
+U 1 1 5F400C11
+P 6750 6150
+F 0 "TP16" H 6692 6176 50  0000 R CNN
+F 1 "TestPoint" H 6692 6267 50  0000 R CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 6950 6150 50  0001 C CNN
+F 3 "~" H 6950 6150 50  0001 C CNN
+	1    6750 6150
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:VCC #PWR044
+U 1 1 5F4011B2
+P 6750 6150
+F 0 "#PWR044" H 6750 6000 50  0001 C CNN
+F 1 "VCC" H 6767 6323 50  0000 C CNN
+F 2 "" H 6750 6150 50  0001 C CNN
+F 3 "" H 6750 6150 50  0001 C CNN
+	1    6750 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-mechanical:TestPoint TP18
+U 1 1 5F41DF7B
+P 8250 650
+F 0 "TP18" H 8308 722 50  0000 L CNN
+F 1 "TestPoint" H 8308 677 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 8450 650 50  0001 C CNN
+F 3 "~" H 8450 650 50  0001 C CNN
+	1    8250 650 
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-mechanical:TestPoint TP19
+U 1 1 5F44DB51
+P 8500 650
+F 0 "TP19" H 8558 722 50  0000 L CNN
+F 1 "TestPoint" H 8558 677 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 8700 650 50  0001 C CNN
+F 3 "~" H 8700 650 50  0001 C CNN
+	1    8500 650 
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-mechanical:TestPoint TP20
+U 1 1 5F44DEA2
+P 8750 650
+F 0 "TP20" H 8808 722 50  0000 L CNN
+F 1 "TestPoint" H 8808 677 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 8950 650 50  0001 C CNN
+F 3 "~" H 8950 650 50  0001 C CNN
+	1    8750 650 
+	1    0    0    -1  
+$EndComp
+$Comp
+L tom-mechanical:TestPoint TP17
+U 1 1 5F44E186
+P 5700 650
+F 0 "TP17" H 5758 722 50  0000 L CNN
+F 1 "TestPoint" H 5758 677 50  0001 L CNN
+F 2 "tom-mechanical:TestPoint_Pad_D1.5mm" H 5900 650 50  0001 C CNN
+F 3 "~" H 5900 650 50  0001 C CNN
+	1    5700 650 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 1100 8250 650 
+Connection ~ 8250 1100
+Wire Wire Line
+	8500 650  8500 750 
+Wire Wire Line
+	8500 750  8350 750 
+Wire Wire Line
+	8350 750  8350 1200
+Connection ~ 8350 1200
+Wire Wire Line
+	7900 1400 9350 1400
+Wire Wire Line
+	9350 1300 8450 1300
+Wire Wire Line
+	8350 1200 9350 1200
+Wire Wire Line
+	8250 1100 9350 1100
+Wire Wire Line
+	8750 650  8750 1500
+Connection ~ 8750 1500
+Wire Wire Line
+	8750 1500 8550 1500
+Wire Wire Line
+	5700 650  5700 1800
+Connection ~ 5700 1800
 $EndSCHEMATC

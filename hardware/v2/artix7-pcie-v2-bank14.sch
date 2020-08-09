@@ -1459,7 +1459,7 @@ IO_L24_14_N
 Wire Wire Line
 	5300 6500 5150 6500
 $Comp
-L tom-passives:C C?
+L tom-passives:CP_Small C?
 U 1 1 5E981467
 P 6800 950
 AR Path="/5E98B37D/5E981467" Ref="C?"  Part="1" 
@@ -1467,7 +1467,7 @@ AR Path="/5E48AFE6/5F1FEEB3/5E981467" Ref="C?"  Part="1"
 AR Path="/5E5E2B54/5E981467" Ref="C60"  Part="1" 
 F 0 "C60" V 6750 150 40  0000 L CNN
 F 1 "100uF/6.3V/X5R" V 6850 150 40  0000 L CNN
-F 2 "tom-passives:C_1206_3216Metric" H 6838 800 30  0001 C CNN
+F 2 "tom-passives:CP_EIA-3216-12_Kemet-S" H 6838 800 30  0001 C CNN
 F 3 "" H 6800 950 60  0001 C CNN
 F 4 "478-12404-1-ND" H 6800 950 50  0001 C CNN "Vendor"
 	1    6800 950 
@@ -1493,11 +1493,6 @@ Wire Wire Line
 Connection ~ 6800 750 
 Wire Wire Line
 	6800 750  7000 750 
-Wire Wire Line
-	6550 1150 6800 1150
-Connection ~ 6800 1150
-Wire Wire Line
-	6800 1150 7000 1150
 $Comp
 L tom-passives:C C?
 U 1 1 5E981479
@@ -1617,7 +1612,7 @@ $EndComp
 Text Label 6550 750  2    50   ~ 0
 VCCO_14
 $Comp
-L tom-passives:C C?
+L tom-passives:CP_Small C?
 U 1 1 5E9A7CA4
 P 11000 4050
 AR Path="/5E98B37D/5E9A7CA4" Ref="C?"  Part="1" 
@@ -1625,7 +1620,7 @@ AR Path="/5E48AFE6/5F1FEEB3/5E9A7CA4" Ref="C?"  Part="1"
 AR Path="/5E5E2B54/5E9A7CA4" Ref="C68"  Part="1" 
 F 0 "C68" H 10900 4450 40  0000 L CNN
 F 1 "100uF/6.3V/X5R" H 10700 4350 40  0000 L CNN
-F 2 "tom-passives:C_1206_3216Metric" H 11038 3900 30  0001 C CNN
+F 2 "tom-passives:CP_EIA-3216-12_Kemet-S" H 11038 3900 30  0001 C CNN
 F 3 "" H 11000 4050 60  0001 C CNN
 F 4 "478-12404-1-ND" H 11000 4050 50  0001 C CNN "Vendor"
 	1    11000 4050
@@ -1646,7 +1641,7 @@ F 3 "" H 11000 4250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L tom-passives:C C?
+L tom-passives:CP_Small C?
 U 1 1 5E9B60F9
 P 8300 5500
 AR Path="/5E98B37D/5E9B60F9" Ref="C?"  Part="1" 
@@ -1654,7 +1649,7 @@ AR Path="/5E48AFE6/5F1FEEB3/5E9B60F9" Ref="C?"  Part="1"
 AR Path="/5E5E2B54/5E9B60F9" Ref="C67"  Part="1" 
 F 0 "C67" H 8100 5600 40  0000 L CNN
 F 1 "100uF/6.3V/X5R" H 7650 5450 40  0000 L CNN
-F 2 "tom-passives:C_1206_3216Metric" H 8338 5350 30  0001 C CNN
+F 2 "tom-passives:CP_EIA-3216-12_Kemet-S" H 8338 5350 30  0001 C CNN
 F 3 "" H 8300 5500 60  0001 C CNN
 F 4 "478-12404-1-ND" H 8300 5500 50  0001 C CNN "Vendor"
 	1    8300 5500
@@ -1729,4 +1724,21 @@ Wire Wire Line
 Wire Wire Line
 	9300 4200 9150 4200
 NoConn ~ 5150 5700
+Wire Wire Line
+	6800 750  6800 850 
+Wire Wire Line
+	6550 1150 6800 1150
+Wire Wire Line
+	6800 1050 6800 1150
+Connection ~ 6800 1150
+Wire Wire Line
+	6800 1150 7000 1150
+Wire Wire Line
+	11000 3850 11000 3950
+Wire Wire Line
+	11000 4150 11000 4250
+Wire Wire Line
+	8300 5300 8300 5400
+Wire Wire Line
+	8300 5600 8300 5700
 $EndSCHEMATC

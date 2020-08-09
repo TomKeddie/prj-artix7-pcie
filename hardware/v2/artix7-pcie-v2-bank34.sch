@@ -1721,7 +1721,7 @@ VCCO_34
 Text HLabel 1500 1250 0    50   Input ~ 0
 VCCO_34
 $Comp
-L tom-passives:C C?
+L tom-passives:CP_Small C?
 U 1 1 5E9ED7A0
 P 6900 1200
 AR Path="/5E98B37D/5E9ED7A0" Ref="C?"  Part="1" 
@@ -1730,7 +1730,7 @@ AR Path="/5E5E2B54/5E9ED7A0" Ref="C?"  Part="1"
 AR Path="/5E6D5E13/5E9ED7A0" Ref="C85"  Part="1" 
 F 0 "C85" V 6850 400 40  0000 L CNN
 F 1 "100uF/6.3V/X5R" V 6950 400 40  0000 L CNN
-F 2 "tom-passives:C_1206_3216Metric" H 6938 1050 30  0001 C CNN
+F 2 "tom-passives:CP_EIA-3216-12_Kemet-S" H 6938 1050 30  0001 C CNN
 F 3 "" H 6900 1200 60  0001 C CNN
 F 4 "478-12404-1-ND" H 6900 1200 50  0001 C CNN "Vendor"
 	1    6900 1200
@@ -1757,11 +1757,6 @@ Wire Wire Line
 Connection ~ 6900 1000
 Wire Wire Line
 	6900 1000 7100 1000
-Wire Wire Line
-	6650 1400 6900 1400
-Connection ~ 6900 1400
-Wire Wire Line
-	6900 1400 7100 1400
 $Comp
 L tom-passives:C C?
 U 1 1 5E9ED7B2
@@ -1888,7 +1883,7 @@ $EndComp
 Text Label 6650 1000 2    50   ~ 0
 VCCO_34
 $Comp
-L tom-passives:C C?
+L tom-passives:CP_Small C?
 U 1 1 5E9F722D
 P 6900 2350
 AR Path="/5E98B37D/5E9F722D" Ref="C?"  Part="1" 
@@ -1897,7 +1892,7 @@ AR Path="/5E5E2B54/5E9F722D" Ref="C?"  Part="1"
 AR Path="/5E6D5E13/5E9F722D" Ref="C86"  Part="1" 
 F 0 "C86" V 6850 1550 40  0000 L CNN
 F 1 "100uF/6.3V/X5R" V 6950 1550 40  0000 L CNN
-F 2 "tom-passives:C_1206_3216Metric" H 6938 2200 30  0001 C CNN
+F 2 "tom-passives:CP_EIA-3216-12_Kemet-S" H 6938 2200 30  0001 C CNN
 F 3 "" H 6900 2350 60  0001 C CNN
 F 4 "478-12404-1-ND" H 6900 2350 50  0001 C CNN "Vendor"
 	1    6900 2350
@@ -1924,11 +1919,6 @@ Wire Wire Line
 Connection ~ 6900 2150
 Wire Wire Line
 	6900 2150 7100 2150
-Wire Wire Line
-	6650 2550 6900 2550
-Connection ~ 6900 2550
-Wire Wire Line
-	6900 2550 7100 2550
 $Comp
 L tom-passives:C C?
 U 1 1 5E9F723F
@@ -2065,7 +2055,7 @@ Wire Notes Line
 Text Notes 10850 2450 0    50   ~ 0
 ULX3S
 $Comp
-L tom-passives:C C?
+L tom-passives:CP_Small C?
 U 1 1 5EAAA6C6
 P 9750 3750
 AR Path="/5E98B37D/5EAAA6C6" Ref="C?"  Part="1" 
@@ -2074,7 +2064,7 @@ AR Path="/5E5E2B54/5EAAA6C6" Ref="C?"  Part="1"
 AR Path="/5E6D5E13/5EAAA6C6" Ref="C23"  Part="1" 
 F 0 "C23" H 9650 4150 40  0000 L CNN
 F 1 "100uF/6.3V/X5R" H 9450 4050 40  0000 L CNN
-F 2 "tom-passives:C_1206_3216Metric" H 9788 3600 30  0001 C CNN
+F 2 "tom-passives:CP_EIA-3216-12_Kemet-S" H 9788 3600 30  0001 C CNN
 F 3 "" H 9750 3750 60  0001 C CNN
 F 4 "478-12404-1-ND" H 9750 3750 50  0001 C CNN "Vendor"
 	1    9750 3750
@@ -2101,7 +2091,7 @@ Wire Wire Line
 Text Label 7000 3550 2    50   ~ 0
 VCCO_35
 $Comp
-L tom-passives:C C?
+L tom-passives:CP_Small C?
 U 1 1 5EAE8169
 P 8200 5950
 AR Path="/5E98B37D/5EAE8169" Ref="C?"  Part="1" 
@@ -2110,7 +2100,7 @@ AR Path="/5E5E2B54/5EAE8169" Ref="C?"  Part="1"
 AR Path="/5E6D5E13/5EAE8169" Ref="C18"  Part="1" 
 F 0 "C18" H 8350 6000 40  0000 L CNN
 F 1 "100uF/6.3V/X5R" H 8350 5900 40  0000 L CNN
-F 2 "tom-passives:C_1206_3216Metric" H 8238 5800 30  0001 C CNN
+F 2 "tom-passives:CP_EIA-3216-12_Kemet-S" H 8238 5800 30  0001 C CNN
 F 3 "" H 8200 5950 60  0001 C CNN
 F 4 "478-12404-1-ND" H 8200 5950 50  0001 C CNN "Vendor"
 	1    8200 5950
@@ -2146,4 +2136,30 @@ Wire Wire Line
 	5300 3050 5450 3050
 NoConn ~ 5300 3550
 NoConn ~ 5300 3650
+Wire Wire Line
+	6900 1000 6900 1100
+Wire Wire Line
+	6650 1400 6900 1400
+Wire Wire Line
+	6900 1300 6900 1400
+Connection ~ 6900 1400
+Wire Wire Line
+	6900 1400 7100 1400
+Wire Wire Line
+	6900 2150 6900 2250
+Wire Wire Line
+	6650 2550 6900 2550
+Wire Wire Line
+	6900 2450 6900 2550
+Connection ~ 6900 2550
+Wire Wire Line
+	6900 2550 7100 2550
+Wire Wire Line
+	9750 3550 9750 3650
+Wire Wire Line
+	9750 3850 9750 3950
+Wire Wire Line
+	8200 5750 8200 5850
+Wire Wire Line
+	8200 6050 8200 6150
 $EndSCHEMATC

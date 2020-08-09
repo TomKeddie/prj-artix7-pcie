@@ -240,7 +240,7 @@ F 3 "~" H 950 1500 50  0001 C CNN
 $EndComp
 Connection ~ 950  1500
 $Comp
-L tom-passives:C C?
+L tom-passives:CP_Small C?
 U 1 1 5E9DF380
 P 8450 2000
 AR Path="/5E98B37D/5E9DF380" Ref="C?"  Part="1" 
@@ -249,7 +249,7 @@ AR Path="/5E5E2B54/5E9DF380" Ref="C?"  Part="1"
 AR Path="/5ED151B3/5E9DF380" Ref="C78"  Part="1" 
 F 0 "C78" V 8400 1200 40  0000 L CNN
 F 1 "100uF/6.3V/X5R" V 8500 1200 40  0000 L CNN
-F 2 "tom-passives:C_1206_3216Metric" H 8488 1850 30  0001 C CNN
+F 2 "tom-passives:CP_EIA-3216-12_Kemet-S" H 8488 1850 30  0001 C CNN
 F 3 "" H 8450 2000 60  0001 C CNN
 F 4 "478-12404-1-ND" H 8450 2000 50  0001 C CNN "Vendor"
 	1    8450 2000
@@ -276,11 +276,6 @@ Wire Wire Line
 Connection ~ 8450 1800
 Wire Wire Line
 	8450 1800 8650 1800
-Wire Wire Line
-	8200 2200 8450 2200
-Connection ~ 8450 2200
-Wire Wire Line
-	8450 2200 8650 2200
 $Comp
 L tom-passives:C C?
 U 1 1 5E9DF392
@@ -438,4 +433,13 @@ Wire Wire Line
 	5450 4000 5450 1450
 NoConn ~ 4550 6800
 NoConn ~ 4550 6900
+Wire Wire Line
+	8450 1800 8450 1900
+Wire Wire Line
+	8200 2200 8450 2200
+Wire Wire Line
+	8450 2100 8450 2200
+Connection ~ 8450 2200
+Wire Wire Line
+	8450 2200 8650 2200
 $EndSCHEMATC
