@@ -1,120 +1,120 @@
-26947266572410
-tom-mechanical
-Castellation_5.08_2.54
-
-
-0
-1
-1
-tom-mechanical
-MountingHole_2.7mm_M2.5_DIN965_Pad
-Mounting Hole 2.7mm, M2.5, DIN965
-mounting hole 2.7mm m2.5 din965
-0
-1
-1
-tom-mechanical
-MountingHole_3.2mm_M3_DIN965_Pad
-Mounting Hole 3.2mm, M3, DIN965
-mounting hole 3.2mm m3 din965
-0
-1
-1
-tom-mechanical
-PCIe_1x
-
-
-0
-72
-36
-tom-mechanical
-SW_Push_1P1T_NO_CK_KMR2
-CK components KMR2 tactile switch http://www.ckswitches.com/media/1479/kmr2.pdf
-tactile switch kmr2
-0
-4
-2
-tom-mechanical
-SW_Push_1P1T_NO_Vertical_Wuerth_434133025816
-https://katalog.we-online.com/em/datasheet/434133025816.pdf
-tactile switch Wurth Wuerth PRT-0031
-0
-4
-2
-tom-mechanical
-SW_SPST_SMD_2PIN_3.5x6.0
-http://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1437566-3&DocType=Customer+Drawing&DocLang=English
-SPST button tactile switch
+26951678328259
+tom-passives
+CP_EIA-3216-12_Kemet-S
+Tantalum Capacitor SMD Kemet-S (3216-12 Metric), IPC_7351 nominal, (Body size from: http://www.kemet.com/Lists/ProductCatalog/Attachments/253/KEM_TC101_STD.pdf), generated with kicad-footprint-generator
+capacitor tantalum
 0
 2
 2
-tom-mechanical
-SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm
-SMD Solder Jumper, 1x1.5mm Pads, 0.3mm gap, bridged with 1 copper strip
-solder jumper open
+tom-passives
+C_0402_1005Metric
+Capacitor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+capacitor
 0
 2
 2
-tom-mechanical
-SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm
-SMD Solder Jumper, 1x1.5mm Pads, 0.3mm gap, open
-solder jumper open
+tom-passives
+C_0603_1608Metric
+Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+capacitor
 0
 2
 2
-tom-mechanical
-SolderJumper-3_P2.0mm_Open_TrianglePad1.0x1.5mm
-SMD Solder Jumper, 1x1.5mm Triangular Pads, 0.3mm gap, open
-solder jumper open
+tom-passives
+C_0603_1608Metric_1OF2
+Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+capacitor
 0
-5
 3
-tom-mechanical
-TestPoint_Loop_D2.50mm_Drill1.0mm
-wire loop as test point, loop diameter 2.5mm, hole diameter 1.0mm
-test point wire loop bead
+3
+tom-passives
+C_0603_1608Metric_Pad1.05x0.95mm_HandSolder
+Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+capacitor handsolder
 0
-1
-1
-tom-mechanical
-TestPoint_Pad_D1.5mm
-SMD pad as test Point, diameter 1.5mm
-test point SMD pad
+2
+2
+tom-passives
+C_0805_2012Metric
+Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+capacitor
 0
-1
-1
-tom-mechanical
-TestPoint_Pad_D3.0mm
-SMD pad as test Point, diameter 3.0mm
-test point SMD pad
+2
+2
+tom-passives
+C_0805_2012Metric_Pad1.15x1.40mm_HandSolder
+Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+capacitor handsolder
 0
-1
-1
-tom-mechanical
-cc-by-sa
+2
+2
+tom-passives
+C_1206_3216Metric
+Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+capacitor
+0
+2
+2
+tom-passives
+C_1206_3216Metric_Pad1.42x1.75mm_HandSolder
+Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+capacitor handsolder
+0
+2
+2
+tom-passives
+Crystal_SMD_0603_5x3.2
+Crystal, Quarz, SMD, 0603, 4 Pads,
+Crystal, Quarz, SMD, 0603, 4 Pads,
+0
+4
+4
+tom-passives
+Crystal_SMD_3225-4Pin_3.2x2.5mm
+SMD Crystal SERIES SMD3225/4 http://www.txccrystal.com/images/pdf/7m-accuracy.pdf, 3.2x2.5mm^2 package
+SMD SMT crystal
+0
+4
+4
+tom-passives
+R_0402_1005Metric
+Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+resistor
+0
+2
+2
+tom-passives
+R_0402_1005Metric_NoPaste
+Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+resistor
+0
+2
+2
+tom-passives
+R_0603_1608Metric
+Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+resistor
+0
+2
+2
+tom-passives
+R_0603_1608Metric_NoPaste
+Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+resistor
+0
+2
+2
+tom-passives
+R_0603_1608Metric_Pad1.05x0.95mm_HandSolder
+Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+resistor handsolder
+0
+2
+2
+tom-passives
+R_PACK8_CAT16J8
 
 
 0
-0
-0
-tom-mechanical
-cc-by-sa-80x15
-
-
-0
-0
-0
-tom-mechanical
-mask
-
-
-0
-0
-0
-tom-mechanical
-mask_600
-
-
-0
-0
-0
+16
+16
