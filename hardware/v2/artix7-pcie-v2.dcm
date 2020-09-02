@@ -5,6 +5,18 @@ D Clock Generators & Support Products VersaClock 6E Standard Part
 F https://componentsearchengine.com/Datasheets/1/5P49V6965A000NLGI.pdf
 $ENDCMP
 #
+$CMP TLV62569DBVR
+D Buck Switching Regulator IC Positive Adjustable 0.6V Output 2A with EN
+$ENDCMP
+#
+$CMP TLV62569PDDCR
+D Buck Switching Regulator IC Positive Adjustable 0.6V Output 2A with EN & PG
+$ENDCMP
+#
+$CMP TPS74701DRCR
+D Linear Voltage Regulator IC 1 Output 500mA 10-VSON (3x3)
+$ENDCMP
+#
 $CMP XC7A75T-FGG484
 D Artix 7 T 75 XC7A75T-FGG484
 K FPGA
