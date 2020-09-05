@@ -475,29 +475,6 @@ F 3 "" H 4850 2100 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L tom-passives:R R4
-U 1 1 5E7FB45A
-P 5850 2450
-F 0 "R4" H 5921 2488 40  0000 L CNN
-F 1 "1k/1%" H 5921 2412 40  0000 L CNN
-F 2 "tom-passives:R_0402_1005Metric" V 5780 2450 30  0001 C CNN
-F 3 "" H 5850 2450 30  0000 C CNN
-F 4 "C11702" H 5850 2450 50  0001 C CNN "LCSC"
-	1    5850 2450
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR013
-U 1 1 5E7FCD8A
-P 5850 2700
-F 0 "#PWR013" H 5850 2450 50  0001 C CNN
-F 1 "GND" H 5855 2527 50  0000 C CNN
-F 2 "" H 5850 2700 50  0001 C CNN
-F 3 "" H 5850 2700 50  0001 C CNN
-	1    5850 2700
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+3V3 #PWR05
 U 1 1 5E815253
 P 4350 2000
@@ -512,34 +489,6 @@ Wire Wire Line
 	8550 2100 5900 2100
 Wire Wire Line
 	8450 2000 6150 2000
-$Comp
-L tom-connectors:Conn_01x02 J3
-U 1 1 5E81BC64
-P 6350 2550
-F 0 "J3" V 6222 2630 50  0000 L CNN
-F 1 "JTAG_EN" V 6313 2630 50  0000 L CNN
-F 2 "tom-connectors:PinHeader_1x02_P1.27mm_Vertical" H 6350 2550 50  0001 C CNN
-F 3 "~" H 6350 2550 50  0001 C CNN
-F 4 "DNP" H 6350 2550 50  0001 C CNN "LCSC"
-	1    6350 2550
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	5850 2200 6250 2200
-Wire Wire Line
-	6250 2200 6250 2350
-Connection ~ 5850 2200
-$Comp
-L power:+3V3 #PWR016
-U 1 1 5E82C135
-P 6350 2350
-F 0 "#PWR016" H 6350 2200 50  0001 C CNN
-F 1 "+3V3" H 6365 2523 50  0000 C CNN
-F 2 "" H 6350 2350 50  0001 C CNN
-F 3 "" H 6350 2350 50  0001 C CNN
-	1    6350 2350
-	1    0    0    -1  
-$EndComp
 $Comp
 L tom-mechanical:SW_SPST SW1
 U 1 1 5E83A5C8
@@ -566,10 +515,8 @@ F 3 "" H 5650 3300 50  0001 C CNN
 	1    5650 3300
 	1    0    0    -1  
 $EndComp
-Text Label 5350 2200 0    50   ~ 0
+Text Label 3550 2200 0    50   ~ 0
 M2
-Wire Wire Line
-	3450 2200 5850 2200
 $Comp
 L power:+3V3 #PWR01
 U 1 1 5E95EFB5
@@ -3239,4 +3186,9 @@ F 3 "" H 9050 7050 50  0001 C CNN
 	1    9050 7050
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	3450 2200 4850 2200
+Wire Wire Line
+	4850 2100 4850 2200
+Connection ~ 4850 2100
 $EndSCHEMATC
