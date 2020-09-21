@@ -1,4 +1,4 @@
-Ref,Val,Package,PosX,PosY,Rot,Side
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
 "C1","47uF/6.3V/X5R","C_1206_3216Metric",-30.800000,17.790000,0.000000,bottom
 "C2","0.1uF/6.3V/X5R","C_0402_1005Metric",-51.160000,26.780000,270.000000,bottom
 "C3","0.1uF/6.3V/X5R","C_0402_1005Metric",-14.700000,43.990000,270.000000,bottom
