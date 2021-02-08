@@ -10,32 +10,24 @@ preflight:
 
 global:
   output: '%f-%r.%x'
+  kiauto_time_out_scale: 2.0
 
 outputs:
   - name: 'gerbers'
     type: gerber
     dir: gerber
     options:
-        # generic layer options
-        exclude_edge_layer: true
-        exclude_pads_from_silkscreen: true
-        plot_sheet_reference: false
-        plot_footprint_refs: true
-        plot_footprint_values: false
-        force_plot_invisible_refs_vals: false
-        tent_vias: true
-        line_width: 0.15
-        # gerber options
-        use_aux_axis_as_origin: true
-        subtract_mask_from_silk: true
-        use_protel_extensions: false
-        gerber_precision: 4.6
-        create_gerber_job_file: false
-        use_gerber_x2_attributes: false
-        use_gerber_net_attributes: false
+      create_gerber_job_file: false
+      exclude_edge_layer: true
+      exclude_pads_from_silkscreen: true
+      gerber_precision: 4.6
+      output: '%f-%i%v.%x'
+      tent_vias: true
+      use_aux_axis_as_origin: true
+      use_gerber_x2_attributes: false
     layers:
-        - 'copper'
-        - 'technical'
+        - copper
+        - technical
 
   - name: 'drills'
     type: excellon
@@ -50,7 +42,7 @@ outputs:
     dir: bom
     options:
       output: '%f-jlc-%r.%x'
-      ref-sepatator: ','
+      ref_separator: ','
       columns:
         - field: Value
           name: Comment
@@ -66,10 +58,14 @@ outputs:
   - name: 'sch_svg'
     type: svg_sch_print
     dir: doc
+    options:
+      output: '%f-sch-%r.%x'
 
   - name: 'sch_pdf'
     type: pdf_sch_print
     dir: doc
+    options:
+      output: '%f-sch-%r.%x'
 
   - name: 'pcb_svg_f'
     type: svg
@@ -127,7 +123,7 @@ outputs:
     type: ibom
     dir: bom
     options:
-      include-tracks: true
+      include_tracks: true
 
   - name: 'step'
     type: step
@@ -143,8 +139,17 @@ outputs:
       metric_units: true
       exclude_edge_layer: true
       sketch_plot: true
-      drill_marks: None
+      drill_marks: 'none'
       polygon_mode: false
     layers:
       - 'Edge.Cuts'
       - 'Eco1.User'
+
+  - name: 'gerber-zip-file'
+    type: compress
+    options:
+      output: '%f-%r-%D-%T.%x'
+      format: 'ZIP'
+      files:
+        - from_output: 'gerbers'
+        - from_output: 'drills'
